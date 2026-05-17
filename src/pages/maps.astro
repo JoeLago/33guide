@@ -1,5 +1,6 @@
 ---
 import GuideLayout from '../layouts/GuideLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 <GuideLayout title="Maps" description="Reference maps for each region — chest, altar, sigil, and event locations.">
   <h1>Maps</h1>
@@ -7,17 +8,17 @@ import GuideLayout from '../layouts/GuideLayout.astro';
   <p>Each color corresponds to one possible layout (3 possible). On Paradiso, sigil chambers show the first-wave / second-wave sigil per spawn point.</p>
 
   <div class="map-block" id="purgatorio">
-    <img class="map-image" src="/assets/maps/purgatorio.png" alt="Purgatorio map showing chests, altars, and sigil locations" loading="lazy" />
+    <img class="map-image" src={`${base}assets/maps/purgatorio.png`} alt="Purgatorio map showing chests, altars, and sigil locations" loading="lazy" />
     <button class="map-expand" type="button" aria-label="Expand Purgatorio map">⤢</button>
   </div>
 
   <div class="map-block" id="inferno">
-    <img class="map-image" src="/assets/maps/inferno.png" alt="Inferno map showing chests, altars, and sigil locations" loading="lazy" />
+    <img class="map-image" src={`${base}assets/maps/inferno.png`} alt="Inferno map showing chests, altars, and sigil locations" loading="lazy" />
     <button class="map-expand" type="button" aria-label="Expand Inferno map">⤢</button>
   </div>
 
   <div class="map-block" id="paradiso">
-    <img class="map-image" src="/assets/maps/paradiso.png" alt="Paradiso map showing chests, altars, and Ancient Sigil chambers" loading="lazy" />
+    <img class="map-image" src={`${base}assets/maps/paradiso.png`} alt="Paradiso map showing chests, altars, and Ancient Sigil chambers" loading="lazy" />
     <button class="map-expand" type="button" aria-label="Expand Paradiso map">⤢</button>
   </div>
 

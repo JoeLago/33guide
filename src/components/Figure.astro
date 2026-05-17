@@ -6,6 +6,8 @@ interface Props {
 }
 
 const { src, alt, variant } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const resolvedSrc = src.startsWith('/') ? `${base}${src.slice(1)}` : src;
 const cls = variant ? `formula-figure ${variant}` : 'formula-figure';
 ---
-<img class={cls} src={src} alt={alt} loading="lazy" />
+<img class={cls} src={resolvedSrc} alt={alt} loading="lazy" />

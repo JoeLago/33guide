@@ -22,6 +22,8 @@ if (!detectedKind) {
   else if (upgrades.some(u => u.slug === slug)) detectedKind = 'upgrade';
 }
 
+const base = import.meta.env.BASE_URL;
+
 let cls: string;
 if (detectedKind === 'relic') {
   cls = `pill pill-relic-${'rarity' in item ? item.rarity : 'common'}`;
@@ -31,4 +33,4 @@ if (detectedKind === 'relic') {
   cls = 'pill pill-upgrade';
 }
 ---
-<span class={cls}>{icon && <img class="pill-icon" src={`/${icon.path}`} alt="" loading="lazy" />}{item.name}</span>
+<span class={cls}>{icon && <img class="pill-icon" src={`${base}${icon.path}`} alt="" loading="lazy" />}{item.name}</span>

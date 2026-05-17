@@ -1,6 +1,7 @@
 ---
 import GuideLayout from '../layouts/GuideLayout.astro';
 import Callout from '../components/Callout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 <GuideLayout title="Introduction" description="Community build guide for 33 Immortals — weapon upgrades, perks, relics, and build strategies.">
   <h1>Introduction</h1>
@@ -22,12 +23,12 @@ import Callout from '../components/Callout.astro';
     <h2 id="how-to-read">How to read the site</h2>
     <p>Use the left sidebar to navigate. The recommended order on a first pass:</p>
     <ol>
-      <li><a href="/general-tips">General Tips</a> — core habits.</li>
-      <li><a href="/damage">Damage</a> — formulas behind every hit.</li>
-      <li><a href="/empathy-coop">Empathy & Coop Powers</a> — how teamwork scales.</li>
-      <li><a href="/ordeals">Ordeals & Agony</a> — difficulty modifiers and effective damage reduction.</li>
-      <li><a href="/perks">Perks</a> and <a href="/relics">Relics</a> — what's available to slot.</li>
-      <li><a href="/making-a-build">Making a Build</a> — how it all comes together.</li>
+      <li><a href={`${base}general-tips`}>General Tips</a> — core habits.</li>
+      <li><a href={`${base}damage`}>Damage</a> — formulas behind every hit.</li>
+      <li><a href={`${base}empathy-coop`}>Empathy & Coop Powers</a> — how teamwork scales.</li>
+      <li><a href={`${base}ordeals`}>Ordeals & Agony</a> — difficulty modifiers and effective damage reduction.</li>
+      <li><a href={`${base}perks`}>Perks</a> and <a href={`${base}relics`}>Relics</a> — what's available to slot.</li>
+      <li><a href={`${base}making-a-build`}>Making a Build</a> — how it all comes together.</li>
       <li>Finally, dig into specific <strong>weapon pages</strong> for upgrades, tips, and curated builds.</li>
     </ol>
 

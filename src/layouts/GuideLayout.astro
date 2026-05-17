@@ -5,15 +5,16 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 <!doctype html>
-<html lang="en">
+<html lang="en" data-base={base}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title} — 33 Immortals Build Guide</title>
 {description && <meta name="description" content={description} />}
-<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href={`${base}assets/styles.css`}>
 </head>
 <body>
 <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
@@ -31,34 +32,34 @@ const { title, description } = Astro.props;
   <nav class="nav-group">
     <h3>Fundamentals</h3>
     <ul>
-      <li><a href="/">Introduction</a></li>
-      <li><a href="/general-tips">General Tips</a></li>
-      <li><a href="/damage">Damage</a></li>
-      <li><a href="/empathy-coop">Empathy &amp; Coop</a></li>
-      <li><a href="/ordeals">Ordeals &amp; Agony</a></li>
-      <li><a href="/making-a-build">Making a Build</a></li>
+      <li><a href={base}>Introduction</a></li>
+      <li><a href={`${base}general-tips`}>General Tips</a></li>
+      <li><a href={`${base}damage`}>Damage</a></li>
+      <li><a href={`${base}empathy-coop`}>Empathy &amp; Coop</a></li>
+      <li><a href={`${base}ordeals`}>Ordeals &amp; Agony</a></li>
+      <li><a href={`${base}making-a-build`}>Making a Build</a></li>
     </ul>
   </nav>
 
   <nav class="nav-group">
     <h3>Catalog</h3>
     <ul>
-      <li><a href="/perks">Perks</a></li>
-      <li><a href="/relics">Relics</a></li>
-      <li><a href="/maps">Maps</a></li>
+      <li><a href={`${base}perks`}>Perks</a></li>
+      <li><a href={`${base}relics`}>Relics</a></li>
+      <li><a href={`${base}maps`}>Maps</a></li>
     </ul>
   </nav>
 
   <nav class="nav-group">
     <h3>Weapons</h3>
     <ul>
-      <li><a href="/bow">Bow of Hope</a></li>
-      <li><a href="/sword">Sword of Justice</a></li>
-      <li><a href="/daggers">Daggers of Greed</a></li>
-      <li><a href="/staff">Staff of Sloth</a></li>
-      <li><a href="/glaive">Glaive of Temperance</a></li>
-      <li><a href="/crossbows">Crossbows of Pride</a></li>
-      <li><a href="/hooks">Hooks of Gluttony</a></li>
+      <li><a href={`${base}bow`}>Bow of Hope</a></li>
+      <li><a href={`${base}sword`}>Sword of Justice</a></li>
+      <li><a href={`${base}daggers`}>Daggers of Greed</a></li>
+      <li><a href={`${base}staff`}>Staff of Sloth</a></li>
+      <li><a href={`${base}glaive`}>Glaive of Temperance</a></li>
+      <li><a href={`${base}crossbows`}>Crossbows of Pride</a></li>
+      <li><a href={`${base}hooks`}>Hooks of Gluttony</a></li>
     </ul>
   </nav>
 </aside>
@@ -68,6 +69,7 @@ const { title, description } = Astro.props;
 </main>
 </div>
 <script>
+const BASE = document.documentElement.dataset.base || '/';
 const THEME_KEY = 'guide-theme';
 
 function applyTheme(t: string) {
@@ -125,8 +127,8 @@ function initPillTooltips() {
   function loadItems() {
     if (!_itemsPromise) {
       _itemsPromise = Promise.all([
-        fetch('/assets/items.json').then(r => r.json()),
-        fetch('/assets/icons.json').then(r => r.json()),
+        fetch(`${BASE}assets/items.json`).then(r => r.json()),
+        fetch(`${BASE}assets/icons.json`).then(r => r.json()),
       ]).then(([items, icons]) => {
         const bySlug: Record<string, any> = {};
         for (const r of items.relics)   { bySlug[r.slug] = { ...r, kind: 'relic' }; }
@@ -147,9 +149,9 @@ function initPillTooltips() {
   }
 
   function pillLink(entry: any) {
-    if (entry.kind === 'perk')    return `/perks#${entry.slug}`;
-    if (entry.kind === 'relic')   return `/relics#${entry.slug}`;
-    if (entry.kind === 'upgrade') return `/${entry.weapon}#upgrade-${entry.slug}`;
+    if (entry.kind === 'perk')    return `${BASE}perks#${entry.slug}`;
+    if (entry.kind === 'relic')   return `${BASE}relics#${entry.slug}`;
+    if (entry.kind === 'upgrade') return `${BASE}${entry.weapon}#upgrade-${entry.slug}`;
     return null;
   }
 
@@ -172,7 +174,7 @@ function initPillTooltips() {
       const entry = data.bySlug[slug];
       if (!entry) return;
       const icon = data.icons[slug];
-      const iconHtml = icon ? `<img src="/${icon.path}" alt="" aria-hidden="true">` : '';
+      const iconHtml = icon ? `<img src="${BASE}${icon.path}" alt="" aria-hidden="true">` : '';
       const blessedHtml = entry.blessed ? `<p class="pill-tooltip-blessed">Blessed: ${esc(entry.blessed)}</p>` : '';
       const href = pillLink(entry);
       const linkHtml = href ? `<a class="pill-tooltip-link" href="${href}" tabindex="-1">${pillLinkLabel(entry)} ↗</a>` : '';

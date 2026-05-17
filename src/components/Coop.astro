@@ -6,11 +6,12 @@ interface Props {
 }
 
 const { weapon } = Astro.props;
+const base = import.meta.env.BASE_URL;
 const icons = iconsData as Record<string, { path: string }>;
 const icon = icons[`${weapon}-coop`];
 if (!icon) throw new Error(`Missing coop icon: ${weapon}-coop`);
 const alt = `${weapon} Coop Power`;
 ---
 <p class="coop-power-icon-row">
-  <img class="entity-icon entity-icon-coop" src={`/${icon.path}`} alt={alt} loading="lazy" />
+  <img class="entity-icon entity-icon-coop" src={`${base}${icon.path}`} alt={alt} loading="lazy" />
 </p>
