@@ -1,0 +1,11 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  variant?: 'banner' | 'wide' | 'inline';
+}
+
+const { src, alt, variant } = Astro.props;
+const cls = variant ? `formula-figure ${variant}` : 'formula-figure';
+---
+<img class={cls} src={src} alt={alt} loading="lazy" />

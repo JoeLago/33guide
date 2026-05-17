@@ -1,0 +1,187 @@
+---
+title: Daggers of Greed
+lead: Quick melee with Takedown for invulnerability frames and burst damage. Coop Power farms bones.
+---
+import Pill from '../../components/Pill.astro';
+import Build from '../../components/Build.astro';
+import Coop from '../../components/Coop.astro';
+
+<img class="entity-icon entity-icon-hero" src="/assets/icons/weapons/daggers-hero.png" alt="First look at Daggers of Greed" loading="lazy" />
+
+## First look at daggers
+
+Daggers are quick melee attack weapons, able to land a single deadly blow with its Takedown (TD) ability, which can also be used as invulnerability frames or a gap closer (it also does stagger enemies hit!). There are usually two main playstyles, the first focusing on Light attacks by amplifying attack speed and light attack damage, using TD mainly as a second dodge, and the second focusing on amplifying TD damage.
+
+TD provides 0.9s-0.97s invulnerability depending on how long it is held (38-42 frames for jump + 16 after dealing damage) then followed by 0.2s (12 frames) vulnerable, unable to move normally but able to attack (or dash). It has a 2 seconds cooldown, starting after dealing damage. TD deals heavy damage depending on Greed charge, emptying it if damage has been dealt (see details below).
+
+<Coop weapon="daggers" />
+
+Daggers Coop Power makes enemies drop a bone each time they get hit, and when upgraded to max level, add +50% additional damage plus an additional 2.5% for every 10 bones you own until 200 bones (+100% total at 200 bones), then per 40 bones until cap, for a total of +150% additional damage at cap. Lasts 18s, with duration scaling on participants' Empathy. Great for farming bones early and good damage more lately, however quite long to recharge without focusing on it.
+
+**Base stats**
+
+- Attack speed: 3.33 attacks per sec
+- Base damage: 78 (x0.8 ratio)
+- Charging time: 0.87s (60% charging, 40% animation)
+- Charged attack damage: 195 (x2 ratio)
+- Takedown (TD) damage: 30 + 6.365 for every point of Greed (450 at 66 greed)
+- For Greed charging, see Tips and tricks
+
+## Daggers upgrades
+
+<div data-render="upgrades" data-weapon="daggers"></div>
+
+## Tips and tricks
+
+Greed gauge charge and <Pill slug="quick-strike" /> upgrade does work following an internal dagger "combo" that is maintained as long as you keep using light attacks or charging/using heavy attacks, even if you are not hitting anything! This way you can use your light attack movement wisely rather than stop attacking to move two steps, or anticipate whether an enemy will be coming at you.
+
+Greed meter charging follows these rules:
+
+- Each successful attack in the daggers combo (light or heavy) will give +3 Greed to every subsequent hit in the same combo
+- Successful Light attacks give +1 Greed plus the additional greed from previous attacks
+- Successful Heavy attacks give +32 Greed plus twice the additional greed from previous attacks
+
+This way, when using only light attacks, they will provide:
+
+| Greed gen on hit | 1 | 4 | 7 | 10 | 13 | 16 | 19 | 22 | 25 |
+|---|---|---|---|---|---|---|---|---|---|
+| Total Greed | 1 | 5 | 12 | 22 | 25 | 41 | 60 | 82 | 99 |
+
+While using only heavy attacks will provide 32 → 38 → 42, two being enough to charge 66, and three for charging 99, meaning that for breaking Armor you may be using 2-3 heavy then Dash + TD. Note that one heavy attack is as long as performing 3 light attacks, meaning that for charging 99 Greed both strategies will take the same time, however 9 light attacks will deal a bit more damage (if no armor), and provide more costrike/coop power charge than 3 heavy. Although, the 9 light will only completely charge the 99 Greed if they are consecutive, while the 3 heavy only require only two to be consecutive (and if the 3 heavy are sparse, it will still charge 96 Greed, which is more than correct), so choose accordingly depending on the situation!
+
+**Dash (Combo) Takedown**
+
+An easy and quick way to land Takedown on a close enemy, is to dash away from the enemy, then instantly use Takedown back since it covers the same distance as a dash (or more if you hold the TD button). In addition, this allow to perform a Dash Combo easily on TD (dealing x1.2 damage, x1.5 if <Pill slug="cosmic-rebirth" /> is equipped!), however will leave you with no to little defense option for almost half a second.
+
+<img class="demo-gif" src="/assets/gifs/daggers-dash-takedown.gif" alt="Dash Combo Takedown demo" loading="lazy" />
+
+## Builds
+
+Click a build name to expand its breakdown.
+
+<Build id="patience-greedier" name="Flexing on these numbers" upgrades={["patience", "greedier"]} desc="Single-hit highest damage build, empowering Takedown.">
+
+Always wanted to see chunks of the boss' health going away in a single strike? That's the build. With a x3.5 multiplier on takedown which already has good damage at base, these two upgrades combined can go up for really high numbers. Naturally we'll be also using Dash Combo on our Patience'd Takedown with <Pill slug="cosmic-rebirth" /> equipped for 1.5 times more damage, for a total of x5.25 damage multiplier on TD.
+
+This build is the hardest one for maintaining your costrike counter since it only holds for 3s and that Patience triggers after 2.25s + takedown animation is 0.63s minimum before it hits (0.9s with a dash before). It is best to anticipate your Patience so that it triggers DURING takedown animation and also to get/wish the <Pill slug="cracked-rosary-beads" /> (+7s combo time common relic), it will save you countless times.
+
+Reminder from Tips and tricks that 99 greed can be charged either by doing 9 consecutive Light attacks or by doing 3 heavy attacks (with only two of them required to be consecutive). The former will provide slightly more dps, Costrikes and Coop Power charge, while the latter will charge Greed more easily (but not specifically quicker), does heavy damage and has slightly more cleave.
+
+While building up the costrike counter to a high enough value (30 min for <Pill slug="empyreal-deceptiveness" />, or more to get higher crit chance), it is best to use only Light attacks, then Dash + TD everytime you need to dodge or that Greed is full.
+
+Also note that performing <Pill slug="patience" /> TD at 99 greed is extremely hard, usually one already has lost 5 greed from greed depletion before the hit is done, resulting in a bit less damage.
+
+### Build info
+
+| | 9 Lights + Patience Dash TD | 3 Heavy + Patience Dash TD |
+|---|---|---|
+| Loop Time | ~5.4s | ~5.4s |
+| Loop Damage | 3064.5 | 2947.5 |
+| Avg dps | 567.5 | 545.8 |
+| Hits/Costrikes per second | 1.85 | 0.74 |
+| Costrikes per second in counter | 2.04 | 1.48 |
+
+- **Cleaving capacity:** Low - Medium
+- **Difficulty rating:** Hard+
+- **Best fitting build archetype:** Full Damage
+
+### Pros
+
+- BIG NUMBERS
+- Can go full heavy damage
+- Not much restriction on gameplay compared to other Daggers upgrades (just can't use TD for dodging)
+- Correct mobility outside of greed charging
+
+### Cons
+
+- Costrike counter is hard to maintain, best to use Beads
+- Lacks Costrikes/s, it's best to spam light attacks a bit to charge counter before doing TDs or use Cilice
+- Missing a Takedown ruins dps
+
+</Build>
+
+<Build id="quick-strike-stabs" name="Au Couteau No Ken" upgrades={["quick-strike", "stabs"]} desc="Quick light attacks, mostly static, short range.">
+
+Couteau de cuisine, couteau de salle à manger! The go-to build for full light attacks (and Coop Power). However, both upgrades are a bit conflicting, since <Pill slug="quick-strike" /> will restrict you in movement, and <Pill slug="stabs" /> will require some movement to be in range. Once again, the little step that lights attacks makes you do will be our best option to keep dealing damage – yet sometimes insufficient. But good news, we're able to dodge now! Show 'em your knifes anyway.
+
+### Build info (3.3s ramp on continuous attacks)
+
+- **Attack speed:** 3.33 up to 4.29 hits per sec
+- **Damage:** 93.6 per light atk
+- **Core dps:** 311.7 up to 401.6
+- **Costrike per second:** 3.33 up to 4.29
+- **Cleaving capacity:** Lowest
+- **Difficulty rating:** Medium
+- **Best fitting build archetype:** Coop Power + Damage
+
+### Pros
+
+- Good attack speed, provides easy costrike combo uptime and uptime for others
+- Full Light damage
+- Can build around Coop Power
+
+### Cons
+
+- Knife range while being static as much as you can
+- Takedown doesn't get any damage buff
+
+</Build>
+
+<Build id="quick-strike-steadfast" name="guess i'll tank" upgrades={["quick-strike", "steadfast-power"]} desc="Quick light attacks, can't use dash freely — TD as defense.">
+
+<Pill slug="steadfast-power" /> is in some situations the hardest daggers upgrade to play with, restricting you to dodge the least possible as you can, making takedown your only defensive option and it has a longer cooldown that dodge (2s vs 1.25s). Let's combine this with <Pill slug="quick-strike" />, which also restricts your movement since you want to keep your daggers combo up for attack speed, and we get one of the hardest build to play in the game (pretty easy on bosses honestly, since there are not a lot of situations where you need to dodge a lot).
+
+Yet it is quite rewarding, damage is more than correct, costrike rate is great, takedown will output some good damage too, and it can go for any single damage type (or even go for coop power spam!).
+
+You may also take advantage of the little step quick attack does to dodge some attacks.
+
+### Build info (3.3s ramp on continuous attacks)
+
+- **Attack speed:** 3.33 up to 4.29 hits per sec
+- **Damage:** 93.6 per light atk
+- **Core dps:** 311.7 up to 401.6
+- **Costrike per second:** 3.33 up to 4.29
+- **Cleaving capacity:** Low - Medium
+- **Difficulty rating:** Medium - Hard
+- **Best fitting build archetype:** Coop Power + Damage
+
+### Pros
+
+- Good attack speed, provides easy costrike combo buildup and uptime for others
+- Full Light damage
+- Can build around Coop Power
+
+### Cons
+
+- Extremely restrictive in mobility/dodge and hard to play
+- Takedown is mainly used for defense and mobility
+
+</Build>
+
+<Build id="steadfast-stabs" name="Close Enough" upgrades={["steadfast-power", "stabs"]} desc="Light attacks with normal range, less attack speed.">
+
+Variant of the previous build that is slightly easier to play since we don't have the movement restriction from <Pill slug="quick-strike" />, so that we can stop attacking to move out of incoming attacks, to replace ourselves since our range is now diminished, or to use Takedown to dodge. Takedown could also be used when greed is full for the same reason for dps gain, however it is preferable not to use it since it is our only defensive option, and that it may require replacement to use it since Dash is locked (in addition it cannot beneficiate from Dash Combo).
+
+### Build info
+
+- **Attack speed:** 3.33 hits per sec
+- **Damage:** 112.3 per light atk
+- **Core dps:** 374
+- **Costrike per second:** 3.33
+- **Cleaving capacity:** Lowest
+- **Difficulty rating:** Medium
+- **Best fitting build archetype:** Coop Power + Damage
+
+### Pros
+
+- Correct attack speed, provides easy costrike combo charge and uptime for others
+- Good damage without the condition of being static
+- Less mobility restriction than its variant
+
+### Cons
+
+- Dodge is still restricted
+- Takedown is mainly used for defense and mobility
+- Knife range
+
+</Build>

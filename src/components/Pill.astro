@@ -1,0 +1,34 @@
+---
+import { bySlug, relics, perks, upgrades } from '../data/items';
+import iconsData from '../data/icons.json';
+
+interface Props {
+  slug: string;
+  kind?: 'relic' | 'perk' | 'upgrade';
+}
+
+const { slug, kind } = Astro.props;
+
+const item = bySlug.get(slug);
+if (!item) throw new Error(`Unknown item slug: ${slug}`);
+
+const icons = iconsData as Record<string, { path: string }>;
+const icon = icons[slug];
+
+let detectedKind = kind;
+if (!detectedKind) {
+  if (relics.some(r => r.slug === slug)) detectedKind = 'relic';
+  else if (perks.some(p => p.slug === slug)) detectedKind = 'perk';
+  else if (upgrades.some(u => u.slug === slug)) detectedKind = 'upgrade';
+}
+
+let cls: string;
+if (detectedKind === 'relic') {
+  cls = `pill pill-relic-${'rarity' in item ? item.rarity : 'common'}`;
+} else if (detectedKind === 'perk') {
+  cls = 'pill pill-perk';
+} else {
+  cls = 'pill pill-upgrade';
+}
+---
+<span class={cls}>{icon && <img class="pill-icon" src={`/${icon.path}`} alt="" loading="lazy" />}{item.name}</span>

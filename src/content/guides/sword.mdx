@@ -1,0 +1,212 @@
+---
+title: Sword of Justice
+lead: Tank/support weapon with parry. Provides shield via Coop Power and staggers groups with heavy attacks.
+---
+import Pill from '../../components/Pill.astro';
+import Build from '../../components/Build.astro';
+import Coop from '../../components/Coop.astro';
+
+<img class="entity-icon entity-icon-hero" src="/assets/icons/weapons/sword-hero.png" alt="First look at Sword of Justice" loading="lazy" />
+
+## First look at sword
+
+Sword is a tank support oriented weapon, has high survivability with its ability to parry, and can provide shield to other players. However its damage, attack speed and range are quite low compared to other weapons.
+
+<Coop weapon="sword" />
+
+Sword coop power gives shield to 3 players (30 at base when upgraded at max, scales on empathy, can go over 150 points with the right build!), making sword a great support weapon, with the addition of it being able to parry projectiles (use it on a&e homing fruits, you'll be a life saver), and to stagger enemies when dealing heavy damage (very useful against group of enemies not to be overwhelmed with their attacks).
+
+Doing a successful light attack provides 10 Justice, and Justice is consumed at a fast rate while staying in parry state (and by doing a successful parry with <Pill slug="final-justice" /> upgrade equipped). It is also still possible to parry for some short frames when at 0 Justice, but that will only negate damage, not perform a counter-attack.
+
+**Base stats**
+
+- Attack speed: 1.36 attack per sec, 1.68 with animation cancels (see tips and tricks)
+- Light combo: 97.5 → 117 → 136.5 (x1 → 1.2 → 1.4 ratio)
+- Heavy combo: 117 → 136.5 → 156 (x1.2 → 1.4 → 1.6 ratio)
+- Charging time: 0.8s (half time charging, half animation)
+- 1st charged is a bit longer to charge
+- 3rd charged has a longer ending animation, but can be cancelled too
+- Parry base damage: 126.75
+
+## Sword upgrades
+
+<div data-render="upgrades" data-weapon="sword"></div>
+
+## Tips and tricks
+
+It's time to do animation cancels again!
+
+The first possible animation cancel can increase your attack speed by around 20%. To do so, you need to do a quick parry the following frames after your third attack hits, then go back to attacking again. This can also work with dashing, allowing to perform a Dash Combo for a slight boost on your first attack, but can get you out of range of your target.
+
+Here is the comparison:
+
+<img class="demo-gif" src="/assets/gifs/sword-parry-cancel.gif" alt="Parry / Dash animation cancel demo" loading="lazy" />
+
+| | Loop Time | atk per sec |
+|---|-----------|-------------|
+| Normal (no <Pill slug="frenzy" />) | 2.2s | 1.36 aps |
+| Parry/Dash cancel (no <Pill slug="frenzy" />) | 1.78s | 1.68 aps |
+| Normal (<Pill slug="frenzy" />) | 1.9s | 1.58 aps |
+| Parry/Dash cancel (<Pill slug="frenzy" />) | 1.59s | 1.89 aps |
+
+These numbers aren't 100% accurate and depend on how well cancelling is performed!
+
+Note that since you cannot instantly parry after a parry, you may put yourself in a difficult position. But good news! The second animation cancel you can perform allows to almost completely negate that delay. To do so, just do an attack then immediately parry.
+
+<img class="demo-gif" src="/assets/gifs/sword-atk-parry.gif" alt="Attack then parry cancel demo" loading="lazy" />
+
+Take the habit to always perform the first frame of an attack before parrying to make sure you are not in the "parry cooldown".
+
+**Staying on fire**
+
+Also note that sword is able to parry ANY incoming tick of damage, including the ones from the aoes on the ground (exception for boss undodgeable damage from mechanics end). This way, you can stay on fire aoes, they are ticking their damage every second every time you get in it (first tick being quicker if you go in an already existing aoe). The strategy here is to parry once, the second tick will be absorbed by parry invulnerability frames, and you'll have to parry the third one and so on. Between the second and third tick, you'll have enough time to either perform a light attack (or two with <Pill slug="frenzy" /> if you don't lose any justice on your parries, hard), or to perform a charged attack.
+
+You'll again be a lifesaver if you hold other ppl coop power targeted by aoes during ascensions! Beware if there are multiple aoes since they all got their own timer.
+
+## Builds
+
+Click a build name to expand its breakdown.
+
+<Build id="frenzy-shockwave" name="Quick Sword" upgrades={["frenzy", "shockwave"]} desc="Maximize attack speed for more costrikes and Coop Power charge.">
+
+Sword lacks attack speed, but fortunately these two upgrades can fix it a bit. This makes the <Pill slug="muddy-apostle-medal" /> relic more viable in order to spam your coop power. On the other side, it can also output a good amount of damage.
+
+Can also make use of <Pill slug="eagle-talon" /> for slightly more costrikes if you are doing dash cancels.
+
+### Build info
+
+- **Attack speed:** 2.39 hits per sec with animation cancels (2.08 without)
+- **Damage:** 117 mean for sword combo + 68.25 shockwave
+- **Core dps:** 252.3
+- **Costrike per second:** 2.39
+- **Cleaving capacity:** Low - Medium
+- **Difficulty rating:** Easy
+- **Best fitting build archetype:** Coop Power + Damage / Full Damage
+
+### Pros
+
+- Biggest costrike rate that you can get on sword (making it also the one build for going coop power)
+- Correct full light damage dps
+
+### Cons
+
+- (none listed)
+
+</Build>
+
+<Build id="spin-slash-shockwave" name="Spin2Win" upgrades={["spin-slash", "shockwave"]} desc="Maximize AoE damage and mass stagger.">
+
+Huge aoe damage-oriented build that hits and staggers everything around you. You can either go full heavy to perma-stagger or break armor, or you can also mix up with light attacks to gain a bit of damage, attack speed and to regenerate Justice if you need to (at the price of slightly less costrike in counter per sec). Note that i have chosen <Pill slug="shockwave" /> in second because it feels better in general, adding dps and some costrike capability, any other upgrade is at least okay so feel free to try the other ones out.
+
+### Build info
+
+- **Attack speed:** 1.75 hits per sec (full heavy + cancelling + shockwave)
+- **Damage:** 136.5 mean for heavy + 68.25 shockwave
+- **Core dps:** 204.75
+- **Costrike per second:** 1.75
+- **Costrike per second in counter:** 3
+- **Cleaving capacity:** Medium
+- **Difficulty rating:** Hard
+- **Best fitting build archetype:** Mixed, aoe damage + support with stagger and coop power
+
+### Pros
+
+- Really good area damage
+- Mass melee perma stagger
+- spinnin'
+
+### Cons
+
+- Low costrike count and pretty low dps in single target too
+
+</Build>
+
+<Build id="final-justice-inner-justice" name="JUUUSTIIICEE" upgrades={["final-justice", "inner-justice"]} desc="Parry-centric, fun, weak in most scenarios.">
+
+Fun build that relies on parrying as much as you can to output some damage.
+
+This build (and mostly all sword builds) takes good advantage of the stats converter trinity, then take <Pill slug="string-of-jibril" />, some +% additional damage, and eventually the candle to give more shield and support. Or you can even go for full supporting (you'll be staggering, stunning, using/activating coop power, can take damage reduction to team relics, etc.), this is a mixed build so you won't be doing bad choices anyway.
+
+Also note that Dash Combo is extremely weird with Parry: you can effectively use it after a dash, but you'll still be invulnerable for several frames while being in parry, so you'll need a little stock of justice in this case. The second method to perform it is by doing a simple frame parry in dash combo, then releasing it instantly; the next parry you'll perform will be a Dash Combo parry if you perform no other action before it (you won't be able to perform the parry animation cancel in this case).
+
+Not giving build info since it's basically impossible to provide as it is situational-driven. Keep in mind this can best perform in Purgatorio as enemies there are attacking more (there's also more projectiles to parry to save your mates).
+
+### Pros
+
+- hehe parry chain
+- Projectile eater
+- Can go full heavy
+- Really good cleaving capacity, allows for a good amount of stagger
+
+### Cons
+
+- Lacks mostly everything that can be lacking except survivability (damage can be good but it is highly situational)
+- Going full heavy feels a bit bad since you'll be staggering enemies that you would prefer them to attack you
+- Using Dash Combo on parry is weird
+
+Some numbers: Parry can be chained every 1.33s (dodge after parrying then parry again, note that you are able to hold parry whilst in dodge iframes, losing some justice), but at this rate you'll be losing more justice than you gain (you need 2.33s to recover 35 justice), to be precise you lose 15 justice for each parry in chain. In best case scenario you'll be chaining 3 parries then doing a 3-combo heavy to recover your missing justice, which takes 7 seconds in total (everything takes a bit less time, so in reality you'll have around 0.45s downtime), for a base dps of 167 (221.5 if you can Dash Combo on every parry with <Pill slug="cosmic-rebirth" /> equipped), for 0.86 attack per second, and 1.71 costrike in counter per sec.
+
+</Build>
+
+<Build id="mighty-slash-shockwave" name="Croooaaa (that's an eagle)" upgrades={["mighty-slash", "shockwave"]} desc="Dash Combo light-attack build with Worn Scapular + Eagle Talon.">
+
+After decades of searching, our best researchers finally found an usage in <Pill slug="eagle-talon" />!! <Pill slug="mighty-slash" /> being a good damage addition, it however does totally reduce the attack speed, which (unfortunately here) can be considered as the most powerful thing in this game. To compensate for that, we'll make use of <Pill slug="shockwave" /> and <Pill slug="eagle-talon" />, paired with <Pill slug="worn-scapular" /> (this one is required too, else we'll lose further attack speed! Wish for both), then we'll be doing full light attacks, with a dash in between each. Naturally, we'll be using <Pill slug="cosmic-rebirth" /> here since we're spamming Dash Combos. Of course that won't be that easy, you'll sometimes be dashing out of melee range trying to deal damage to a single enemy (and <Pill slug="eagle-talon" /> range is awful also).
+
+### Build info (with Eagle Talon and Worn Scapular)
+
+- **Attack speed:** 2.5 hits per sec (attack speed becomes 1/s with dash cancelling, so 2 hits per sec with Eagle Talon + 0.5 with Shockwave)
+- **Damage:** 351 Slash, 78 Eagle Talon, 68.25 Shockwave
+- **Core dps:** 463.1
+- **Costrike per second:** 2.5
+- **Cleaving capacity:** Medium
+- **Difficulty rating:** Hard
+- **Best fitting build archetype:** Full Damage
+
+Notes:
+- Numbers are higher than other sword builds, but remember you already have 2 relics here! Only 6 left
+- Perfect 2 dashes 1 Shockwave synchronization may negate some costrikes (samely as bow <Pill slug="double-shot" /> builds)
+
+### Pros
+
+- So many iframes and movement you're almost untouchable
+- Good damage and good costrike capability for sword
+- Full light damage
+
+### Cons
+
+- Build with TWO core relics to be wished for, only 6 relic slots left!
+- Heavy attacking to remove armor is painful because of heavy charge time
+- Talon and Sword lacks range to be effectively played like this
+- Required movement with dash, will sometimes get you out of melee
+
+</Build>
+
+<Build id="mighty-slash-spin-slash" name="Don't" upgrades={["mighty-slash", "spin-slash"]} desc="One-hit damage attempt — suffers every sword disadvantage.">
+
+Honestly a terrible build, take everything that is wrong with sword (lack of range, lack of attack speed and costrikes, extremely long heavy charging time and upgrades that are pretty weak per se) aaaand it's here.
+
+Let's see how far we can get trying to build a one single high damage slash build. Here we'll be using heavy slash with <Pill slug="mighty-slash" />, paired with <Pill slug="spin-slash" /> for more cleave, and we'll be using Dash Combo with <Pill slug="cosmic-rebirth" />. We won't be needing <Pill slug="worn-scapular" /> here as heavy attack charging time is 1.3s.
+
+### Build info
+
+- **Attack speed:** 0.77 heavy per sec
+- **Damage:** 380.25 per heavy slash
+- **Core dps:** 292.8
+- **Costrike per second:** 0.77
+- **Costrike per second in counter:** 1.54
+- **Cleaving capacity:** Medium
+- **Difficulty rating:** Hard
+- **Best fitting build archetype:** Full Damage
+
+### Pros
+
+- Can break enemies' Armor in aoe in a single slash
+
+### Cons
+
+- Terrible costrike counter buildup, and it's really easy to lose it. Don't count on crits.
+- Range feels awful when trying to chain Dash Combos
+- Not even a particularly huge dps
+- Long charging time, enemies may have time to attack or move away during it
+
+</Build>

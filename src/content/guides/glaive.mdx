@@ -1,0 +1,288 @@
+---
+title: Glaive of Temperance
+lead: Cleave-focused melee with backstep iframes. Coop Power Aftershock adds heavy damage stacks across hits.
+---
+import Pill from '../../components/Pill.astro';
+import Build from '../../components/Build.astro';
+import Coop from '../../components/Coop.astro';
+
+<img class="entity-icon entity-icon-hero" src="/assets/icons/weapons/glaive-hero.png" alt="First look at Glaive of Temperance" loading="lazy" />
+
+## First look at glaive
+
+Glaive has a good cleave, especially with its heavy attack. However it requires good placement, else it suffers from 90% damage reduction (x0.1 multiplier) if the enemy is too close. Fortunately, placement is made more easy with the backstep ability (which is also an iframe, making glaive able to totally ignore dash). Also note that it just requires for 1 pixel of the enemy hitbox to be in the max damage area for attacks to have normal damage, making it easier on elites and bosses.
+
+Each attack done with glaive consumes 1 Temperance, which can be recovered using backstep (3 per backstep, max 6 Temperance stored). In addition, having 4 or more Temperance causes the attacks to deal x1.15 (+15%) damage, and having 0 Temperance makes them deal x0.1 damage. Thus we'll need to use backstep constantly between each combo ideally. Backstep can be used once every ~0.5 seconds (28 frames to be exact) or twice in a quick succession, which will put it in a 0.5s cooldown AFTER the backstep.
+
+<Coop weapon="glaive" />
+
+Its Coop Power Aftershock gives 12 base stacks (scaling on participants' empathy), each successful attack (swing or projectile) consumes a single stack, even if multiple enemies are hit, dealing 250 heavy damage to each of those enemies at max level. When there are multiple enemies, it is best for high cleave builds to take this power for best total damage output. The hits done by Aftershock CAN costrike and WILL costrike if it is one, bypassing the "1 costrike at a time" limit that usually prevent two instances of damage at the same time to both be costrikes. Cannot apply any status effect. (thanks Romallka for confirming this) Aftershock optimization in tips and tricks.
+
+**Base stats** (without Temperance x1.15 dmg buff)
+
+- Attack speed: 1.8 attack per sec in average for continuous light attacks and perfect backstep (backstep is 18 frames*, as much as 3rd atk ending frames)
+- Light combo: 126.75 → 146.26 → 185.25 (x1.3 → 1.5 → 1.9 ratio)
+- Heavy combo: 146.25 → 185.25 (x1.5 → 1.9 ratio)
+- Charging time: 0.93s (26 frames charging, 30 frames animation)
+
+*we'll give 4 additional frames for giving a direction to backstep, which is almost always different as attack direction, putting attack speed at 1.73 with bs cancel on 3rd attack, and charging time to 0.8s with cancel + we do not consider Temperance dmg buff here, but it will be accounted in every build
+
+## Glaive upgrades
+
+<div data-render="upgrades" data-weapon="glaive"></div>
+
+## Tips and tricks
+
+**Aftershock optimization**
+
+- Bow Coop Power is able to proc it, and sometimes does not consume any stack by doing so (it seems that enemies already "inside" at activation won't consume any)
+- <Pill slug="preserved-heretic-head" /> is able to proc it at no cost (won't costrike either)
+- Staff <Pill slug="scattering-orbs" /> and <Pill slug="bouncing-orbs" /> does not seem to consume multiple stacks anymore
+- Most of Hooks attacks won't consume stacks (bug)
+
+**Where to backstep, general case**
+
+Step 1: identify the two possible places where you'll be at the same distance from the enemy after backstepping (black lines showing distance from enemy, blue arrows showing backstep distance)
+
+Step 2: identify the opposite direction from backstep directions (green dots)
+
+Step 3: ideally, wait for your 3 light combo or 2 heavy combo to end then immediately direct your cursor/joystick in the wanted direction (the quicker the more dps)
+
+Step 4: backstep to step 1
+
+Note that hitboxes are quite generous, no need to be 100% accurate, especially on elites and bosses.
+
+<img class="demo-gif" src="/assets/gifs/glaive-backstep-position.gif" alt="Backstep positioning demo" loading="lazy" />
+
+**Easy backstep**
+
+Luckily there are other easy ways to recover Temperance without having to be under pressure every time. The first one consists of totally emptying your Temperance, then backstep in the same direction you're attacking before backstepping in the opposite direction. This however will cost 7.5% dps from attacking at 3 or less Temperance, and will put Backstep in cooldown.
+
+<img class="demo-gif" src="/assets/gifs/glaive-easy-backstep.gif" alt="Easy backstep demo" loading="lazy" />
+
+The second strategy consists in backstepping against a wall to negate movement from it, all simply.
+
+<img class="demo-gif" src="/assets/gifs/glaive-wall-backstep.gif" alt="Wall backstep demo" loading="lazy" />
+
+**learn how 2 iceskate (very important)**
+
+im still learning sry
+
+<img class="demo-gif" src="/assets/gifs/glaive-iceskate.gif" alt="Iceskate demo" loading="lazy" />
+
+## Builds
+
+Click a build name to expand its breakdown.
+
+<Build id="master-of-flow-thousand-cuts" name="The Lawnmower" upgrades={["master-of-flow", "thousand-cuts"]} desc="Easiest glaive build, light-attack focused — best for Coop Power spamming.">
+
+Easiest glaive build since everything you have to do is keeping the right distance from the enemy, without being scared of losing too much Temperance while using light attacks. Backstep will be your main tool for quick repositioning still.
+
+This build is also the one that takes most advantage from <Pill slug="thousand-cuts" />, since backstepping to recover Temperance slightly diminish overall light attack speed, making it the best choice for going Coop Power too.
+
+### Build info
+
+- **Attack speed:** 2.2 attack per sec with continuous light attacks (1.28 aps with 2 heavy + backstep)
+- **Damage:** 175.66 avg light / 190.61 avg heavy
+- **Core dps:** 386.5 full light / 244 full heavy
+- **Costrike per second:** 2.2 light / 1.28 heavy
+- **Costrike per second in counter:** 2.2 light / 2.56 heavy
+- **Cleaving capacity:** Medium with light / High with heavy
+- **Difficulty rating:** Easy
+- **Best fitting build archetype:** Coop Power + Damage
+
+### Pros
+
+- Best costrike per second rate achievable with glaive
+- Easy playstyle
+- Backstep can be used as a free second dodge
+
+### Cons
+
+- Quite far from being the most damage achievable with glaive
+- Switching to heavy will require to change playstyle at a dps loss
+
+</Build>
+
+<Build id="master-of-flow-unceasing-blows" name="The Lawnmower MkII" upgrades={["master-of-flow", "unceasing-blows"]} desc="Easy glaive build that trades attack speed for damage.">
+
+Also a very easy glaive build, that maximizes damage over attack speed this time.
+
+### Build info (at 6 stacks)
+
+- **Attack speed:** 1.8 attack per sec with continuous light attacks (1.15 aps with 2 heavy + backstep)
+- **Damage:** 281 avg light / 305 avg heavy
+- **Core dps:** 505.9 full light / 350.7 full heavy
+- **Costrike per second:** 1.8 light / 1.15 heavy
+- **Costrike per second in counter:** 1.8 light / 2.3 heavy
+- **Cleaving capacity:** Medium with light / High with heavy
+- **Difficulty rating:** Easy
+- **Best fitting build archetype:** Full Damage
+
+### Pros
+
+- Easy playstyle
+- Backstep can be used as a free second dodge
+- Correct dps
+
+### Cons
+
+- Switching to heavy will require to change playstyle at a dps loss (will give more costrike in counter rate still)
+
+</Build>
+
+<Build id="thousand-cuts-unceasing-blows" name="Stronger Glaive" upgrades={["thousand-cuts", "unceasing-blows"]} desc="Normal glaive playstyle that maxes both attack speed and damage.">
+
+Build that keeps normal glaive gameplay while maximizing damage and attack speed.
+
+### Build info (at 6 stacks)
+
+- **Attack speed:** 1.92 attack per sec with 3 lights + backstep (adds 12 frames) / 1.28 aps with 2 heavy + backstep
+- **Damage:** 281 avg light / 305 avg heavy
+- **Core dps:** 539.5 full light / 390.4 full heavy
+- **Costrike per second:** 1.92 light / 1.28 heavy
+- **Costrike per second in counter:** 1.92 light / 2.56 heavy
+- **Cleaving capacity:** Medium with light / High with heavy
+- **Difficulty rating:** Hard
+- **Best fitting build archetype:** Full Damage (Coop Power + Damage is okay too)
+
+### Pros
+
+- Correct dps and attack speed
+- No playstyle change from switching to heavy to break armors (just trading dps for costrike in counter rate)
+
+### Cons
+
+- Requires playing glaive correctly, backstepping frequently to regain Temperance
+
+</Build>
+
+<Build id="one-motion-unceasing-blows" name="Dash Combo <<< Backstep" upgrades={["one-motion", "unceasing-blows"]} desc="Full backstep build — heavy-attack dps, one-shots armor.">
+
+Build based on constant backstepping to take advantage of <Pill slug="one-motion" /> huge damage buff, making it able to one shot most enemies Armor in a single hit, thus making +% damage to armor worth for this build for overflowing into hp, and being able to one shot enemies more simply. All of that with the great cleave provided by heavy attacks.
+
+<img class="demo-gif" src="/assets/gifs/glaive-backstep-loop.gif" alt="Dash Combo <<< Backstep demo" loading="lazy" />
+
+### Build info (at 6 stacks)
+
+- **Attack speed:** 1.25 attack per sec (0.8 second per heavy, since backstepping can cancel heavy ending anim)
+- **Damage:** 538.2 per heavy
+- **Core dps:** 672.75
+- **Costrike per second:** 1.25
+- **Costrike per second in counter:** 2.5
+- **Cleaving capacity:** High
+- **Difficulty rating:** Hard
+- **Best fitting build archetype:** Full Damage
+
+<img class="demo-gif" src="/assets/gifs/glaive-backstep-loop-2.gif" alt="Dash Combo <<< Backstep loop" loading="lazy" />
+
+### Pros
+
+- Really good dps
+- Full heavy damage
+
+### Cons
+
+- Requires constant and frequent backstepping
+- Low coop power charging rate
+
+</Build>
+
+<Build id="one-motion-deliberation" name="Helicopterrr" upgrades={["one-motion", "deliberation"]} desc="One-shot charged heavy. Max dps potential, slow swing.">
+
+Variant of the previous build, that is able to guarantee armor break in a single hit (and one-shotting even more easily). A bit harder to play since being more static is more rewarding, but luckily we don't need to totally charge <Pill slug="deliberation" /> for it to provide more damage since the damage is going up gradually when charging, making releasing charge to dodge with backstep earlier not too bad.
+
+<img class="demo-gif" src="/assets/gifs/glaive-helicopterrr.gif" alt="Helicopterrr charged-heavy demo" loading="lazy" />
+
+### Build info
+
+- **Attack speed:** 0.68 attack per sec (1.47 second per heavy)
+- **Damage:** 1009 per heavy
+- **Core dps:** 686.2
+- **Costrike per second:** 0.68
+- **Costrike per second in counter:** 1.36
+- **Cleaving capacity:** High
+- **Difficulty rating:** Hard
+- **Best fitting build archetype:** Full Damage
+
+<img class="demo-gif" src="/assets/gifs/glaive-helicopterrr-2.gif" alt="Helicopterrr loop" loading="lazy" />
+
+### Pros
+
+- Really good dps
+- Full heavy damage
+- Can still release heavy early with increased damage for dodging
+
+### Cons
+
+- Requires constant and frequent backstepping
+- Extremely low coop power charging rate
+- Requires to be static as much as possible
+- Need to increase costrike counter first
+
+</Build>
+
+<Build id="deliberation-unceasing-blows" name="Dash Combo is back" upgrades={["deliberation", "unceasing-blows"]} desc="Drops One Motion for Cosmic Rebirth Dash Combo — highest glaive dps.">
+
+Variant of the previous build, dropping <Pill slug="one-motion" /> in favor of <Pill slug="unceasing-blows" /> and Dash Combo (with <Pill slug="cosmic-rebirth" /> equipped), resulting in a better multiplier (x2 vs x2.4), however using Dash Combo with Glaive is quite harder than backstepping (especially on keyboard where you only have 8 directions to dash in).
+
+Samely, building up the costrike counter is really slow, it is better to build it up first using normal heavy attack combos (will also build up <Pill slug="unceasing-blows" /> stacks quicker).
+
+### Build info (at 6 stacks)
+
+- **Attack speed:** 0.73 attack per sec (1.37 second per heavy)
+- **Damage:** 1053 per heavy
+- **Core dps:** 768.7
+- **Costrike per second:** 0.73
+- **Costrike per second in counter:** 1.46
+- **Cleaving capacity:** High
+- **Difficulty rating:** Hard
+- **Best fitting build archetype:** Full Damage
+
+### Pros
+
+- Best glaive dps
+- Full heavy damage
+- Can still release heavy early with increased damage for dodging
+
+### Cons
+
+- Requires frequent backstepping
+- Extremely low coop power charging rate
+- Requires to be static as much as possible
+- Need to increase costrike counter first
+- Using Dash Combo with glaive is quite hard
+
+</Build>
+
+<Build id="optimal-glaive-9-ordeals" name="Optimal Glaive — 9 Ordeals" upgrades={["master-of-flow", "thousand-cuts", "unceasing-blows"]} desc="Two efficient playstyles when running all 9 ordeals: light-only, or backstep + charged heavy.">
+
+Glaive is one of the only weapon that is able to keep uptime with a high number of ordeals without having to take more risks, and that has upgrades that combines well with each other with no downside (along with sword that can get a lot more comfort as long as you don't take <Pill slug="mighty-slash" />, but won't gain much dps from them).
+
+This will allow two main efficient playstyles:
+
+- Light attacks only, with <Pill slug="master-of-flow" /> + <Pill slug="thousand-cuts" /> + <Pill slug="unceasing-blows" />
+- Backstep + 1s charged attack, with <Pill slug="one-motion" /> + <Pill slug="deliberation" /> + <Pill slug="unceasing-blows" />
+
+(along with Backstep + heavy for Costrike counter building)
+
+<img class="demo-gif" src="/assets/gifs/glaive-9-ordeals.gif" alt="Optimal Glaive 9 Ordeals demo" loading="lazy" />
+
+Optimally, it is best not to take the -4 relics, unlucky rerolls and -stats ordeals, however if you play solo and that the run is going to be quick, you may take the last one to leave the higher bone cost + no key drop, that else may result in not enough time to get 8 relics or not enough bones left to roll them.
+
+### Build info (at 6 stacks)
+
+| | Light only | Backstep + 1s heavy | Backstep + heavy |
+|---|---|---|---|
+| Attack speed | 2.2 Light per sec | 0.68 charged heavy per sec | 1.25 heavy per sec |
+| Damage | 281* avg per Light | 1614.6* per charged heavy | 538.2* per heavy |
+| Core dps | 618.2* | 1097.9* | 672.75* |
+| Costrike per sec | 2.2 | 0.68 | 1.25 |
+| Costrike per sec in counter | 2.2 | 1.36 | 2.5 |
+| Cleaving capacity | Medium | High | High |
+| Difficulty rating | Easy | Hard | Hard |
+| Best fitting build archetype | Coop Power + Damage | Full Damage | Full Damage |
+
+*Agony effect is not taken into account in damage calculation, if in Inferno, multiply by 0.4, if Purgatorio, multiply by 0.64*
+
+</Build>

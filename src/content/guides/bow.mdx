@@ -1,0 +1,325 @@
+---
+title: Bow of Hope
+lead: Ranged, high attack speed weapon. Quick costrike buildup; can apply status effects via Coop Power arrows.
+---
+import Pill from '../../components/Pill.astro';
+import Build from '../../components/Build.astro';
+import Coop from '../../components/Coop.astro';
+
+<img class="entity-icon entity-icon-hero" src="/assets/icons/weapons/bow-hero.png" alt="First look at Bow of Hope" loading="lazy" />
+
+## First look at bow
+
+One of Bow main strength is the number of times it can hit per second at a range, providing a quick costrike buildup, allowing others to get costrikes easily, and charging coop power faster. On the other hand, heavy attacks provide good damage, at a higher range than light attacks, with additional cleave. Note that multiple arrows recalled at the same time will only be able to deal a single costrike on each enemy!
+
+<Coop weapon="bow" />
+
+Bow coop power unleashes a volley of 3 arrows in 3 columns 2.4 times per seconds, it lasts longer with empathy, and each arrow deals a fixed 300 light damage (when upgraded to max). This does a whooping max of 21.6 hits per second, for a max 6480 dps on multiple targets (lucifer large hitbox allow for 5 out of 9 arrows to hit) and the total damage it does only scales on empathy. Arrows from Coop Power can apply status effects (Marked requires YMOT).
+
+**Base stats**
+
+- Fire rate: 2.5 arrows per sec
+- Arrow damage: 58.5 (×0.6 ratio)
+- Recalled arrow damage: 39 (×0.4 ratio)
+- Arrow charging time: 1.05s (0.5s charging + 0.55s firing animation)
+- Charged arrow damage: 146.25 (×1.5 ratio)
+- Recalled charged arrow damage: 107.25 (×1.1 ratio)
+- Guiding Light duration: 0.58s
+- Guiding Light with animation cancel: ~0.2s (see tips and tricks)
+
+Note: Performing a Dash Combo then instantly recalling the arrow(s) shot will also apply Dash Combo multiplier to recalled arrows. I have reported this a while back and have no idea if this is intended, so during the calculation on builds, if DC is used with instant recall I'll add calculation in parenthesis and show the effective value in red.
+
+## Bow upgrades
+
+<div data-render="upgrades" data-weapon="bow"></div>
+
+## Tips and tricks
+
+If you're running a light only bow build, you'll be having a lot of mobility since firing an arrow doesn't lock you in place for long, plus if you run auto recall you won't be affected by guiding light speed debuff. In this case, it is good to aim for empathy/coop power build, so you can also help others activate their power.
+
+If you're running a heavy attack build, you'll notice that guiding light can feel quite long (and heavy arrows cannot be recalled by auto recall). But worry not! You can actually cancel its animation by instantly dodging out of it, just beware if you have an arrow planted far away, you may wait some frames for it to come back before cancelling. Note that instantly attacking after dashing will proc a Dash Combo, making <Pill slug="cosmic-rebirth" /> very good for such builds, and <Pill slug="worn-scapular" /> allows to perform dash cancels more often, effectively increasing attack speed.
+
+This can be done in a short window of 12 frames (counting dodge short frames too), yet better aim for 15 for all arrows to come back. Of course this means you may not be able to dodge when you want to, so you'll need to anticipate your dodge direction!
+
+Note that guiding light can also cancel the end of the animation of firing an arrow, reducing the heavy firing animation down to 8 frames! Making firing an arrow time: 30 frames charging + 8 frames animation + 15 frames cancelling = 0.89s, which unfortunately is quicker than dash recovery time, unless… (no spoiler). Because of this, if the previously shooted arrow is an heavy, guiding light will be counted as having a 0.17s duration.
+
+## Builds
+
+Click a build name to expand its breakdown.
+
+<Build id="auto-recall-quick-shot" name="Make it Rain" upgrades={["auto-recall", "quick-shot"]} desc="Quick attacks and costrikes build focusing on Coop Power.">
+
+Natural build for bow, allowing to get a lot of hits and costrikes per second, thus being great for Coop Power charging. It also has a lot of mobility since a bow shot won't lock you in place for long, so helping your mates to activate their coop power is a good idea with this build, plus you'll already be investing in Stronger Coop Powers for your own coop power.
+
+It's ability to perform a lot of costrikes in no time makes this build a great option for playing <Pill slug="muddy-apostle-medal" />, allowing to charge coop power in around 15 seconds.
+
+In addition, arrows from coop power being fixed damage makes it a great option for applying Exposed and/or Weak (not Marked though!) without having to take care about your own damage.
+
+### Build info
+
+- **Attack speed:** 3.125 arrows per sec
+- **Damage:** 87.75 per arrow (58.5 for arrow + 29.25 for recall)
+- **Core dps:** 274.2 (+ coop power deals up to 6480 dps)
+- **Costrike per sec:** 6.25
+- **Cleaving capacity:** Low / High with coop power
+- **Difficulty rating:** Easy
+- **Best fitting build archetype:** Coop Power + Damage / Coop Power + Support
+
+### Pros
+
+- High damage with coop power, your bow can even reach a neat dps by itself too
+- No mobility restriction unless casting coop power, making it a viable option for supporting aswell
+- Lot of costrike capability, reaching crit caps is easy (or even 999 costrikes)
+- Provides 100% costrike uptime for everyone
+
+### Cons
+
+- Coop Power is less effective against armor, making chains almost mandatory
+- You may create chaos or even kill your allies if you put your coop power at the bad timing (i.e. when someone else is casting one, or there's too many aoes)
+- Requires two other person (lol)
+
+<img class="demo-gif" src="/assets/gifs/bow-make-it-rain.gif" alt="Make it Rain build demo" loading="lazy" />
+
+Can still solo a part of Inferno ascension with little damage relics (and look at that coop charge).
+
+</Build>
+
+<Build id="auto-recall-small-quiver" name="Make it Rain Again" upgrades={["auto-recall", "small-quiver"]} desc="Same focus, slightly less attack speed but more weapon damage.">
+
+Variant of the previous build, which has 20% more core damage, but 20% less costrike capability (or AR+QS has 16.6% less damage and 25% more costrike capability than this one). This is a tradeoff you can choose, you will deal a bit more damage with your bow itself, but will benefit a bit less of coop power recharge and costrike counter buildup.
+
+Note that if you want to try hard, you can win some frames and damage by dodging at the right time, cancelling the end of the animation of shooting an arrow.
+
+### Build info
+
+- **Attack speed:** 2.5 arrows per sec
+- **Damage:** 131.65 per arrow (87.75 arrow + 43.9 recall)
+- **Core dps:** 329.1 (+ coop power deals up to 6480 dps)
+- **Costrike per second:** 5
+- **Cleaving capacity:** Low / High with coop power
+- **Difficulty rating:** Easy
+- **Best fitting build archetype:** Coop Power + Damage / Coop Power + Support
+
+### Pros
+
+- High damage with coop power, your bow can even reach a neater dps by itself too
+- No mobility restriction unless casting coop power, making it a viable option for supporting aswell
+- Correct costrike capability, reaching crit caps is easy (or even 999 costrikes)
+- Provides 100% costrike uptime for everyone
+
+### Cons
+
+- Coop Power is less effective against armor, making chains almost mandatory
+- You may create chaos or even kill your allies if you put your coop power at the bad timing
+- Requires two other person (lol)
+
+<img class="demo-gif" src="/assets/gifs/bow-make-it-rain.gif" alt="Make it Rain Again build demo" loading="lazy" />
+
+</Build>
+
+<Build id="small-quiver-quick-shot" name="The Sniper" upgrades={["small-quiver", "quick-shot"]} desc="High range and weapon damage build using heavy attacks.">
+
+Heavy attack based build which doesn't use Double Shot, allowing to fire arrows from a high range without putting yourself in immediate danger. Can also perform slightly better than Double Shot builds on single target due to all arrows being able to crit (yet all arrows won't benefit from Dash Combo, unless using <Pill slug="worn-scapular" />, which unfortunately won't increase attack speed here since we're using <Pill slug="quick-shot" />, prefer the next build if you're counting on playing it).
+
+We'll be considering two gameplay loops only here, each having a 1.7s duration: 1. static 2 charged then recall 2. Dash Combo charged -> charged -> recall (cancelled by next Dash Combo) with <Pill slug="cosmic-rebirth" /> equipped
+
+### Build info (base quick + charged combo)
+
+- **Attack speed:** 1.18 charged per sec
+- **2 charged + recall damage:** (1) 760.5 / (2) 870.1
+- **Core DPS:** (1) 447 / (2) 511.8
+- **Costrike per second:** 1.76
+- **Costrike per second in counter:** 2.9
+- **Cleaving capacity:** Medium
+- **Difficulty rating:** Easy
+- **Best fitting build archetype:** Full Damage
+
+### Pros
+
+- A bit more effective on single target than <Pill slug="double-shot" /> builds, since both arrows you fire can deal crits
+- High range, allowing to be safe most of the time and having more time to anticipate attacks
+- Full Heavy damage
+
+### Cons
+
+- Slow costrike counter building, yet easier to maintain due to range
+
+</Build>
+
+<Build id="small-quiver-mobile-light" name="Dodge Sniper" upgrades={["small-quiver", "mobile-light"]} desc="Variant of The Sniper, played with Worn Scapular or Dash Combo on recall.">
+
+Variant of the previous build intended to be played with <Pill slug="cosmic-rebirth" /> and possibly <Pill slug="worn-scapular" />. There are two main ways to play this build: The first (1) consists of firing a charged arrow, then recalling it with a Dash Combo for more light damage (this doesn't require <Pill slug="worn-scapular" />). The second (2) consists of firing a charged arrow with a Dash Combo then recalling it and cancelling the guiding light animation with a dash, and so on (this wins attack speed from <Pill slug="worn-scapular" />).
+
+<img class="demo-gif" src="/assets/gifs/bow-dodge-sniper-1.gif" alt="Dodge Sniper playstyle demo" loading="lazy" />
+
+Build info will cover these two playstyles, considering <Pill slug="cosmic-rebirth" /> is equipped.
+
+### Build info
+
+| | (1) Reversed | (2) Base | (2) with Atk Speed |
+|---|---|---|---|
+| **Charged per sec** | 0.8 | 0.8 | 1 |
+| **Damage per charged** | 521.1 | 530.2 | 630.75 |
+| **Core DPS** | 416.9 | 424.2 | 630.75 |
+| **Costrike per second** | 1.6 | 1.6 | 2 |
+| **Costrike per second in counter** | 2.4 | 2.4 | 3 |
+
+- **Cleaving capacity:** Medium
+- **Difficulty rating:** Medium
+- **Best fitting build archetype:** Full Damage
+
+<img class="demo-gif" src="/assets/gifs/bow-dodge-sniper-2.gif" alt="Dodge Sniper full combo demo" loading="lazy" />
+
+### Pros
+
+- Can costrike/crit on every arrow
+- High range build
+- Flexibility on gameplay, with a choice on using <Pill slug="worn-scapular" /> or not
+- Can take advantage of <Pill slug="mobile-light" /> additional mobility
+- Full Heavy damage
+
+### Cons
+
+- Slow costrike counter buildup, yet easier to maintain due to range
+
+</Build>
+
+<Build id="double-shot-small-quiver" name="The Shotgun" upgrades={["double-shot", "small-quiver"]} desc="Burst heavy attack output by firing 2 arrows at a time.">
+
+Emptying quiver in a single powerful charged shot, this build is the one that takes the most advantage from guiding light animations cancel and Dash Combos. On the other hand, you won't have direct access to your dodge since you'll constantly use it for attacking, so it will require timing, anticipation, and good positioning (you also need to be in melee to be sure your two arrows reach the enemy!). In addition, this build can make use of <Pill slug="worn-scapular" /> to increase attack speed by around 25%.
+
+Also note that on a single target, only one fired arrow and one recalled arrow are able to deal costrike or critical hit (unless you're able to delay the time when the second arrow hits the enemy, which require perfect positioning and hitbox knowledge…), and that 42% of your dps is light damage at base, making building around a single type of damage less effective. Last but not least, costrike per second count is terribly low, so do not count on building this around coop power, it'll be less effective than any other bow build.
+
+<img class="demo-gif" src="/assets/gifs/bow-the-shotgun-1.gif" alt="The Shotgun demo" loading="lazy" />
+
+Build info will take in consideration a full Dash Combo usage, with <Pill slug="cosmic-rebirth" />, and with also <Pill slug="worn-scapular" />. For a more static approach that does not use Scapular and a bit more light damage oriented, refer to The Shotgun (with a magazine), and for more light damage leaning, to nugtohS ehT.
+
+### Build info
+
+| | + Atk Speed | |
+|---|---|---|
+| **Charged per sec** | 0.8 | 1 |
+| **Damage per charged** | 734.8 | 855.5 |
+| **Core DPS** | 627.12 | 734.8 |
+| **Costrike per second** | 1.6 | 2 |
+| **Costrike per second in counter** | 2.4 | 3 |
+
+- **Cleaving capacity:** High
+- **Difficulty rating:** Hard
+- **Best fitting build archetype:** Full Damage
+
+<img class="demo-gif" src="/assets/gifs/bow-the-shotgun-2.gif" alt="The Shotgun Dash Combo loop demo" loading="lazy" />
+
+### Pros
+
+- Really good dps and cleave, with mostly heavy damage, allowing for easy stun on elite and adds
+- Cleaving capacity allows to clean up ascension battles
+- Good (but forced) mobility
+- Full Heavy damage
+
+### Cons
+
+- Requires to be melee most of the time
+- Dash is not used for defensive purpose
+- Slow costrike counter buildup, best with one crit maintainer relic
+- 1 mandatory relic that you may wish for (and only 7 relic slots left)
+- No multiple costrike/crit per double shot or recall on single target
+
+</Build>
+
+<Build id="double-shot-quick-shot" name="The Shotgun (with a magazine)" upgrades={["double-shot", "quick-shot"]} desc="Higher fire rate variant.">
+
+More static variant of the previous build where you are not forced to dash cancel guiding light after every shot, being able to keep your dash for dodging. Also does not rely on <Pill slug="worn-scapular" />, yet can still benefit from Dash Combos, especially when recalling your six arrows (however they may only deal a single costrike per hit target). This way, gameplay loop will be: 3 charged, dash + recall, repeat, for a duration of around 3.1 seconds (0.84s for each charged + 0.58s guiding light). Note that you can also Dash Combo on your 2nd charged for more damage, keeping around the same loop duration.
+
+In build info, there will be 4 damage variants displayed: 1. base, no Dash Combo 2. recalling with Dash Combo 3. recalling with Dash Combo and <Pill slug="cosmic-rebirth" /> equipped 4. same as (3), with Dash Combo on 2nd charged
+
+### Build info
+
+- **Attack speed:** 3.87 hits per sec (~0.97 charged attack per sec)
+
+| | (1) | (2) | (3) | (4) |
+|---|---|---|---|---|
+| **6 arrows damage** | 658.1 | 658.1 | 658.1 | 767.8 |
+| **6 recalled arrows damage** | 482.6 | 579.1 | 723.9 | 723.9 |
+| **Core DPS** | 368 | 399.1 | 445.8 | 481.2 |
+
+- **Costrike per second:** 1.29
+- **Costrike per second in counter:** 2.26
+- **Cleaving capacity:** High
+- **Difficulty rating:** Medium, Hard for (4)
+- **Best fitting build archetype:** Full Damage
+
+### Pros
+
+- Cleaving capacity allows to clean up ascension battles, even at range
+- More flexibility on when to dodge + less time charging an arrow
+- Full Heavy damage
+
+### Cons
+
+- Requires to be melee most of the time for single target
+- Slow costrike counter buildup, will hardly rely on crit
+- No multiple costrike/crit per double shot or recall on single target
+
+</Build>
+
+<Build id="double-shot-mobile-light" name="nugtohS ehT" upgrades={["double-shot", "mobile-light"]} desc="Mobility-focused variant.">
+
+The Shotgun, but backwards. Variant of the previous build focusing especially on recalling. Can be either simply played by recalling arrow instantly after shooting if you wish not to use dash offensively, getting advantage of the damage boost and having more mobility without dashing, or either played with <Pill slug="cosmic-rebirth" /> to enhance recalling the 6 arrows at once, and also able to win some damage from <Pill slug="worn-scapular" />, contrary to the previous one which uses <Pill slug="quick-shot" />.
+
+We will consider multiple gameplay loops here: 1. simple loop charged + recall, no dash combo (1.13s per charged) 2. 3 charged then Dash Combo on recall (1.05 x 2 + 0.85 + 0.58 = 3.5s) 3. charged -> Dash Combo charged -> charged -> Dash Combo recall (0.85 x 2 + 1.05 + 0.58 = 3.3s) 4. everything Dash Combo, with <Pill slug="worn-scapular" /> (3.4s)
+
+### Build info
+
+| | (1) | (2) | (3) | (4) |
+|---|---|---|---|---|
+| **Charged per sec** | 0.88 | 0.86 | 0.91 | 0.88 |
+| **6 arrows damage** | 658.1 | 658.1 | 767.8 | 987.2 |
+| **6 recalled arrows damage** | 603.3 | 904.9 | 904.9 | 904.9 |
+| **Core DPS** | 373 | 446.6 | 506.9 | 556.5 |
+| **Costrike per second** | 1.76 | 1.14 | 1.21 | 1.18 |
+| **Costrike per second in counter** | 2.64 | 2 | 2.12 | 2.06 |
+
+- **Cleaving capacity:** High
+- **Difficulty rating:** (1) Easy / (2) Medium / (3,4) Hard
+- **Best fitting build archetype:** Full Damage
+
+### Pros
+
+- Cleaving capacity allows to clean up ascension battles, even at range
+- Flexibility on gameplay, with a choice on using <Pill slug="worn-scapular" /> or not
+- Can take advantage of <Pill slug="mobile-light" /> additional mobility
+- Full Heavy damage
+
+### Cons
+
+- Requires to be melee most of the time for single target
+- Slow costrike counter buildup, will hardly rely on crit
+- No multiple costrike/crit per double shot or recall on single target
+
+</Build>
+
+<Build id="mobile-light-quick-shot" name="Support Bow" upgrades={["mobile-light", "quick-shot"]} desc="Coop Power oriented light-attack build.">
+
+Concept is simple here: we take <Pill slug="mobile-light" /> for its additional mobility during Guiding Light to create a good support build, then we complete it with <Pill slug="quick-shot" /> as it is the best bow perk for Coop Power charging. Thus, this is the go-to build for supporting (resurrecting people, using other players' Coop Power), with an emphasis on using your own Coop Power. Of course, maximize empathy during your run. This build can also benefit from a good bump of damage by using Dash Combo on recalling (yet will deal only a single costrike).
+
+### Build info
+
+- **Attack speed:** 2.5 arrows per sec (1.92s emptying quiver + 0.58s guiding light)
+- **Damage:** 58.5 per arrow + 292.5 recalling 6 arrows (351 with Dash Combo, no CR)
+- **Core dps:** 257.4 (280.8 with DC on recall)
+- **Costrike per second:** 2.8
+- **Cleaving capacity:** Low / High with Coop Power
+- **Difficulty rating:** Easy
+- **Best fitting build archetype:** Support + Coop Power
+
+### Pros
+
+- SPEED, LIGHTS, MOMENTUM
+- Great option for supporting (activating other/your own coop power, reviving)
+
+### Cons
+
+- Lacks a bit of costrikes, making <Pill slug="muddy-apostle-medal" /> less effective on this build
+
+</Build>

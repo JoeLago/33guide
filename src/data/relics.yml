@@ -1,0 +1,381 @@
+- slug: soiled-purificator
+  name: Soiled Purificator
+  rarity: rare
+  category: status-effect
+  categoryLabel: Status Effect
+  effect: "Costrikes inflict Marked status effect. Marked: target takes +100% additional damage from costrikes for 5s."
+  blessed: Inflict +20% status effect from all sources.
+- slug: sacrosant-vernicle
+  name: Sacrosant Vernicle
+  rarity: rare
+  category: status-effect
+  categoryLabel: Status Effect
+  effect: "Light damage inflicts Exposed status effect. Exposed: target takes ×1.4 damage for 5s (+40% overall)."
+  blessed: Inflict +20% status effect from all sources.
+- slug: oxidized-flagon
+  name: Oxidized Flagon
+  rarity: rare
+  category: status-effect
+  categoryLabel: Status Effect
+  effect: "All damage inflicts Weak status effect. Weak: target deals less damage to players for 5s."
+  blessed: Inflict +20% status effect from all sources.
+- slug: yawning-maw-of-truth
+  name: Yawning Maw of Truth
+  rarity: epic
+  category: status-effect
+  categoryLabel: Status Effect
+  effect: "All damage inflicts Vulnerable status effect. Vulnerable: target takes ×2.25 damage for 5s (+125% overall)."
+  blessed: Inflict +20% status effect from all sources.
+- slug: dirty-votive-candle
+  name: Dirty Votive Candle
+  rarity: common
+  category: coop-power
+  categoryLabel: Coop Power
+  effect: +2% more efficient Coop Power per Empathy point in the ones you participate in.
+  blessed: +3% per Empathy point. Effectively ×1.5 Empathy efficiency.
+- slug: bloodstained-sole
+  name: Bloodstained Sole
+  rarity: common
+  category: coop-power
+  categoryLabel: Coop Power
+  effect: Coop Power charges 100% faster.
+  blessed: 150% faster.
+- slug: muddy-apostle-medal
+  name: Muddy Apostle Medal
+  rarity: rare
+  category: coop-power
+  categoryLabel: Coop Power
+  effect: Costrikes have 25% chance to generate a Coop Power orb (+3% gauge per orb).
+  blessed: 40% chance.
+- slug: string-of-jibril
+  name: String of Jibril
+  rarity: common
+  category: base-stats
+  categoryLabel: Base Stats
+  effect: Each attack point now adds +2.66% damage (vs. base +2%).
+  blessed: +3% per attack point.
+- slug: celestial-green-feather
+  name: Celestial Green Feather
+  rarity: rare
+  category: base-stats
+  categoryLabel: Base Stats
+  effect: Converts half of your Empathy to Attack.
+  blessed: 75% conversion.
+- slug: seraphic-tear
+  name: Seraphic Tear
+  rarity: rare
+  category: base-stats
+  categoryLabel: Base Stats
+  effect: Converts half of your Vitality to Empathy.
+  blessed: 75% conversion.
+- slug: burnt-cincture
+  name: Burnt Cincture
+  rarity: rare
+  category: base-stats
+  categoryLabel: Base Stats
+  effect: Converts half of your Attack to Vitality.
+  blessed: 75% conversion.
+- slug: thorn-of-the-martyr
+  name: Thorn of the Martyr
+  rarity: common
+  category: pure-damage
+  categoryLabel: Pure Damage
+  effect: +15% additional damage.
+  blessed: +25%.
+- slug: cocytus-abiding-ice
+  name: Cocytus Abiding Ice
+  rarity: rare
+  category: pure-damage
+  categoryLabel: Pure Damage
+  effect: +25% additional damage.
+  blessed: +40%.
+- slug: lovers-skull
+  name: Lover's Skull
+  rarity: epic
+  category: pure-damage
+  categoryLabel: Pure Damage
+  effect: +40% additional damage.
+  blessed: +60%.
+- slug: finger-of-the-doubtful
+  name: Finger of the Doubtful
+  rarity: common
+  category: conditional-damage
+  categoryLabel: Conditional Damage
+  effect: +20% additional damage to costrikes.
+  blessed: +30%.
+- slug: tusk-of-ciriatto
+  name: Tusk of Ciriatto
+  rarity: rare
+  category: conditional-damage
+  categoryLabel: Conditional Damage
+  effect: +125% additional damage when target has a status effect.
+  blessed: +200%.
+- slug: mummified-sacred-heart
+  name: Mummified Sacred Heart
+  rarity: epic
+  category: conditional-damage
+  categoryLabel: Conditional Damage
+  effect: +125% additional damage when your health is below 30%.
+  blessed: +200%.
+- slug: cruel-harpy-feather
+  name: Cruel Harpy Feather
+  rarity: common
+  category: single-type-damage
+  categoryLabel: Single-Type Damage
+  effect: +25% additional light damage.
+  blessed: +40%.
+- slug: blessed-chains
+  name: Blessed Chains
+  rarity: rare
+  category: single-type-damage
+  categoryLabel: Single-Type Damage
+  effect: Light attacks ignore Armor damage reduction.
+  blessed: Light attacks also deal +20% additional damage.
+- slug: reliquary-hand
+  name: Reliquary Hand
+  rarity: common
+  category: single-type-damage
+  categoryLabel: Single-Type Damage
+  effect: Heavy damage deals +40% additional damage to Armor.
+  blessed: +60%.
+- slug: altruist-jawbone
+  name: Altruist Jawbone
+  rarity: rare
+  category: single-type-damage
+  categoryLabel: Single-Type Damage
+  effect: Heavy damage deals +35% additional damage.
+  blessed: +50%.
+- slug: burning-femur
+  name: Burning Femur
+  rarity: common
+  category: player-nearby-damage
+  categoryLabel: Player-Nearby Damage
+  effect: +5% additional damage per nearby player, up to +25%.
+  blessed: +8% per player, up to +40%.
+- slug: charred-book-of-the-gospel
+  name: Charred Book of the Gospel
+  rarity: rare
+  category: player-nearby-damage
+  categoryLabel: Player-Nearby Damage
+  effect: +5% additional damage per nearby player, up to +50%.
+  blessed: +8% per player, up to +75%.
+- slug: melted-bishop-ring
+  name: Melted Bishop Ring
+  rarity: epic
+  category: player-nearby-damage
+  categoryLabel: Player-Nearby Damage
+  effect: +8% additional damage per nearby player, up to +120%.
+  blessed: +12% per player, up to +180%.
+- slug: bark-of-erudition
+  name: Bark of Erudition
+  rarity: common
+  category: damage-on-elites
+  categoryLabel: Damage on Elites
+  effect: +30% additional damage on elites.
+  blessed: +45%.
+- slug: pious-blindfold
+  name: Pious Blindfold
+  rarity: rare
+  category: damage-on-elites
+  categoryLabel: Damage on Elites
+  effect: +50% additional damage on elites.
+  blessed: +75%.
+- slug: preserved-heretic-head
+  name: Preserved Heretic Head
+  rarity: epic
+  category: flat-damage
+  categoryLabel: Flat Damage
+  effect: Costrikes have 33% chance to trigger 3 scattered projectiles dealing 67.5 base damage each — affected by atk and additional damage but cannot costrike or crit. Can proc status effects (Marked requires YMOT). Does not charge Coop Power on hit.
+  blessed: 50% trigger chance.
+- slug: cracked-rosary-beads
+  name: Cracked Rosary Beads
+  rarity: common
+  category: crit
+  categoryLabel: Crit
+  effect: Costrike counter takes 7 more seconds to reset.
+  blessed: 12 more seconds.
+- slug: clerical-cilice
+  name: Clerical Cilice
+  rarity: common
+  category: crit
+  categoryLabel: Crit
+  effect: Each costrike in the counter provides +3% crit chance (instead of +1%).
+  blessed: +4%.
+- slug: holy-book-of-hymns
+  name: Holy Book of Hymns
+  rarity: rare
+  category: crit
+  categoryLabel: Crit
+  effect: +10% crit damage per nearby player, up to 100%.
+  blessed: +15% per player, up to 150%.
+- slug: emerald-of-princes
+  name: Emerald of Princes
+  rarity: epic
+  category: crit
+  categoryLabel: Crit
+  effect: Costrike counter starts at 20.
+  blessed: Starts at 30.
+- slug: rope-of-treachery
+  name: Rope of Treachery
+  rarity: common
+  category: sharing
+  categoryLabel: Sharing
+  effect: Nearby players get +4% additional damage.
+  blessed: +6%.
+- slug: congealed-blood-of-saints
+  name: Congealed Blood of Saints
+  rarity: common
+  category: sharing
+  categoryLabel: Sharing
+  effect: Nearby players get 8% incoming damage reduction.
+  blessed: 12%.
+- slug: desecrated-paten
+  name: Desecrated Paten
+  rarity: epic
+  category: sharing
+  categoryLabel: Sharing
+  effect: Nearby players get 20% incoming damage reduction.
+  blessed: 30%.
+- slug: braid-of-dis
+  name: Braid of Dis
+  rarity: common
+  category: survivability
+  categoryLabel: Survivability
+  effect: 30% incoming damage reduction.
+  blessed: 45%.
+- slug: fruit-of-the-insatiable
+  name: Fruit of the Insatiable
+  rarity: common
+  category: survivability
+  categoryLabel: Survivability
+  effect: Each point of Vitality provides +5 max health.
+  blessed: +8 per Vitality.
+- slug: lamp-of-purifying-flames
+  name: Lamp of Purifying Flames
+  rarity: rare
+  category: survivability
+  categoryLabel: Survivability
+  effect: Regenerate 1% of max health every 5 seconds.
+  blessed: 1.5%.
+- slug: stained-burial-shroud
+  name: Stained Burial Shroud
+  rarity: epic
+  category: survivability
+  categoryLabel: Survivability
+  effect: Critical hits heal +2 health.
+  blessed: "+3."
+- slug: worn-scapular
+  name: Worn Scapular
+  rarity: common
+  category: dash
+  categoryLabel: Dash
+  effect: Reduces dash cooldown by 0.4s (1.2s → 0.8s).
+  blessed: Adds +20% damage to Dash Combo multiplier.
+- slug: eagle-talon
+  name: Eagle Talon
+  rarity: rare
+  category: dash
+  categoryLabel: Dash
+  effect: "Dashing causes a blast at start and end positions: small range, 78 base damage, affected by stats and relics/crits. Can deal costrike; cannot apply status effects (even with YMOT), trigger Muddy Apostle Medal, or charge Coop Power on hit. Currently bugged on boss room — deals damage twice at start position."
+- slug: all-seeing-saucer-a-s-s
+  name: All Seeing Saucer (A.S.S.)
+  rarity: legendary
+  category: boss-relics-legendary
+  categoryLabel: Boss Relics (Legendary)
+  effect: +50% additional costrike damage on boss when costrike counter is over 25.
+- slug: coffer-of-the-devoted
+  name: Coffer of the Devoted
+  rarity: legendary
+  category: boss-relics-legendary
+  categoryLabel: Boss Relics (Legendary)
+  effect: +50% additional damage on boss when it has a status effect.
+- slug: empyreal-light
+  name: Empyreal Light
+  rarity: legendary
+  category: boss-relics-legendary
+  categoryLabel: Boss Relics (Legendary)
+  effect: Status buildup is +100% effective on boss.
+- slug: defiled-crucifixion-nails
+  name: Defiled Crucifixion Nails
+  rarity: legendary
+  category: boss-relics-legendary
+  categoryLabel: Boss Relics (Legendary)
+  effect: +100% additional damage on boss when its current health bar is below 30%.
+- slug: polished-monstrance
+  name: Polished Monstrance
+  rarity: legendary
+  category: boss-relics-legendary
+  categoryLabel: Boss Relics (Legendary)
+  effect: When the boss loses a health bar, players recover 25% of their Coop Power.
+- slug: anointed-chalice
+  name: Anointed Chalice
+  rarity: legendary
+  category: boss-relics-legendary
+  categoryLabel: Boss Relics (Legendary)
+  effect: Incoming damage reduction from boss per nearby player.
+- slug: wax-death-mask
+  name: Wax Death Mask
+  rarity: legendary
+  category: boss-relics-legendary
+  categoryLabel: Boss Relics (Legendary)
+  effect: When the boss loses a health bar, players recover 10% of their max health.
+- slug: shrunken-papal-heart
+  name: Shrunken Papal Heart
+  rarity: legendary
+  category: boss-relics-legendary
+  categoryLabel: Boss Relics (Legendary)
+  effect: When arriving on boss fight, recover all your health and shatter.
+- slug: bark-of-erudition-fake
+  name: Bark of Erudition (fake)
+  rarity: fake
+  category: fake-relics
+  categoryLabel: Fake Relics
+  effect: −15% additional damage on elites.
+- slug: bloodstained-sole-fake
+  name: Bloodstained Sole (fake)
+  rarity: fake
+  category: fake-relics
+  categoryLabel: Fake Relics
+  effect: Coop Power charges 50% slower.
+- slug: braid-of-dis-fake
+  name: Braid of Dis (fake)
+  rarity: fake
+  category: fake-relics
+  categoryLabel: Fake Relics
+  effect: Take +15% damage.
+- slug: cracked-rosary-beads-fake
+  name: Cracked Rosary Beads (fake)
+  rarity: fake
+  category: fake-relics
+  categoryLabel: Fake Relics
+  effect: Costrike counter takes 1 less second to reset.
+- slug: dirty-votive-candle-fake
+  name: Dirty Votive Candle (fake)
+  rarity: fake
+  category: fake-relics
+  categoryLabel: Fake Relics
+  effect: −1% less efficient Coop Power per Empathy point in the ones you participate.
+- slug: fruit-of-the-insatiable-fake
+  name: Fruit of the Insatiable (fake)
+  rarity: fake
+  category: fake-relics
+  categoryLabel: Fake Relics
+  effect: Each point of Vitality removes −2 max health.
+- slug: string-of-jibril-fake
+  name: String of Jibril (fake)
+  rarity: fake
+  category: fake-relics
+  categoryLabel: Fake Relics
+  effect: Attack is now +1.66% base damage instead of +2%.
+- slug: thorn-of-the-martyr-fake
+  name: Thorn of the Martyr (fake)
+  rarity: fake
+  category: fake-relics
+  categoryLabel: Fake Relics
+  effect: −8% additional damage.
+- slug: worn-scapular-fake
+  name: Worn Scapular (fake)
+  rarity: fake
+  category: fake-relics
+  categoryLabel: Fake Relics
+  effect: Increases dash cooldown by 0.5s (1.25s → 1.75s).

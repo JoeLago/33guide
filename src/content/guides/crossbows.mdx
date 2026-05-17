@@ -1,0 +1,306 @@
+---
+title: Crossbows of Pride
+lead: High-range, high-damage single-target weapon. Brand ability doubles damage and cuts animation frames.
+---
+import Pill from '../../components/Pill.astro';
+import Build from '../../components/Build.astro';
+import Coop from '../../components/Coop.astro';
+
+<img class="entity-icon entity-icon-hero" src="/assets/icons/weapons/crossbows-hero.png" alt="First look at Crossbows of Pride" loading="lazy" />
+
+## First look at crossbows
+
+High range, high damage single-target weapon with no cleave at base. Its ability launches a bolt that marks (brand) a target, making them suffer x2 damage from your crossbow, which will be necessary to keep a good dps. Fortunately, the brand ability allows us to cut a lot of animation frames, so we'll be using it constantly in order to maximize attack speed and damage. Hitting a branded target generates 3 Pride (max 20), which is consumed by heavy attacking (1 heavy bolt per Pride). Note that performing a Dash Combo on a heavy attack applies the Dash Combo bonus on every shot, and since DC is a multiplicative buff, this is an easy way to make damage ramp up. Do not forget to equip <Pill slug="cosmic-rebirth" /> perk for more effect!
+
+<Coop weapon="crossbows" />
+
+Its Coop Power Ballista creates a turret that launches 5 pairs* of single-target bolts per second, each dealing 300 heavy damage at max level (3000 dps) for 11 seconds, with duration scaling on empathy (very slightly, haven't seen it last more than 16s even at 35+ emp with candle for both), and it cannot deal costrikes. Cannot apply any status effect. *both bolts hitting the same enemy will show the damage only once, where it in fact happens twice.
+
+**Base stats (no brand)**
+
+- Attack speed: 1.4 2-bolts combo + brand per sec (see tips and tricks). 24 frames to launch 2 bolts + 18 frames brand
+- Light damage: 40.6 x2
+- Heavy damage: 58.5 first bolt, then 31 for any subsequent bolt
+- Charged attack rate: 0.43s charging then 6 shots per sec (26 frames charging + 10 frames per subsequent shot + 16 frames animation end)
+- Brand ability damage: 49
+
+## Crossbows upgrades
+
+<div data-render="upgrades" data-weapon="crossbows"></div>
+
+## Tips and tricks
+
+**How to Quick Shot**
+
+Light attack ending animation being 34 frames, and brand ability being only 18 frames with no cooldown, we can use the ability at the very end of the second shot to gain several frames, making the animation around 25% quicker, plus having more damage from using the ability, plus not needing to remind to brand the enemy being attacked. Only downside being that the brand is imprecise and sometimes goes off, and could hit another enemy because of the weird auto-aim the game has.
+
+<img class="demo-gif" src="/assets/gifs/crossbows-quick-shot.gif" alt="Quick Shot brand cancel demo" loading="lazy" />
+
+**How to Skipping Bolts**
+
+<Pill slug="skipping-bolts" /> usage is quite weird: since hitboxes are generous, bolts will almost always go on a second enemy that is right behind, however if the enemy is a bit far you'll usually see the bolt skipping in plain void. As a rule of thumb we can consider that a bolt will always ricochet in a 140° fashion depending on whether you hit the top of the hitbox or the bottom. This way we can more consistently hit farther enemies, at the price of being placed well. This will sometimes still be very random because of the auto aim.
+
+<img class="demo-gif" src="/assets/gifs/crossbows-skipping-bolts.gif" alt="Skipping Bolts ricochet demo" loading="lazy" />
+
+**Flurry of Bolts Pride generation**
+
+This is not always exact and sometimes bolts from the second shot will generate one more Pride for some reason, but here's a general rule:
+
+- 1 bolt hitting generates 1 pride
+- 2 bolts hitting generates 3 pride
+- 3 bolts hitting generates 4 pride
+- 4 bolts hitting generates 6 pride
+
+As long as you are close to the enemy, you're going to generate more Pride than usual, up to twice more.
+
+## Builds
+
+Click a build name to expand its breakdown.
+
+<Build id="flurry-of-bolts-showtime" name="Prideful" upgrades={["flurry-of-bolts", "showtime"]} desc="Heavy attack with Flurry to charge Pride; Showtime for damage.">
+
+In this build, we use <Pill slug="flurry-of-bolts" /> to quickly charge up 20 Pride and <Pill slug="showtime" /> (which ends up with 100% uptime), also making it a really good build for costrikes per second (even in counter!) because of the heavy high attack rate, this is the go-to build to play with <Pill slug="muddy-apostle-medal" /> and for Coop Power spamming (reminder that Ballista is 3000 stable dps and barely scales on empathy).
+
+Note that <Pill slug="showtime" /> being additional damage, the shown damage numbers below will not scale properly when you get more additional damage. For this reason I'll also write the numbers at +300% additional damage already (which is crit with <Pill slug="empyreal-deceptiveness" /> + empathy boost from costrikes + some relics or Marked status effect), at this point it is effectively a x1.075 damage multiplier (+7.5% damage).
+
+Conversely, costrikes/crit not being achieved on every hit of <Pill slug="flurry-of-bolts" />, <Pill slug="showtime" /> helps reduce the slight gap of damage caused by this (Light attack damage is approximately only 25% of all the damage done with the gameplay loop).
+
+The optimal gameplay loop is: Brand > Light > Brand > Light > Dash Combo Heavy 20 bolts. However since <Pill slug="flurry-of-bolts" /> requires to be melee and dashing being a large movement and all attacks having a small recoil, this would be only achievable against a wall (or left/right on large hitboxes), so we'll add a second dash to get back to melee for the general case: Brand > Dash Combo Light > Brand > Light > Dash Combo Heavy 20 bolts
+
+<img class="demo-gif" src="/assets/gifs/crossbows-prideful.gif" alt="Prideful rotation demo" loading="lazy" />
+
+### Build info
+
+- **Loop duration:** 5.47s (328 frames, or 5.22s 313 frames against a wall)
+- **Hits per second (avg):** 5.48
+- **Loop Damage:** 3731.1 (34% light | 66% heavy) — 3085.3 at +300% additional damage
+- **Core dps:** 682.1 — 564 at +300% additional damage
+- **Costrike per second (avg):** 4.4
+- **Costrike per second in counter (avg):** 8
+- **Cleaving capacity:** Low
+- **Difficulty rating:** Medium
+- **Best fitting build archetype:** Full Damage / Coop Power + Damage
+
+### Pros
+
+- Quick Pride charging
+- Good heavy dps, can remove armor easily
+- Quick costrike counter building and Coop Power charging
+
+### Cons
+
+- <Pill slug="showtime" /> is additional damage
+- Removing multiple armor in a single heavy attack still is painful
+- Requires to be at close range most of the time
+
+</Build>
+
+<Build id="flurry-of-bolts-massive-bolts" name="Prideful-er" upgrades={["flurry-of-bolts", "massive-bolts"]} desc="Variant — Massive Bolts is a true multiplier, no diminishing returns.">
+
+Variant of the previous build, dropping <Pill slug="showtime" /> for <Pill slug="massive-bolts" />, which is a damage multiplier, rather than additional damage, meaning that it won't scale down when getting high +% additional damage. This build is as good as the previous in all points (refer to previous build), has a bit more damage in endgame, with the only downside being the huge <Pill slug="massive-bolts" /> recoil (which can however help dodging some attacks during the heavy), which now makes a second dash necessary in the rotation.
+
+Rotation being: Brand > Dash Combo Light > Brand > Light > Dash Combo Heavy 20 bolts
+
+<img class="demo-gif" src="/assets/gifs/crossbows-prideful-er.gif" alt="Prideful-er rotation demo" loading="lazy" />
+
+### Build info
+
+- **Loop duration:** 5.47s (328 frames)
+- **Hits per second (avg):** 5.48
+- **Loop Damage:** 3331.4 (29% light | 71% heavy)
+- **Core dps:** 609
+- **Costrike per second (avg):** 4.4
+- **Costrike per second in counter (avg):** 8
+- **Cleaving capacity:** Low
+- **Difficulty rating:** Medium
+- **Best fitting build archetype:** Full Damage / Coop Power + Damage
+
+### Pros
+
+- Quick Pride charging
+- Good heavy dps, can remove armor easily
+- Quick costrike counter building and Coop Power charging
+
+### Cons
+
+- <Pill slug="massive-bolts" /> recoil is too strong
+- Removing multiple armor in a single heavy attack still is painful
+- Requires to be at close range most of the time
+
+</Build>
+
+<Build id="flurry-of-bolts-explosive-brands" name="REAL SHOTGUN" upgrades={["flurry-of-bolts", "explosive-brands"]} desc="HEHE EXPLOSIONS.">
+
+THEY INVENTED GUNPOWDER FR. Quite easy to play build, that is theoretically the best dps in the game, however ends up being random in terms of damage when it comes to costrikes and critical hits.
+
+Concept is simple: get to melee, then spam the light + brand combo, making the brand explode in big damage at every light attack.
+
+It's first downside is that it is almost unable to get damage from heavy attack (or doing so would be dropping quite a lot of damage), making the <Pill slug="blessed-chains" /> almost mandatory (useless on boss though, especially if your team can easily handle elites). Secondly, this build suffers a lot from the "one costrike/crit at a time" limit: if the explosion happens when another instance of damage is being processed at the same time on the same enemy, it won't costrike nor crit, which is quite harsh as the game favor these a lot. Samely, each <Pill slug="flurry-of-bolts" /> will usually only deal a single costrike per shot. Finally, the second shot from the light attack may not benefit from the x2 damage from the brand if it exploded after the first shot (which also is random, all 4 bolts hitting doesn't necessarily causes the explosion to proc), hence the damage range in the stats below.
+
+<img class="demo-gif" src="/assets/gifs/crossbows-real-shotgun.gif" alt="REAL SHOTGUN explosive brand demo" loading="lazy" />
+
+### Build info
+
+- **Attack speed:** 1.4 brand + 2-light combo + explosion per second (42 frames, 0.7s)
+- **Hits per second:** 14
+- **Damage per loop:** 653.3 - 750.9
+- **Core dps:** 933.3 - 1072.7
+- **Costrike per second:** 5.6 (effectively a bit less)
+- **Costrike per second in counter:** 5.6
+- **Cleaving capacity:** Medium
+- **Difficulty rating:** Easy
+- **Best fitting build archetype:** Full Damage
+
+### Pros
+
+- Extremely good dps
+- Good Coop Power charging (w/o <Pill slug="muddy-apostle-medal" />)
+
+### Cons
+
+- Heavy attack cannot really be used anymore (as brand explodes)
+- Requires to be always at close range
+- Does not scales with costrike/crits correctly
+- Random dps that depends on whether the explosion is critting or not
+
+</Build>
+
+<Build id="indiscriminate-skipping-bolts" name="Bouncin'" upgrades={["indiscriminate", "skipping-bolts"]} desc="Double-targeting build — learn to bounce first.">
+
+Numbers here are incorrect since <Pill slug="skipping-bolts" /> removes the damage boost from Dash Combos for now.
+
+Build that revolves around double-target hitting, allowing to get up to x2 damage in some situations (notably a&e which can both be hit if they are not too far away from each other, refer to tips and tricks to learn how to bounce). This build (and all <Pill slug="skipping-bolts" /> ones) can also excel in Coop Power charging with <Pill slug="muddy-apostle-medal" /> if you can achieve to constantly hit and costrike two targets with the heavy attack.
+
+Numbers will be shown on single branded target, double targets single brand and double branded targets. For the rotation, we'll use: 4 times Brand + Light -> Dash Combo 20 bolts Heavy (with <Pill slug="cosmic-rebirth" />)
+
+### Build info
+
+- **Loop duration:** 6.63s (398 frames)
+
+| | Single branded Target | Double Targets 1 brand | Double branded Targets |
+|---|---|---|---|
+| Hits per sec (avg) | 4.83 | 9.05 | 9.65 |
+| Damage per loop | 2788.1 | 4084.2 | 5576.2 |
+| %Light / %Heavy | 30% / 70% | 29% / 71% | 30% / 70% |
+| Core DPS | 420.5 | 616 | 841 |
+| Costrike per second (avg) | 4.83 | 9.05 | 9.65 |
+| Costrike per second in counter (avg) | 7.84 | 15.08 | 15.69 |
+
+- **Cleaving capacity:** Medium
+- **Difficulty rating:** Medium
+- **Best fitting build archetype:** Coop Power + Damage
+
+### Pros
+
+- Potentially really good dps, costrike counter building and Coop Power charging
+- <Pill slug="indiscriminate" /> makes multi targeting way easier, able to remove multiple armors in a single heavy attack
+
+### Cons
+
+- \<- Potentially
+- Requires to master bouncing, which requires good placement, aim, and sometimes a bit of luck
+- Dependant on <Pill slug="indiscriminate" /> explosion range
+
+</Build>
+
+<Build id="indiscriminate-explosive-brands" name="Chained Explosions" upgrades={["indiscriminate", "explosive-brands"]} desc="AoE explosions — brand multiple enemies and chain-detonate.">
+
+Fun build that can explode up to 5 brands in a single heavy attack, making it a really good build for aoe damage since all branded enemies will suffer x2 damage from the explosion. However it does become significantly less strong on a single target. Here the strategy is to charge Pride as fast as possible with light attacks until you have enough for enemies around (4 per enemy), then brand as many enemies as possible at once, and try to explode them one by one in quick succession with a single heavy attack.
+
+Multi target dps is extremely hard to compute and heavily depends on the situation, so there will only be numbers for single target in two cases: 1. standard light + brand spam 2. 4x brand + light -> 5x brand + Dash Combo heavy 4-bolts
+
+The second one provides a slightly better dps (do not forget to equip <Pill slug="cosmic-rebirth" /> here!), more costrikes in counter and almost half of the damage done are heavy damage, but is much harder to play, with some downsides if missing the right count of bolts during a heavy attack (see next build, which is even more punishing as it requires refreshing <Pill slug="showtime" /> frequently enough).
+
+<img class="demo-gif" src="/assets/gifs/crossbows-chained-explosions.gif" alt="Chained Explosions demo" loading="lazy" />
+
+### Build info (1)
+
+- **Attack speed:** 1.4 brand + 2-light combo (+ ½ explosion) per second (42 frames, 0.7s)
+- **Damage per loop:** 367.15
+- **Core dps:** 514
+- **Costrike per second:** 4.9
+- **Costrike per second in counter:** 4.9
+- **Cleaving capacity:** Medium
+- **Difficulty rating:** Easy
+- **Best fitting build archetype:** Full Damage
+
+### Build info (2)
+
+- **Loop duration:** 10.13s (608 frames)
+- **Hits per second (avg):** 4.3
+- **Loop Damage:** 5543.6 (59% light | 41% heavy)
+- **Core dps:** 547.2
+- **Costrike per second (avg):** 4.3
+- **Costrike per second in counter (avg):** 6.3
+- **Cleaving capacity:** Medium
+- **Difficulty rating:** Hard
+- **Best fitting build archetype:** Full Damage
+
+### Pros
+
+- Really good at removing pack of enemies
+- Still correct dps in single target
+
+### Cons
+
+- Using heavy attack in single target is hard and poorly rewarding
+- Far from being the best crossbows build on Coop Power charging
+
+</Build>
+
+<Build id="flurry-of-bolts-skipping-bolts" name="It's Raining Bolts" upgrades={["flurry-of-bolts", "skipping-bolts"]} desc="Coop Power charging only, mostly neglects weapon damage.">
+
+Fun build that maximizes the number of hits per second to maximize Coop Power recharge from it (up to 12.6 hits per second using light attacks!). Weapon damage is quite terrible here, but Coop Power being 3000dps, we don't really mind it here. Of course, as all <Pill slug="skipping-bolts" /> builds, heavy attacks will also perform very nicely with <Pill slug="muddy-apostle-medal" /> (and <Pill slug="flurry-of-bolts" /> make it easier to recharge it!). No numbers here since everything is heavily situation-dependent.
+
+<img class="demo-gif" src="/assets/gifs/crossbows-raining-bolts-1.gif" alt="It's Raining Bolts demo" loading="lazy" />
+
+### Pros
+
+- THAT'S A LOT OF NUMBERS
+- Very good Coop Power charging in all situations
+- Quick Pride charging at close range
+
+### Cons
+
+- Quite low single target dps + no multi target branding
+
+<img class="demo-gif" src="/assets/gifs/crossbows-raining-bolts-2.gif" alt="It's Raining Bolts coop charge demo" loading="lazy" />
+
+</Build>
+
+<Build id="explosive-brands-showtime" name="skill issue?" upgrades={["explosive-brands", "showtime"]} desc="Theoretical, extremely skilled, mostly not worth the risk.">
+
+Mostly a theoretical build, as it requires extreme precision in every input (and low ping probably, as sometimes Pride generation and brand stacks seem to be skipped, causing the rotation time to expand, losing dps). Here we'll be using <Pill slug="explosive-brands" /> + <Pill slug="showtime" /> + Dash Combo 4 heavy spam with <Pill slug="cosmic-rebirth" /> in order to try to maximize single target dps without any costrike loss (in best case scenario only, unfortunately). The Dash Combo 4 heavy is able to proc the explosion as quick as light attacks does (without <Pill slug="flurry-of-bolts" /> ofc), while dealing quite more damage due to the first bolt being stronger and all bolts benefiting from Dash Combo.
+
+The rotation will be as follow (we'll suppose we start with 20 pride): (Brand -> Dash Combo Heavy 4 bolts) x3 -> (Brand -> Light) x2
+
+The 3 Dash Combo Heavy will cost 12 pride, just as much as the 2 Light should replenish, allowing for <Pill slug="showtime" /> to be always up. However, a lot of things can be messed during the rotation:
+
+- Releasing one too much bolt during a heavy attack will make the explosion unable to costrike/crit with a high probability
+- Releasing one too much bolt during a heavy attack will cost more pride than light attacks will regenerate, requiring one more on the next chain, but a single one won't trigger the explosion, leaving it at 2 stacks and disabling the next heavy from triggering a costrike explosion (unless using a 2-bullets heavy), so it may be better to compensate with another second light attack
+- Holding back one too much bolt during a heavy attack chain will leave the Brand stacks at 3, losing one explosion and making the next one unable to costrike (unless using a 1-bullet heavy)
+- Sometimes the quick light/brand combo drifts off, causing the target to not get an additional brand stack, and preventing Pride regeneration, thus making the whole rotation to drift into one or two more light attacks
+
+Since this build uses <Pill slug="showtime" />, which provides additional damage, the numbers will also be shown when at already +300% additional damage from other sources (<Pill slug="showtime" /> being x1.075 damage at this point).
+
+### Build info
+
+- **Loop duration:** 5.8s (348 frames)
+- **Hits per second (avg):** 4.31
+- **Loop Damage:** 4133.1 (57% light | 43% heavy) — 3417.8 at +300% additional damage
+- **Core dps:** 712.6 — 589.3 at +300% additional damage
+- **Costrike per second (avg):** 4.3
+- **Costrike per second in counter (avg):** 6.3
+- **Cleaving capacity:** Low
+- **Difficulty rating:** Very Hard++
+- **Best fitting build archetype:** Full Damage
+
+### Pros
+
+- Just above average dps…
+
+### Cons
+
+- …but at what cost?
+
+</Build>

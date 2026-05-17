@@ -1,0 +1,17 @@
+---
+import GuideLayout from '../layouts/GuideLayout.astro';
+import RelicGrid from '../components/RelicGrid.astro';
+import { relics } from '../data/items';
+
+const categories = [...new Map(relics.map(r => [r.category, r.categoryLabel])).entries()];
+---
+<GuideLayout title="Relics" description="All relics organized by category.">
+  <h1>Relics</h1>
+  <p class="page-lead">All relics organized by category.</p>
+  {categories.map(([slug, label]) => (
+    <section id={slug}>
+      <h2>{label}</h2>
+      <RelicGrid category={slug} />
+    </section>
+  ))}
+</GuideLayout>

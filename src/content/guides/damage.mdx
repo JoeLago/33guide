@@ -1,0 +1,135 @@
+---
+title: Everything about Damage
+lead: How damage is calculated — formulas, status effects, armor, dash combos, and diminishing returns.
+---
+import Pill from '../../components/Pill.astro';
+import Callout from '../../components/Callout.astro';
+import Figure from '../../components/Figure.astro';
+
+**Notes before starting:**
+
+- There may still be small mistakes — exact numbers can be hard to pin down because of the damage window. There's an old [automatic formula verifier spreadsheet](https://docs.google.com/spreadsheets/d/131I72CTlugOdlzsQjM6ZwEg65OHTJh_6NhpNrUsDYjc/edit?gid=0#gid=0) if you want to poke at the math yourself.
+- Percentages are expressed as proportions (15% → 0.15).
+- Σ means "sum of [what follows]" — e.g. ΣRelic% is the sum of relic percentages.
+- Thanks to **Romalllka** for help on status effects.
+
+## 1. Basic formula — Attack and Relics
+
+<Callout>
+  **Damage = BaseDmg × (1 + 0.02·atk) × (1 + ΣRelic%)**
+</Callout>
+
+<Figure src="/assets/figures/damage/formula-basic.png" alt="BaseDmg × (1 + 0.02·atk) × (1 + ΣRelic%) rendered" variant="banner" />
+
+This is the simple damage formula for "vanilla" damage (no costrike, no status effect, etc.). **BaseDmg** averages 97.5 (100 max, 95 min), multiplied by a ratio specific to the attack you are using (from 0.4 for a recalled light bow arrow at 39 dmg, up to 1.9 for the glaive last attack of a combo at 185 dmg).
+
+Then it's multiplied by another ratio that depends on your weapon upgrade(s). For Bow with <Pill slug="small-quiver" />, that's 1.5. Upgrades are multiplicative with each other — adding <Pill slug="double-shot" /> on top of <Pill slug="small-quiver" /> gives 1.5 × 0.75 = 1.125 <img class="formula-inline" src="/assets/figures/damage/formula-upgrade-mult.png" alt="" />. Per-attack and per-upgrade ratios are listed on each weapon's intro page.
+
+Next, we multiply by a stat term: `(1 + 0.02 · atk)` — each attack point adds +2% damage.
+
+Finally, relics. Relics and most perks are **additive** between each other — hence the Σ. Example: <Pill slug="thorn-of-the-martyr" /> (+15%) and <Pill slug="cocytus-abiding-ice" /> (+25%) give +40% total, not +43.75% <img class="formula-inline" src="/assets/figures/damage/relic-sum-example.png" alt="" />.
+
+Your damage will almost never be exactly the same in identical conditions because there's a ±2.5% window around the calculated value (only exception: daggers' Takedown).
+
+### Full example
+
+Playing daggers, light attacks (0.8 ratio), <Pill slug="stabs" /> upgrade (×1.2 light damage), 18 atk, relics <Pill slug="thorn-of-the-martyr" /> (0.20 after blessing) and <Pill slug="cocytus-abiding-ice" /> (0.25):
+
+`97.5 × 0.8 × 1.2 × (1 + 0.02·18) × (1 + 0.20 + 0.25) ≈ 184.7`
+
+<Figure src="/assets/figures/damage/daggers-example.png" alt="Daggers light attack worked example" />
+
+With the damage window, my hit will be between roughly 180 and 189.
+
+From here on, we call **additional damage** every +% added alongside relics% (additive), and call out anything **multiplicative** separately. This distinction is crucial for the diminishing-returns section.
+
+<Figure src="/assets/figures/damage/additive-vs-multiplicative.png" alt="Additional damage adds to ΣRelic%; multiplicative damage gets its own multiplier term" variant="wide" />
+
+## 2. Advanced formula — Costrikes and Critical hits
+
+Co-strike additional damage scales on empathy (+1% per empathy point) and is **additive with relics**.
+
+Critical hits add +100% additional damage (and more with additional crit damage). Also **additive with relics**.
+
+<Callout>
+  **FinalDmg = BaseDmg × (1 + 0.02·atk) × (1 + ΣRelic% + ΣCostrike% + ΣCrit%)**
+</Callout>
+
+<Figure src="/assets/figures/damage/formula-advanced.png" alt="Advanced formula with costrike and crit terms" variant="banner" />
+
+## 3. Status effects, Armor, String of Jibril, Dash combos
+
+<Figure src="/assets/figures/damage/formula-final.png" alt="Full final damage formula including status, armor, dash combo, and atk-multiplier terms" variant="wide" />
+
+### Status effects
+
+- <img class="entity-icon entity-icon-inline" src="/assets/icons/status/status-armor-break.png" alt="" loading="lazy" /> **Armor Break** — once armor is broken with enough heavy damage. Prevents the target from doing any action for 3 seconds.
+- <img class="entity-icon entity-icon-inline" src="/assets/icons/status/status-vulnerable.jpg" alt="" loading="lazy" /> **Vulnerable** — built up by any damage while <Pill slug="yawning-maw-of-truth" /> is equipped. Multiplies damage taken by ×2.25 for 5s.
+- <img class="entity-icon entity-icon-inline" src="/assets/icons/status/status-exposed.jpg" alt="" loading="lazy" /> **Exposed** — built up by light damage while <Pill slug="sacrosant-vernicle" /> is equipped. ×1.4 damage taken for 5s.
+- <img class="entity-icon entity-icon-inline" src="/assets/icons/status/status-marked.png" alt="" loading="lazy" /> **Marked** — built up by costrike damage while <Pill slug="soiled-purificator" /> is equipped. +100% costrike damage taken for 5s.
+- <img class="entity-icon entity-icon-inline" src="/assets/icons/status/status-weak.jpg" alt="" loading="lazy" /> **Weak** — built up by any damage while <Pill slug="oxidized-flagon" /> is equipped. Target deals less damage to players for 5s.
+
+Vulnerability and Exposure are **additive to each other**; an enemy under both takes +165% more damage (×2.65).
+
+Status effects only trigger once a threshold of "status damage" has been done — depends on the target's max HP and type:
+
+| Target | Exposed / Marked / Vulnerable | Weak |
+|--------|-------------------------------|------|
+| Normal | 33% of max HP | 16.5% of max HP |
+| Elite | 20% of max HP | 10% of max HP |
+| Boss | 20% of a bar (36,000 HP) / 2% max HP | 10% of a bar (18,000 HP) / 1% max HP |
+
+Weak doesn't directly add damage, but it's the easiest status to trigger <Pill slug="tusk-of-ciriatto" /> on (twice easier than Exposed/Marked).
+
+### Armor
+
+Armor reduces light damage by 60% (×0.4). Killing an armored enemy with light damage alone requires 2.5× its max HP.
+
+Example: an Arciere has 950 HP, so you'd need to deal 950 ÷ 0.4 = 2,375 light damage <img class="formula-inline" src="/assets/figures/damage/armor-example.png" alt="" /> to kill it through armor.
+
+Regular enemies have 40–60% of their HP as armor *(Arciere itself has 600)*; elites have ~35–40%. Switch to heavy on elites — with small exceptions for full Coop-Power builds or running <Pill slug="blessed-chains" /> / <Pill slug="cruel-harpy-feather" />.
+
+### Dash Combos
+
+Performed by dashing and inputting an attack within ~20 frames (0.3 s) during the dash. Adds ×1.2 (+20% multiplicative), ×1.5 with <Pill slug="cosmic-rebirth" />.
+
+Most powerful when your attack speed is low (between 1.2 and 0.8 atk/sec) but damage is high. Sometimes even better when paired with <Pill slug="worn-scapular" />, which speeds up dashes.
+
+### String of Jibril
+
+<Pill slug="string-of-jibril" /> is the only relic that affects the atk multiplier (along with <Pill slug="celestial-green-feather" /> indirectly): it replaces the 0.02 per-atk multiplier with 0.0266, so each attack point becomes worth +2.66% damage — effectively an extra atk point every 3 atk points.
+
+At 23 atk (max without converters) this multiplies damage by ×1.104 (+10.4% overall), comparable to a +50% additional damage relic stacked on top of an existing +400% additional damage. The multiplier grows with attack.
+
+It's a really good relic for any atk build, especially paired with <Pill slug="celestial-green-feather" /> if you can max empathy during the run.
+
+### Agony
+
+3 or 9 ordeals equipped trigger Agony levels. No direct effect on displayed damage, but monsters have more HP for the player(s) running ordeals — effective damage reduction (and changes how %HP status thresholds work). See [Ordeals & Agony](/ordeals.html).
+
+## 4. Diminishing returns — invest in multipliers
+
+The damage formula is a chain of multiplications, but the "additional damage" term (relics + costrike + crit) is a sum. Sums suffer from diminishing returns; multipliers don't.
+
+### What is diminishing returns?
+
+Vanilla bow normal attack, 15 atk, +50% damage relic: ~ 97.5 × 0.6 × 1.3 × 1.5 ≈ 114.
+
+<Figure src="/assets/figures/damage/diminishing-step1.png" alt="Starting damage calculation: ≈ 114" />
+
+Now add a second relic at +25%. If relics were **multiplicative**, you'd expect 114 × 1.25 = 142.5.
+
+<Figure src="/assets/figures/damage/diminishing-step2.png" alt="Hypothetical multiplicative result: 142.5" />
+
+But relics are **additive**, so the real calculation is 97.5 × 0.6 × 1.3 × (1 + 0.50 + 0.25) ≈ 133 — an effective +16.6% overall (not +25%).
+
+<Figure src="/assets/figures/damage/diminishing-step3.png" alt="Actual additive result: ≈ 133" />
+
+This gets worse the higher your existing multiplier. Adding +25% to an already +300% pile is only an effective +6.25% damage.
+
+Once your additional damage stack is already high (with or without crits, depending on play), invest in *other* multipliers:
+
+- **Atk multiplier**: <Pill slug="string-of-jibril" />, <Pill slug="celestial-green-feather" />.
+- **Status effects**: triggers <Pill slug="tusk-of-ciriatto" /> and adds team-shared damage.
+- **Crit sustain**: <Pill slug="cracked-rosary-beads" />, <Pill slug="clerical-cilice" />.
+- **Coop Power relics**, or just **survivability**.

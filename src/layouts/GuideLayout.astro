@@ -1,0 +1,262 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title} — 33 Immortals Build Guide</title>
+{description && <meta name="description" content={description} />}
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <h2 class="site-title">33 Immortals</h2>
+    <p class="site-subtitle">Build Guide · Gluttony Update</p>
+  </div>
+  <div class="search-box">
+    <input id="site-search" type="search" placeholder="Search the guide…" aria-label="Search guide">
+    <div id="search-results" class="search-results" role="listbox"></div>
+  </div>
+
+  <nav class="nav-group">
+    <h3>Fundamentals</h3>
+    <ul>
+      <li><a href="/">Introduction</a></li>
+      <li><a href="/general-tips">General Tips</a></li>
+      <li><a href="/damage">Damage</a></li>
+      <li><a href="/empathy-coop">Empathy &amp; Coop</a></li>
+      <li><a href="/ordeals">Ordeals &amp; Agony</a></li>
+      <li><a href="/making-a-build">Making a Build</a></li>
+    </ul>
+  </nav>
+
+  <nav class="nav-group">
+    <h3>Catalog</h3>
+    <ul>
+      <li><a href="/perks">Perks</a></li>
+      <li><a href="/relics">Relics</a></li>
+      <li><a href="/maps">Maps</a></li>
+    </ul>
+  </nav>
+
+  <nav class="nav-group">
+    <h3>Weapons</h3>
+    <ul>
+      <li><a href="/bow">Bow of Hope</a></li>
+      <li><a href="/sword">Sword of Justice</a></li>
+      <li><a href="/daggers">Daggers of Greed</a></li>
+      <li><a href="/staff">Staff of Sloth</a></li>
+      <li><a href="/glaive">Glaive of Temperance</a></li>
+      <li><a href="/crossbows">Crossbows of Pride</a></li>
+      <li><a href="/hooks">Hooks of Gluttony</a></li>
+    </ul>
+  </nav>
+</aside>
+<main class="main">
+  <button class="theme-toggle" type="button" aria-label="Toggle light/dark theme">☾ Dark</button>
+  <slot />
+</main>
+</div>
+<script>
+const THEME_KEY = 'guide-theme';
+
+function applyTheme(t: string) {
+  document.documentElement.setAttribute('data-theme', t);
+  const btn = document.querySelector('.theme-toggle');
+  if (btn) btn.textContent = t === 'dark' ? '☀ Light' : '☾ Dark';
+}
+
+function initTheme() {
+  let saved: string | null = null;
+  try { saved = localStorage.getItem(THEME_KEY); } catch {}
+  if (!saved) {
+    saved = window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  applyTheme(saved);
+  const btn = document.querySelector('.theme-toggle');
+  btn?.addEventListener('click', () => {
+    const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    try { localStorage.setItem(THEME_KEY, next); } catch {}
+    applyTheme(next);
+  });
+}
+
+function initMobileToggle() {
+  const toggle = document.querySelector('.menu-toggle');
+  const sidebar = document.querySelector('.sidebar');
+  if (!toggle || !sidebar) return;
+  toggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+  sidebar.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => sidebar.classList.remove('open'));
+  });
+}
+
+function initActiveLink() {
+  const here = (location.pathname.split('/').pop() || 'index').toLowerCase();
+  document.querySelectorAll('.nav-group a').forEach(a => {
+    const href = (a.getAttribute('href') || '').split('/').pop()?.split('#')[0]?.toLowerCase() || '';
+    if (href === here || href === here + '.html') a.classList.add('active');
+  });
+}
+
+function initPillTooltips() {
+  const tip = document.createElement('div');
+  tip.className = 'pill-tooltip';
+  tip.id = 'pill-tip';
+  tip.setAttribute('role', 'tooltip');
+  tip.hidden = true;
+  document.body.appendChild(tip);
+
+  let activeEl: HTMLElement | null = null;
+  let showTimer: ReturnType<typeof setTimeout> | null = null;
+  let hideTimer: ReturnType<typeof setTimeout> | null = null;
+  let _itemsPromise: Promise<any> | null = null;
+
+  function loadItems() {
+    if (!_itemsPromise) {
+      _itemsPromise = Promise.all([
+        fetch('/assets/items.json').then(r => r.json()),
+        fetch('/assets/icons.json').then(r => r.json()),
+      ]).then(([items, icons]) => {
+        const bySlug: Record<string, any> = {};
+        for (const r of items.relics)   { bySlug[r.slug] = { ...r, kind: 'relic' }; }
+        for (const p of items.perks)    { bySlug[p.slug] = { ...p, kind: 'perk' }; }
+        for (const u of items.upgrades) { bySlug[u.slug] = { ...u, kind: 'upgrade' }; }
+        return { bySlug, icons };
+      }).catch(() => null);
+    }
+    return _itemsPromise;
+  }
+
+  function slugFromPill(pill: HTMLElement) {
+    const img = pill.querySelector('img.pill-icon') as HTMLImageElement | null;
+    if (!img) return null;
+    const src = img.getAttribute('src') || '';
+    const base = src.split('/').pop()?.replace(/\.[^.]+$/, '') || '';
+    return base || null;
+  }
+
+  function pillLink(entry: any) {
+    if (entry.kind === 'perk')    return `/perks#${entry.slug}`;
+    if (entry.kind === 'relic')   return `/relics#${entry.slug}`;
+    if (entry.kind === 'upgrade') return `/${entry.weapon}#upgrade-${entry.slug}`;
+    return null;
+  }
+
+  function pillLinkLabel(entry: any) {
+    if (entry.kind === 'perk')    return 'View on Perks';
+    if (entry.kind === 'relic')   return 'View on Relics';
+    if (entry.kind === 'upgrade') return `View on ${entry.weaponLabel}`;
+    return 'View';
+  }
+
+  function esc(s: string) {
+    return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function showTip(pill: HTMLElement) {
+    const slug = slugFromPill(pill);
+    if (!slug) return;
+    loadItems().then(data => {
+      if (!data || activeEl !== pill) return;
+      const entry = data.bySlug[slug];
+      if (!entry) return;
+      const icon = data.icons[slug];
+      const iconHtml = icon ? `<img src="/${icon.path}" alt="" aria-hidden="true">` : '';
+      const blessedHtml = entry.blessed ? `<p class="pill-tooltip-blessed">Blessed: ${esc(entry.blessed)}</p>` : '';
+      const href = pillLink(entry);
+      const linkHtml = href ? `<a class="pill-tooltip-link" href="${href}" tabindex="-1">${pillLinkLabel(entry)} ↗</a>` : '';
+      tip.innerHTML = `<div class="pill-tooltip-name">${iconHtml}${esc(entry.name)}</div><p class="pill-tooltip-effect">${esc(entry.effect)}</p>${blessedHtml}${linkHtml}`;
+      tip.hidden = false;
+      tip.setAttribute('data-interactive', '');
+      pill.setAttribute('aria-describedby', 'pill-tip');
+      positionTip(pill);
+    });
+  }
+
+  function positionTip(pill: HTMLElement) {
+    const r = pill.getBoundingClientRect();
+    const tw = tip.offsetWidth;
+    const th = tip.offsetHeight;
+    const gap = 8;
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    let left = r.left + r.width / 2 - tw / 2;
+    let top = r.bottom + gap;
+    if (top + th > vh - 8) top = r.top - th - gap;
+    left = Math.max(8, Math.min(left, vw - tw - 8));
+    tip.style.left = left + 'px';
+    tip.style.top = top + 'px';
+  }
+
+  function hideTip(pill: HTMLElement | null) {
+    if (hideTimer) clearTimeout(hideTimer);
+    tip.hidden = true;
+    tip.removeAttribute('data-interactive');
+    if (pill) pill.removeAttribute('aria-describedby');
+    activeEl = null;
+  }
+
+  function scheduleHide(pill: HTMLElement | null) {
+    if (hideTimer) clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => hideTip(pill), 150);
+  }
+
+  document.addEventListener('pointerover', e => {
+    const pill = (e.target as HTMLElement).closest('.pill') as HTMLElement | null;
+    if (!pill || pill === activeEl) return;
+    if (showTimer) clearTimeout(showTimer);
+    activeEl = pill;
+    showTimer = setTimeout(() => showTip(pill), 120);
+  });
+
+  document.addEventListener('pointerout', e => {
+    const pill = (e.target as HTMLElement).closest('.pill') as HTMLElement | null;
+    if (!pill) return;
+    if (showTimer) clearTimeout(showTimer);
+    if (!tip.contains(e.relatedTarget as Node)) scheduleHide(pill);
+  });
+
+  tip.addEventListener('pointerenter', () => { if (hideTimer) clearTimeout(hideTimer); });
+  tip.addEventListener('pointerleave', () => scheduleHide(activeEl));
+
+  document.addEventListener('focusin', e => {
+    const pill = (e.target as HTMLElement).closest('.pill') as HTMLElement | null;
+    if (!pill) return;
+    activeEl = pill;
+    showTip(pill);
+  });
+
+  document.addEventListener('focusout', e => {
+    const pill = (e.target as HTMLElement).closest('.pill') as HTMLElement | null;
+    if (pill) hideTip(pill);
+  });
+
+  document.addEventListener('scroll', () => hideTip(activeEl), true);
+  window.addEventListener('resize', () => hideTip(activeEl));
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && activeEl) { hideTip(activeEl); activeEl = null; }
+  });
+
+  document.querySelectorAll('.pill').forEach(pill => {
+    if (!pill.hasAttribute('tabindex')) pill.setAttribute('tabindex', '0');
+  });
+}
+
+initTheme();
+initMobileToggle();
+initActiveLink();
+initPillTooltips();
+</script>
+</body>
+</html>

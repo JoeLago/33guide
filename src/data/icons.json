@@ -1,0 +1,884 @@
+{
+  "all-seeing-saucer-a-s-s": {
+    "path": "assets/icons/relics/all-seeing-saucer-a-s-s.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "altruist-jawbone": {
+    "path": "assets/icons/relics/altruist-jawbone.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "anointed-chalice": {
+    "path": "assets/icons/relics/anointed-chalice.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "astute-erudite": {
+    "path": "assets/icons/perks/astute-erudite.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "auto-recall": {
+    "path": "assets/icons/upgrades/auto-recall.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "bark-of-erudition": {
+    "path": "assets/icons/relics/bark-of-erudition.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "bark-of-erudition-fake": {
+    "path": "assets/icons/relics/bark-of-erudition-fake.png",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "blessed-chains": {
+    "path": "assets/icons/relics/blessed-chains.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "blissful-farewell": {
+    "path": "assets/icons/perks/blissful-farewell.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "bloodstained-sole": {
+    "path": "assets/icons/relics/bloodstained-sole.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "bloodstained-sole-fake": {
+    "path": "assets/icons/relics/bloodstained-sole-fake.png",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "bold-revolt": {
+    "path": "assets/icons/perks/bold-revolt.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "bouncing-orbs": {
+    "path": "assets/icons/upgrades/bouncing-orbs.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "bow-coop": {
+    "path": "assets/icons/coop/bow-coop.png",
+    "category": "coop",
+    "w": 189,
+    "h": 123
+  },
+  "bow-hero": {
+    "path": "assets/icons/weapons/bow-hero.png",
+    "category": "weapons",
+    "w": 640,
+    "h": 360
+  },
+  "bow-of-hope": {
+    "path": "assets/icons/weapons/bow-of-hope.jpg",
+    "category": "weapons",
+    "w": 20,
+    "h": 20
+  },
+  "braid-of-dis": {
+    "path": "assets/icons/relics/braid-of-dis.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "braid-of-dis-fake": {
+    "path": "assets/icons/relics/braid-of-dis-fake.png",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "burning-femur": {
+    "path": "assets/icons/relics/burning-femur.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "burnt-cincture": {
+    "path": "assets/icons/relics/burnt-cincture.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "celestial-green-feather": {
+    "path": "assets/icons/relics/celestial-green-feather.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "charred-book-of-the-gospel": {
+    "path": "assets/icons/relics/charred-book-of-the-gospel.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "cheerful-camaraderie": {
+    "path": "assets/icons/perks/cheerful-camaraderie.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "clerical-cilice": {
+    "path": "assets/icons/relics/clerical-cilice.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "cocytus-abiding-ice": {
+    "path": "assets/icons/relics/cocytus-abiding-ice.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "coffer-of-the-devoted": {
+    "path": "assets/icons/relics/coffer-of-the-devoted.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "congealed-blood-of-saints": {
+    "path": "assets/icons/relics/congealed-blood-of-saints.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "cosmic-rebirth": {
+    "path": "assets/icons/perks/cosmic-rebirth.jpg",
+    "category": "perks",
+    "w": 20,
+    "h": 20
+  },
+  "cracked-rosary-beads": {
+    "path": "assets/icons/relics/cracked-rosary-beads.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "crippling-hits": {
+    "path": "assets/icons/upgrades/crippling-hits.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "cracked-rosary-beads-fake": {
+    "path": "assets/icons/relics/cracked-rosary-beads-fake.png",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "crossbows-coop": {
+    "path": "assets/icons/coop/crossbows-coop.png",
+    "category": "coop",
+    "w": 69,
+    "h": 151
+  },
+  "crossbows-hero": {
+    "path": "assets/icons/weapons/crossbows-hero.png",
+    "category": "weapons",
+    "w": 640,
+    "h": 360
+  },
+  "cruel-harpy-feather": {
+    "path": "assets/icons/relics/cruel-harpy-feather.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "daggers-coop": {
+    "path": "assets/icons/coop/daggers-coop.png",
+    "category": "coop",
+    "w": 150,
+    "h": 69
+  },
+  "daggers-hero": {
+    "path": "assets/icons/weapons/daggers-hero.png",
+    "category": "weapons",
+    "w": 640,
+    "h": 360
+  },
+  "defiant-denial": {
+    "path": "assets/icons/perks/defiant-denial.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "defiled-crucifixion-nails": {
+    "path": "assets/icons/relics/defiled-crucifixion-nails.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "deliberation": {
+    "path": "assets/icons/upgrades/deliberation.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "desecrated-paten": {
+    "path": "assets/icons/relics/desecrated-paten.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "dirty-votive-candle": {
+    "path": "assets/icons/relics/dirty-votive-candle.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "dirty-votive-candle-fake": {
+    "path": "assets/icons/relics/dirty-votive-candle-fake.png",
+    "category": "relics",
+    "w": 100,
+    "h": 100
+  },
+  "double-shot": {
+    "path": "assets/icons/upgrades/double-shot.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "eagle-talon": {
+    "path": "assets/icons/relics/eagle-talon.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "echoing-orbs": {
+    "path": "assets/icons/upgrades/echoing-orbs.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "elegy-of-plethora": {
+    "path": "assets/icons/perks/elegy-of-plethora.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "emerald-of-princes": {
+    "path": "assets/icons/relics/emerald-of-princes.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "empyreal-deceptiveness": {
+    "path": "assets/icons/perks/empyreal-deceptiveness.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "empyreal-light": {
+    "path": "assets/icons/relics/empyreal-light.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "exorbitant": {
+    "path": "assets/icons/ordeals/exorbitant.png",
+    "category": "ordeals",
+    "w": 145,
+    "h": 170
+  },
+  "explosive-brands": {
+    "path": "assets/icons/upgrades/explosive-brands.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "exposed": {
+    "path": "assets/icons/ordeals/exposed.png",
+    "category": "ordeals",
+    "w": 145,
+    "h": 170
+  },
+  "feeble": {
+    "path": "assets/icons/ordeals/feeble.png",
+    "category": "ordeals",
+    "w": 145,
+    "h": 170
+  },
+  "final-justice": {
+    "path": "assets/icons/upgrades/final-justice.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "finger-of-the-doubtful": {
+    "path": "assets/icons/relics/finger-of-the-doubtful.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "famished": {
+    "path": "assets/icons/upgrades/famished.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "feast-of-flesh": {
+    "path": "assets/icons/upgrades/feast-of-flesh.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "flurry-of-bolts": {
+    "path": "assets/icons/upgrades/flurry-of-bolts.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "fools-fate": {
+    "path": "assets/icons/perks/fools-fate.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "fortitude-of-heart": {
+    "path": "assets/icons/perks/fortitude-of-heart.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "frail": {
+    "path": "assets/icons/ordeals/frail.png",
+    "category": "ordeals",
+    "w": 145,
+    "h": 170
+  },
+  "frenzy": {
+    "path": "assets/icons/upgrades/frenzy.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "fruit-of-the-insatiable": {
+    "path": "assets/icons/relics/fruit-of-the-insatiable.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "fruit-of-the-insatiable-fake": {
+    "path": "assets/icons/relics/fruit-of-the-insatiable-fake.png",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "glaive-coop": {
+    "path": "assets/icons/coop/glaive-coop.png",
+    "category": "coop",
+    "w": 231,
+    "h": 69
+  },
+  "glaive-hero": {
+    "path": "assets/icons/weapons/glaive-hero.png",
+    "category": "weapons",
+    "w": 640,
+    "h": 360
+  },
+  "greedier": {
+    "path": "assets/icons/upgrades/greedier.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "guiding-light": {
+    "path": "assets/icons/perks/guiding-light.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "hampered": {
+    "path": "assets/icons/ordeals/hampered.png",
+    "category": "ordeals",
+    "w": 145,
+    "h": 170
+  },
+  "holy-book-of-hymns": {
+    "path": "assets/icons/relics/holy-book-of-hymns.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "immeasurable-love": {
+    "path": "assets/icons/perks/immeasurable-love.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "incurable": {
+    "path": "assets/icons/ordeals/incurable.png",
+    "category": "ordeals",
+    "w": 145,
+    "h": 170
+  },
+  "indiscriminate": {
+    "path": "assets/icons/upgrades/indiscriminate.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "inner-justice": {
+    "path": "assets/icons/upgrades/inner-justice.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "lamp-of-purifying-flames": {
+    "path": "assets/icons/relics/lamp-of-purifying-flames.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "lethargy": {
+    "path": "assets/icons/upgrades/lethargy.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "light-bringer": {
+    "path": "assets/icons/perks/light-bringer.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "lovers-skull": {
+    "path": "assets/icons/relics/lovers-skull.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "massive-bolts": {
+    "path": "assets/icons/upgrades/massive-bolts.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "master-of-flow": {
+    "path": "assets/icons/upgrades/master-of-flow.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "measured": {
+    "path": "assets/icons/upgrades/measured.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "melted-bishop-ring": {
+    "path": "assets/icons/relics/melted-bishop-ring.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "merciful-contemplation": {
+    "path": "assets/icons/perks/merciful-contemplation.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "mighty-slash": {
+    "path": "assets/icons/upgrades/mighty-slash.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "mobile-light": {
+    "path": "assets/icons/upgrades/mobile-light.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "mortal-slashes": {
+    "path": "assets/icons/upgrades/mortal-slashes.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "morphology-of-justice": {
+    "path": "assets/icons/perks/morphology-of-justice.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "muddy-apostle-medal": {
+    "path": "assets/icons/relics/muddy-apostle-medal.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "mummified-sacred-heart": {
+    "path": "assets/icons/relics/mummified-sacred-heart.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "one-motion": {
+    "path": "assets/icons/upgrades/one-motion.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "outburst": {
+    "path": "assets/icons/upgrades/outburst.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "oxidized-flagon": {
+    "path": "assets/icons/relics/oxidized-flagon.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "patience": {
+    "path": "assets/icons/upgrades/patience.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "piercing-arrows": {
+    "path": "assets/icons/upgrades/piercing-arrows.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "pious-blindfold": {
+    "path": "assets/icons/relics/pious-blindfold.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "polished-monstrance": {
+    "path": "assets/icons/relics/polished-monstrance.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "preserved-heretic-head": {
+    "path": "assets/icons/relics/preserved-heretic-head.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "quick-shot": {
+    "path": "assets/icons/upgrades/quick-shot.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "quick-strike": {
+    "path": "assets/icons/upgrades/quick-strike.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "rejuvenated-vigor": {
+    "path": "assets/icons/perks/rejuvenated-vigor.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "reliquary-hand": {
+    "path": "assets/icons/relics/reliquary-hand.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "renewal-of-dust": {
+    "path": "assets/icons/perks/renewal-of-dust.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "restrained": {
+    "path": "assets/icons/ordeals/restrained.png",
+    "category": "ordeals",
+    "w": 145,
+    "h": 170
+  },
+  "riposte": {
+    "path": "assets/icons/upgrades/riposte.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 21
+  },
+  "rites-of-passage": {
+    "path": "assets/icons/perks/rites-of-passage.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "rope-of-treachery": {
+    "path": "assets/icons/relics/rope-of-treachery.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "sacrosant-vernicle": {
+    "path": "assets/icons/relics/sacrosant-vernicle.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "scattering-orbs": {
+    "path": "assets/icons/upgrades/scattering-orbs.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "scourge-of-omnipotence": {
+    "path": "assets/icons/perks/scourge-of-omnipotence.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "seraphic-tear": {
+    "path": "assets/icons/relics/seraphic-tear.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "shattered": {
+    "path": "assets/icons/ordeals/shattered.png",
+    "category": "ordeals",
+    "w": 145,
+    "h": 170
+  },
+  "shockwave": {
+    "path": "assets/icons/upgrades/shockwave.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "showtime": {
+    "path": "assets/icons/upgrades/showtime.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "shrunken-papal-heart": {
+    "path": "assets/icons/relics/shrunken-papal-heart.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "skipping-bolts": {
+    "path": "assets/icons/upgrades/skipping-bolts.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "slingshot": {
+    "path": "assets/icons/upgrades/slingshot.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "small-quiver": {
+    "path": "assets/icons/upgrades/small-quiver.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "soaring-grace": {
+    "path": "assets/icons/perks/soaring-grace.jpg",
+    "category": "perks",
+    "w": 83,
+    "h": 83
+  },
+  "soiled-purificator": {
+    "path": "assets/icons/relics/soiled-purificator.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "spin-slash": {
+    "path": "assets/icons/upgrades/spin-slash.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "stabs": {
+    "path": "assets/icons/upgrades/stabs.png",
+    "category": "upgrades",
+    "w": 21,
+    "h": 24
+  },
+  "staff-coop": {
+    "path": "assets/icons/coop/staff-coop.png",
+    "category": "coop",
+    "w": 129,
+    "h": 179
+  },
+  "stained-burial-shroud": {
+    "path": "assets/icons/relics/stained-burial-shroud.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "status-armor-break": {
+    "path": "assets/icons/status/status-armor-break.png",
+    "category": "status",
+    "w": 847,
+    "h": 103
+  },
+  "status-exposed": {
+    "path": "assets/icons/status/status-exposed.jpg",
+    "category": "status",
+    "w": 20,
+    "h": 20
+  },
+  "status-marked": {
+    "path": "assets/icons/status/status-marked.png",
+    "category": "status",
+    "w": 20,
+    "h": 23
+  },
+  "status-vulnerable": {
+    "path": "assets/icons/status/status-vulnerable.jpg",
+    "category": "status",
+    "w": 20,
+    "h": 20
+  },
+  "status-weak": {
+    "path": "assets/icons/status/status-weak.jpg",
+    "category": "status",
+    "w": 20,
+    "h": 20
+  },
+  "steadfast-power": {
+    "path": "assets/icons/upgrades/steadfast-power.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "string-of-jibril": {
+    "path": "assets/icons/relics/string-of-jibril.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "string-of-jibril-fake": {
+    "path": "assets/icons/relics/string-of-jibril-fake.png",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "suffering": {
+    "path": "assets/icons/ordeals/suffering.png",
+    "category": "ordeals",
+    "w": 145,
+    "h": 170
+  },
+  "sword-coop": {
+    "path": "assets/icons/coop/sword-coop.png",
+    "category": "coop",
+    "w": 139,
+    "h": 179
+  },
+  "sword-hero": {
+    "path": "assets/icons/weapons/sword-hero.png",
+    "category": "weapons",
+    "w": 640,
+    "h": 360
+  },
+  "thorn-of-the-martyr": {
+    "path": "assets/icons/relics/thorn-of-the-martyr.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "thorn-of-the-martyr-fake": {
+    "path": "assets/icons/relics/thorn-of-the-martyr-fake.png",
+    "category": "relics",
+    "w": 100,
+    "h": 100
+  },
+  "thousand-cuts": {
+    "path": "assets/icons/upgrades/thousand-cuts.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "torpor-wave": {
+    "path": "assets/icons/upgrades/torpor-wave.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "tusk-of-ciriatto": {
+    "path": "assets/icons/relics/tusk-of-ciriatto.jpg",
+    "category": "relics",
+    "w": 20,
+    "h": 20
+  },
+  "unceasing-blows": {
+    "path": "assets/icons/upgrades/unceasing-blows.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "unlucky": {
+    "path": "assets/icons/ordeals/unlucky.png",
+    "category": "ordeals",
+    "w": 145,
+    "h": 170
+  },
+  "vengeful-slashes": {
+    "path": "assets/icons/upgrades/vengeful-slashes.png",
+    "category": "upgrades",
+    "w": 20,
+    "h": 23
+  },
+  "wax-death-mask": {
+    "path": "assets/icons/relics/wax-death-mask.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  },
+  "weak": {
+    "path": "assets/icons/ordeals/weak.png",
+    "category": "ordeals",
+    "w": 145,
+    "h": 170
+  },
+  "worn-scapular": {
+    "path": "assets/icons/relics/worn-scapular.jpg",
+    "category": "relics",
+    "w": 20,
+    "h": 20
+  },
+  "worn-scapular-fake": {
+    "path": "assets/icons/relics/worn-scapular-fake.png",
+    "category": "relics",
+    "w": 100,
+    "h": 100
+  },
+  "yawning-maw-of-truth": {
+    "path": "assets/icons/relics/yawning-maw-of-truth.jpg",
+    "category": "relics",
+    "w": 49,
+    "h": 49
+  }
+}

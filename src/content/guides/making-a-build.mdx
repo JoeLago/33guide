@@ -1,0 +1,63 @@
+---
+title: Making a Build
+lead: How to combine perks, relics, stats, and upgrades into a coherent build.
+---
+import Pill from '../../components/Pill.astro';
+
+## Build archetypes
+
+Once you understand the damage formula, perks, and relics, you can sort builds into roughly three archetypes — each maps to a region of the decision diagram in the source doc:
+
+- **Heavy Attack DPS** — upper-right part of the diagram.
+- **Light Attack DPS / Coop Power Spam** — middle-right.
+- **Light Attack Coop Power Spam / Support** — lower part.
+
+This split exists because Coop Power generation scales on hit count — so high attack-speed light-attack builds charge Coop Power fastest.
+
+These aren't exclusive:
+
+- Both +% damage-on-elites relics can be used by light-attack builds — they just fit a bit better here since heavy-attack DPS takes elites' Armor down more easily.
+- Light-attack DPS can absolutely make use of the other status-effect relics — but Exposure is the only one it can build, so prioritize <Pill slug="sacrosant-vernicle" />.
+- Heavy-attack builds can also lean supportive and make use of empathy regardless of their own Coop Power.
+- <Pill slug="worn-scapular" /> is a defensive option too, on top of letting you proc Dash Combos more often.
+
+**Don't read the decision diagram in priority order.** It's about picking among the available perks and relics, not a checklist. Exception: **Atk Multiplier** matters only if you'll get other sources of additional damage too — conversely, it's quite important if you have many.
+
+**"Support"** means different things: staggering/immobilizing, using support-flavored relics and perks, or helping others charge their Coop Power — in which case you'll aim for empathy and <Pill slug="dirty-votive-candle" />, and you'll also want to spam your own Coop Power with a quick light-attack build. Using other players' Coop Powers requires mobility (same for <Pill slug="cheerful-camaraderie" />).
+
+## Stats priority
+
+- **Damage only:** Attack > Empathy > Vitality.
+- **Coop Power + damage:** Empathy > Attack > Vitality.
+- **Coop Power + support:** Empathy > Vitality = Attack (depends if you go <Pill slug="seraphic-tear" /> or survivability).
+
+For mixed builds (some supports that still hit hard) go Empathy first, then whatever fits. If you struggle to survive, invest in vitality in between.
+
+## Example: Coop Power + Damage Bow
+
+Build: <Pill slug="auto-recall" /> + <Pill slug="quick-shot" /> — quick attack speed and high costrike capability, making <Pill slug="muddy-apostle-medal" /> more effective and crit maintainers less important.
+
+Goal: charge and amplify Coop Power. Use <Pill slug="astute-erudite" /> for quicker charge, <Pill slug="empyreal-deceptiveness" /> for +100% crit damage (great on the boss), <Pill slug="renewal-of-dust" /> to max both empathy and attack, then <Pill slug="soaring-grace" /> for a longer arrow volley. Last slot: <Pill slug="rejuvenated-vigor" /> (we want lots of rare relics).
+
+Relics: <Pill slug="dirty-votive-candle" /> + <Pill slug="bloodstained-sole" /> for Coop Power, <Pill slug="sacrosant-vernicle" /> for status effect (bow Coop Power can apply Exposed). <Pill slug="soiled-purificator" /> is also good; <Pill slug="yawning-maw-of-truth" /> is worse here since the Coop Power cannot costrike.
+
+For damage, prefer high-% relics since few slots are reserved for it — <Pill slug="cocytus-abiding-ice" /> and <Pill slug="lovers-skull" /> are the best, especially when paired with status effects. One of them is enough to keep room for <Pill slug="string-of-jibril" /> and/or <Pill slug="celestial-green-feather" />.
+
+During the run: keep <Pill slug="bark-of-erudition" /> early but maybe reroll it at boss if teammates are breaking elite Armor; keep <Pill slug="cracked-rosary-beads" /> for comfort. Lower-impact damage relics get rerolled later if you need better same-rarity rolls, get bigger damage sources, or have enough bones to ensure a useful roll. If you ever get an epic, roll until <Pill slug="tusk-of-ciriatto" /> / <Pill slug="mummified-sacred-heart" /> / <Pill slug="lovers-skull" /> — even <Pill slug="braid-of-dis" />.
+
+## Example: Full Heavy Damage Staff
+
+Build: <Pill slug="echoing-orbs" /> + <Pill slug="bouncing-orbs" /> — heavy attack DPS that takes advantage of Dash Combos. Instantly take <Pill slug="cosmic-rebirth" /> for DC damage and hope for <Pill slug="worn-scapular" /> to shorten DC recharge (effectively more attack speed, plus survivability). Naturally take <Pill slug="empyreal-deceptiveness" /> for high crit damage.
+
+Other perk picks:
+
+- <Pill slug="renewal-of-dust" /> — great to max empathy after attack, gives some +% on costrikes and keeps room for <Pill slug="celestial-green-feather" /> on rolls.
+- <Pill slug="guiding-light" /> — okay for breaking armor slightly faster. <Pill slug="fools-fate" /> is okay too.
+- <Pill slug="rejuvenated-vigor" /> or <Pill slug="blissful-farewell" />, but some common relics matter too.
+- <Pill slug="cheerful-camaraderie" /> — but sword users with instant shield handle the instant-revive better.
+
+Relics: <Pill slug="string-of-jibril" /> (and <Pill slug="celestial-green-feather" /> if max emp) since it's a full damage build with lots of additional damage sources, <Pill slug="cracked-rosary-beads" /> to protect your costrike counter, and <Pill slug="sacrosant-vernicle" /> or <Pill slug="soiled-purificator" /> for team-shared status damage.
+
+Reroll once you know you won't get better, or when you have too many relics and one is lying on the ground — this shrinks the rerollable pool and raises the chance of getting the relic you actually want.
+
+For damage relics, 3–5 "reserved" slots depending on rolls. <Pill slug="cocytus-abiding-ice" /> / <Pill slug="lovers-skull" /> preferred; <Pill slug="altruist-jawbone" /> okay. Keep lower or conditional damage relics until later if better ones appear. Alternatively, <Pill slug="bark-of-erudition" /> / <Pill slug="pious-blindfold" /> make a good elite killer.

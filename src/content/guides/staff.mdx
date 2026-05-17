@@ -1,0 +1,167 @@
+---
+title: Staff of Sloth
+lead: Ranged support. Torpor slows enemies and the Coop Power immobilizes a wide rectangular area.
+---
+import Pill from '../../components/Pill.astro';
+import Build from '../../components/Build.astro';
+import Coop from '../../components/Coop.astro';
+
+## First look at staff
+
+Staff is a highly supportive weapon, able to slow or immobilize groups of enemies, while being able to output a good amount of damage (and also lots of costrikes).
+
+<Coop weapon="staff" />
+
+Staff coop power creates a huge rectangular area of purple gas that lasts 16s long at max level (duration scaling on empathy), immobilizing enemies within it (it also deals like 10 damage on activation and interrupts enemies within it at the time). Paired with torpor that reduces the movement speed of enemies for up to 10 seconds (depending on your sloth gauge), staff has a great control of the field and provides great survivability to the team, a well placed power during ascension can guarantee its quick and safe success.
+
+**Base stats**
+
+- Attack speed: 2 orbs per sec
+- Base damage: 73.125 (x0.75 ratio)
+- Charged attack damage: 102.375 x2 (x1.05 ratio)
+- Charging time: 1s (0.55s charge, 0.45s animation)
+- Torpor damage: 126.75 (x1.3 ratio)
+
+## Staff upgrades
+
+<div data-render="upgrades" data-weapon="staff"></div>
+
+## Tips and tricks
+
+Staff light attacks without them being upgraded (i.e. without <Pill slug="scattering-orbs" />) are… Terrible. Charged attacks fire 2 orbs per second which is the same rate as light attacks, but with twice costrikes (since heavy damage generated 2 costrikes to the counter), and damage is also higher than light attack. You may try to cast charged attacks as much as you can, except if you play with <Pill slug="scattering-orbs" /> or need the extra mobility that light attack offers over charged attacks.
+
+Torpor cast being almost instant, it is always good to use it sometimes to provide more support, as long as it doesn't break any combo (as in <Pill slug="scattering-orbs" />). It's also a good tool to save your costrike counter quickly.
+
+## Builds
+
+Click a build name to expand its breakdown.
+
+<Build id="echoing-orbs-bouncing-orbs" name="Minelayer" upgrades={["echoing-orbs", "bouncing-orbs"]} desc="Heavy attack with Dash Combos and Worn Scapular — requires anticipation.">
+
+BOMBS EVERYWHERE!! Great dps with heavy damage only, really good costrike rate, all of this in aoe damage, at the cost of anticipation.
+
+Torpor will still help you here to maintain enemies in place and hit them more easily. If you struggle to hit with mines, you can refer to the next build. Torpor may also save your costrike counter, since hitting with mines takes around 2 seconds.
+
+This is also a build that can be played around Dash Combos and <Pill slug="cosmic-rebirth" />, along with <Pill slug="worn-scapular" /> for attack speed increase.
+
+<img class="demo-gif" src="/assets/gifs/staff-minelayer.gif" alt="Minelayer build demo" loading="lazy" />
+
+### Build info
+
+| | Base | DCs | DCs w/ <Pill slug="worn-scapular" /> |
+|---|---|---|---|
+| Attack speed | 1 charged per sec | 0.8 charged per sec | 1.15 charged per sec |
+| Damage | 477.6 | 656.7 | 656.7 |
+| Core dps | 477.6 | 525.4 | 755.2 |
+| Costrike per second | 4 | 3.2 | 4.6 |
+| Costrike per second in counter | 8 | 6.4 | 9.2 |
+
+- **Cleaving capacity:** Medium
+- **Difficulty rating:** Hard
+- **Best fitting build archetype:** Full Damage
+
+### Pros
+
+- Good damage
+- Fast costrike buildup (slower vs single target since all mines won't hit)
+- Full heavy damage
+
+### Cons
+
+- Requires anticipation to place mines + some enemies really are a pain to hit
+- Losing your costrike counter is pretty easy (Beads is a good idea here)
+- Mines are quite scattering, it is hard to hit a single target with all 4 mines + firing distance is fixed
+
+</Build>
+
+<Build id="echoing-orbs-torpor-wave" name="Stay in my Mines" upgrades={["echoing-orbs", "torpor-wave"]} desc="Variant with more AoE and easier mine hits.">
+
+Variant of the previous build using <Pill slug="torpor-wave" /> in order to hit more enemies with Torpor and to hit them more consistently with echo orbs (Torpor will also do honest damage too!). Note that you can also replace <Pill slug="torpor-wave" /> with <Pill slug="lethargy" /> so that Torpor almost immobilizes enemies.
+
+In dps calculation, Torpor is used every two heavy attacks without attack speed loss since it can be used to cancel a part of the heavy animation. However when using <Pill slug="worn-scapular" />, it will not be taken into account since it would change attack speed (still keep in mind that you can use it every 3 heavy attacks!).
+
+### Build info
+
+| | Base | DCs | DCs w/ <Pill slug="worn-scapular" /> |
+|---|---|---|---|
+| Attack speed | 1 charged per sec | 0.8 charged per sec | 1.15 charged per sec |
+| Damage | 453.3 | 632.4 | 537.3 |
+| Core dps | 453.3 | 505.9 | 617.9 |
+| Costrike per second | 2.5 | 2 | 2.3 |
+| Costrike per second in counter | 4.5 | 3.6 | 4.6 |
+
+- **Cleaving capacity:** High
+- **Difficulty rating:** Medium
+- **Best fitting build archetype:** Full Damage
+
+### Pros
+
+- Good damage
+- Easier time hitting targets with mines
+- Really good cleaving capacity with wave
+
+### Cons
+
+- Losing your costrike counter is pretty easy (Beads is a good idea here)
+- Less costrikes than previous build
+- Mixed types of damage
+
+</Build>
+
+<Build id="scattered-orbs-bouncing-orbs" name="It's Raining Balls" upgrades={["scattering-orbs", "bouncing-orbs"]} desc="Highest hit-rate light-attack build. Static.">
+
+Welcome to the highest costrike rate build of the game! Make these orbs rain on your enemies! Can take perfect advantage from costrike based relics such as <Pill slug="preserved-heretic-head" /> or <Pill slug="muddy-apostle-medal" /> (yet spamming staff coop power isn't really useful…).
+
+Less funnily, this build requires you to be perfectly immobile for as long as you can to hold your <Pill slug="scattering-orbs" />, making it a bad option for supporting.
+
+### Build info (3s ramp on continuous attacks + large hitbox)
+
+- **Attack speed:** 4 up to 16 orbs per second (4 bouncing orbs at 2 per sec rate)
+- **Damage:** up to 73.125 + 24.375 x 7 per light attack
+- **Core dps:** 195 up to 487.5
+- **Costrike per second:** 4 up to ~10 (single target Costrike cap)
+- **Cleaving capacity:** High
+- **Difficulty rating:** Easy
+- **Best fitting build archetype:** Coop Power + Damage / Full Damage
+
+### Pros
+
+- Literal god of rain
+- Huge costrike rate, easy x999 + 100% costrike uptime for others
+- Best build for <Pill slug="preserved-heretic-head" />
+
+### Cons
+
+- Requires to be static
+- All orbs may not hit a single target, resulting in slightly less effective dps
+
+</Build>
+
+<Build id="torpor-wave-lethargy" name="Medusa" upgrades={["torpor-wave", "lethargy"]} desc="Mixed support + AoE damage with immobilization.">
+
+Who needs staff coop power when your wave does the same thing? Here you can either use 4x light attacks then torpor, or 2x heavy attacks then torpor. Heavy offers more charge in some situations since it's an aoe and also more damage, while light offers more mobility and are the same type of damage as your wave (good if you have +50% light damage relic). This little combo will be enough to hold your enemies in place since torpor status' stacks, and you may charge your torpor quicker than they lose it.
+
+If you want more costrikes and damage, you can replace <Pill slug="lethargy" /> with <Pill slug="bouncing-orbs" />, this will also allow you to get more strikes to charge your torpor quicker and be able to slow even more enemies.
+
+### Build info
+
+- **Attack speed:** 2.5 hits per sec
+- **Damage:** 190.1 torpor wave
+- **Core dps:** 241.3 (light) | 299.8 (heavy)
+- **Costrike per second:** 2.5 (4.5 in counter for heavy attacks)
+- **Cleaving capacity:** High
+- **Difficulty rating:** Easy
+- **Best fitting build archetype:** Mixed, aoe damage + support with Lethargy and coop power
+
+### Pros
+
+- Great support by constantly immobilizing enemies around
+- Still correct damage for the support it offers
+- Can go full light damage
+
+### Cons
+
+- Quite low costrike count
+- No input buffer for torpor, annoying to play with heavy attacks
+
+</Build>

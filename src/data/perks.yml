@@ -1,0 +1,80 @@
+- slug: renewal-of-dust
+  name: Renewal of Dust
+  effect: Gain 75% more dust.
+  note: Lets you max out at least 2 stats (usually attack and empathy), especially in short runs. Maxing all stats is particularly interesting when going for the trinity of stat-converter relics.
+- slug: empyreal-deceptiveness
+  name: Empyreal Deceptiveness
+  effect: Deal +100% additional critical damage when co-strike counter is over 30.
+  note: Huge additional damage increase. Already high as long as you can maintain or build up the costrike counter, leaving room for other relics besides damage ones.
+- slug: cosmic-rebirth
+  name: Cosmic Rebirth
+  effect: Dash Combos deal +30% damage.
+  note: Best perk for builds that make use of Dash Combos (slow-attack builds), raising the DC multiplier from ×1.2 to ×1.5.
+- slug: astute-erudite
+  name: Astute Erudite
+  effect: Coop Power charges 60% quicker.
+  note: Great for builds that revolve around Coop Power usage (quick-attack builds).
+- slug: soaring-grace
+  name: Soaring Grace
+  effect: Increases Coop Power effectiveness by +30%.
+  note: Pretty strong, especially on Coop-Power-focused builds. Enhances every Coop Power you participate in, not just your own.
+- slug: fools-fate
+  name: Fool's Fate
+  effect: Costrikes deal +15% additional damage.
+  note: Okay amount of additional damage. Take it if you have a slot left on a full-damage build.
+- slug: guiding-light
+  name: Guiding Light
+  effect: Deal +25% additional heavy damage to armor.
+  note: Correct damage, but specific. If your build can break armor in a single hit this is pretty good — damage to Armor overflows onto enemy HP.
+- slug: blissful-farewell
+  name: Blissful Farewell
+  effect: Gain +20% chance to increase the rarity of a relic when rerolling.
+  note: Useful for more high-rarity relics at the price of bones. If targeting specific relics, you may need a lot of bones — rerolling cost doubles each time.
+- slug: rejuvenated-vigor
+  name: Rejuvenated Vigor
+  effect: Increase rare relic chance from 36% to 54%, epic from 4% to 6%.
+  note: If the relics you aim for are mostly rare ones, consider equipping this.
+- slug: cheerful-camaraderie
+  name: Cheerful Camaraderie
+  effect: Instantly revive other players, additionally filling your Coop Power entirely.
+  note: Best support perk. Can save players in dangerous spots (secret chambers, ascensions, post-failed-mechanic boss). Also lets you use Coop Power a bit more, but situationally.
+- slug: bold-revolt
+  name: Bold Revolt
+  effect: Double the heal provided by Shrines.
+  note: Also doubles healing to players around the shrine you use. Good support / survivability — though players don't often wait around shrines.
+- slug: immeasurable-love
+  name: Immeasurable Love
+  effect: Regen 1% of max HP every 5 seconds, up to 40% of max HP.
+  note: Best survivability perk, scales with max HP.
+- slug: fortitude-of-heart
+  name: Fortitude of Heart
+  effect: Max Health is increased by +50 HP.
+  note: Max health. This is just max health.
+- slug: light-bringer
+  name: Light Bringer
+  effect: Start with 125 bones and get more bones in Urns.
+  note: Okay if you'll need a lot of bones in the run, for rerolling or daggers' Coop Power. Number of extra urn bones is unclear — roughly +5 per urn.
+- slug: rites-of-passage
+  name: Rites of Passage
+  effect: +100% additional damage on Lucidos, and indicators for nearby Lucidos.
+  note: Why would you kill these… Counts as more bones/shards/keys/dust. Elite Lucidos give plenty of resources but need motivated teammates.
+- slug: morphology-of-justice
+  name: Morphology of Justice
+  effect: Gain up to +20% additional damage depending on how full your dust is.
+  note: Good damage increase at the start of a run when you have no relics — unfortunately that's also when you're emptying dust for stats.
+- slug: merciful-contemplation
+  name: Merciful Contemplation
+  effect: Receive a relic once after killing 30 monsters.
+  note: A perk for a relic. Slight boost early; insurance against ending the run relic-light.
+- slug: elegy-of-plethora
+  name: Elegy of Plethora
+  effect: Deal +125% additional damage for 5 minutes upon entering a map.
+  note: One-time. Good for joining already-started runs to grab dust and keys fast — but you can't know when you're joining. Please don't use it to solo-rush a chamber.
+- slug: defiant-denial
+  name: Defiant Denial
+  effect: Start the run with a shield of 150.
+  note: One-time. Okay if you struggle to survive early. Joining a herd of other players also spreads aggro.
+- slug: scourge-of-omnipotence
+  name: Scourge of Omnipotence
+  effect: Find more Eternal Shards.
+  note: Leaving so soon? Not helping much. Effectively only ~+25% or fewer shards — takes runs to become shards-positive after upgrading. Might be better for farming shards if you have shards-on-kill altar — needs testing.

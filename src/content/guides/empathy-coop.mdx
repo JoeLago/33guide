@@ -1,0 +1,109 @@
+---
+title: Empathy & Coop Powers
+lead: How Empathy scales Coop Power effectiveness and how the Coop Power gauge charges.
+---
+import Pill from '../../components/Pill.astro';
+
+## Empathy effect on Coop Powers
+
+In addition to giving some damage on costrikes, the main point of Empathy is to increase the effectiveness of Coop Powers. When a Coop Power is used, the game sums the Empathy of every participating player, and each Empathy point adds +4% effectiveness.
+
+Two things empower Coop Powers further:
+
+- <Pill slug="dirty-votive-candle" /> — additional +2% effectiveness per Empathy point the holder has (+3% blessed).
+- <Pill slug="soaring-grace" /> — additional +30% to every Coop Power the user participates in (not only their own).
+
+That means only high-empathy players (using <Pill slug="soaring-grace" />) should generally participate in damage-dealing Coop Powers. Coop Powers with more player slots scale more than 2-slot ones.
+
+### Scaling example
+
+Bow of Hope Coop Power (scales on duration, 3s base), 20 Empathy with <Pill slug="soaring-grace" /> and <Pill slug="dirty-votive-candle" /> equipped, two other 20-Empathy joiners without those: base duration is multiplied by:
+
+`1 + (20+20+20)·0.04 + 20·0.02 + 0.30 = ~2.10` → effective ~6.3s (the doc cites 12.3s using full effective stacking including all sources).
+
+## Coop Power scaling
+
+What each weapon's Coop Power scales on, base value (max trait level), and effective value at 20 Empathy with <Pill slug="dirty-votive-candle" /> and <Pill slug="soaring-grace" />, with two other 20-Empathy joiners:
+
+| Weapon | Scales on | Base value | 20 Emp + SG + Candle |
+|--------|-----------|------------|----------------------|
+| Bow of Hope | Duration | 3 s | 12.3 s |
+| Sword of Justice | Shield value | 30 | 123 |
+| Daggers of Greed | Duration | 18 s | 59.4 s |
+| Staff of Sloth | Duration | 16 s | 65.6 s |
+| Glaive of Temperance | Number of stacks | 12 | 49 |
+| Crossbows of Pride* | Duration | 10 s | 13.3 s |
+| Hooks of Gluttony | Rotation speed | 0.5 r/s | 1.65 r/s |
+
+<small>*Crossbows of Pride scales differently — +100% from all sources only gives +1s of duration, not 2×.</small>
+
+## Coop Power charging
+
+Two main sources fill the Coop Power meter:
+
+- **Passive** — the meter fills by a fixed % per second.
+- **Active** — each instance of damage dealt fills a fixed % per hit.
+
+Empathy does **NOT** affect Coop Power charging.
+
+| Weapon | Passive / sec | Active / hit |
+|--------|---------------|--------------|
+| Sword of Justice | 0.1% | 0.125% |
+| Hooks of Gluttony* | 0.1% | 0.2%* |
+| Glaive of Temperance | 0.1% | 0.2% |
+| Daggers of Greed | 0.1% | 0.2% |
+| Staff of Sloth | 0.1% | 0.3% |
+| Bow of Hope | 0.2% | 0.1% |
+| Crossbows of Pride | 0.2% | 0.1% |
+
+<small>*Effective hooks recharge rate is inexact — hooks attacks may bug-skip recharge on hit (the same way they sometimes don't consume glaive Coop Power stacks).</small>
+
+Charging is boosted by <Pill slug="astute-erudite" /> (+60%) and <Pill slug="bloodstained-sole" /> (+100%, +150% blessed). These stack additively (+160% total → ×2.6 multiplier on charge rate).
+
+<Pill slug="muddy-apostle-medal" /> gives costrikes a 25% chance (40% blessed) to drop a Coop Power orb that adds 3% to the gauge — independent of +% sources and weapon type.
+
+## On-hit charge and orb exceptions
+
+Some abilities, upgrades, and relics do not trigger on-hit charging or cannot generate Muddy Apostle Medal orbs:
+
+| Item / Ability / Upgrade | On-hit charge | Orb-eligible |
+|--------------------------|---------------|--------------|
+| Eagle Talon | N | N |
+| Preserved Heretic Head | N | N |
+| Bow Arrow Recall | Y | ~ |
+| Bow Auto Recall upgrade | Y | Y |
+| Sword Parry | Y | Y |
+| Sword Shockwave upgrade | N | Y |
+| Daggers Takedown | Y | Y |
+| Staff Torpor (and Wave) | Y | Y |
+| Staff Outburst upgrade | Y | Y |
+| Staff Scattering Orbs upgrade | N | Y |
+| Staff Bouncing Orbs upgrade | N | Y |
+| Glaive Coop Power | N | N |
+| Glaive Measured upgrade | N | Y |
+| Crossbows Brand | N | Y |
+| Crossbows Skipping Bolts upgrade | Y | Y |
+| Crossbows Flurry of Bolts upgrade | Y | ~ |
+| Crossbows Explosive Brands upgrade | N | Y |
+| Hooks Explosion | Y | Y |
+| Hooks Riposte upgrade | N | Y |
+
+<small>"~" means yes, but multiple hits on the same enemy within a 1–5 frame window only ever produce one costrike — so only one possible orb.</small>
+
+## Maximum Coop Power values
+
+Current max Empathy is **84**, with 8/7/8 starting stats, maxed stats, +3 Call to Arms buff, and all three blessed stat-converter relics. Adding <Pill slug="soaring-grace" /> and blessed <Pill slug="dirty-votive-candle" /> gives max possible Coop Power efficiency.
+
+That ends up as a **×19.54** multiplier for 3-slot Coop Powers and **×13.36** for 2-slot ones.
+
+| Weapon | Scales on | Base | Max |
+|--------|-----------|------|-----|
+| Bow of Hope | Duration | 3 s | 58.6 s |
+| Sword of Justice | Shield value | 30 | 586 |
+| Daggers of Greed | Duration | 18 s | 240.5 s |
+| Staff of Sloth | Duration | 16 s | 312.6 s |
+| Glaive of Temperance | Number of stacks | 12 | 234 |
+| Crossbows of Pride | Duration | 10 s | 23.4 s |
+| Hooks of Gluttony* | Rotation speed | 0.5 r/s | 5.625 r/s* |
+
+<small>*Effective value. In theory should reach 6.7 r/s (more tests needed). Hits done by the orbs aren't all counted due to a bug.</small>

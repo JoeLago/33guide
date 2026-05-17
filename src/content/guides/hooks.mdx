@@ -1,0 +1,103 @@
+---
+title: Hooks of Gluttony
+lead: Tank weapon revolving around parry → Gluttony state. Heavy attacks pull and explode for stagger.
+---
+import Pill from '../../components/Pill.astro';
+
+## First look at hooks
+
+Hooks is a tank weapon that revolves around successfully parrying from time to time to trigger Gluttony state (lasts 5s, refresh on new parry), allowing to deal x1.3 (+30%, multiplicatively) damage and to gain Gluttony stacks (max 4) by doing successful light attacks. Gluttony stacks can then be consumed by doing heavy attacks (which pulls the character toward the enemy hit), causing an additional small staggering explosion on arrival (whose damage can also be affected by Dash Combo).
+
+Hooks Coop Power Shield of Spikes gives a shield that negates the three next incoming damage. While active, 3 projectiles revolve around the player at a base 0.5 rotation per sec rate (scaling on empathy), dealing 60 damage (at max level) to enemies hit by them.
+
+The parry ability is effective for 45 frames (0.75s) during which any incoming damage will be negated (except undodgeable damage). During that time, the character cannot perform any other action than dashing, and needs to wait for the animation to finish before doing anything else. However on a successful parry, the parry ability can be used again to extend its duration by around the same amount of time. Note that there is also no input queuing during parry frames, thus making a "perfect failed parry chain" to stay at all time unvulnerable impossible (there will always be 2-3 vulnerability frames as it is the time the game takes to decide whether an input was valid or not). The real downside of this system is that trying to perform a heavy attack after a parry (even successful!) is extremely clunky (pls devs).
+
+Hooks are not a weapon with a fixed sustained dps like other weapons are mostly, so in builds we'll have to differentiate some phases, and discuss what is optimal to do during each of them:
+
+- Downtime (no attack to parry, no Gluttony stacks or stored for later)
+- Gluttony uptime (5s after a parry)
+- Burst uptime (also 5s, when target gets inflicted a strong status effect such as Vulnerable or Exposed, or any status effect has long as you have <Pill slug="tusk-of-ciriatto" />, or more simply a new Gluttony state while already being full in stacks)
+- Overcrowded situation (when there are too many incoming attacks)
+
+**Base stats**
+
+- Attack speed: 1.76 atk per sec (34 frames per light atk, dmg after 8 frames, then 26 cancellable animation frames)
+- Base damage: 97.5 (x1 ratio)
+- Charged attack damage: 121.9 (x1.25 ratio)
+- Gluttony explosion damage: 146.25 (x1.5 ratio)
+- Charging time: min 0.67s (20f charge, 20f animation + travel times)
+- Consuming a Gluttony stack deals dmg 18f after initial dmg, and extends animation by 8f
+
+## Hooks upgrades
+
+<div data-render="upgrades" data-weapon="hooks"></div>
+
+## Tips and tricks
+
+Using parry right after launching hooks with heavy attack will apply the x1.3 damage buff from gluttony, even without getting hit.
+
+Successfully failing (?) a parry will set the damage taken to 10 (yes yes, even undodgeable attacks).
+
+Glaive coop power charges are in some case not depleted by hooks attacks (samely, hooks attacks may not count for other people to costrike with you).
+
+Using a heavy with <Pill slug="slingshot" /> will make all damage from <Pill slug="riposte" /> also have the same damage buff the heavy got from <Pill slug="slingshot" /> until the next heavy attack.
+
+Parry can be used right after launching hook with an heavy attack, in which case:
+
+- If the hook haven't yet hit an enemy, the character won't be pulled toward the hit enemy
+- If the hook has hit an enemy the character will be pulled, but if the explosion have not yet been triggered, the explosion won't happen and no Gluttony stack will be consumed (also good to parry projectiles or puddles on the way)
+
+## Phases
+
+Gluttony and Burst dps are computed over 5s (300 frames), and min. frame count is from animation start to last damage tick (if the loop ends by a light atk for example, the 26 animation frames after dmg tick aren't accounted). For Gluttony uptimes, beware that the parry end animation is not taken into account either, and can vary from 0 to ~40 frames depending on when the parry was triggered.
+
+If you plan to use Dash Combos (DC), <Pill slug="slingshot" /> is mandatory (all DC damage calculations are with it), and don't forget to equip <Pill slug="cosmic-rebirth" /> perk!
+
+**Downtime**
+
+| Phase | DPS | CS/hit per sec | Notes |
+|-------|-----|----------------|-------|
+| Full Light attacks | 171.6 | 1.76 | correct cleave |
+| Full Heavy attacks (no gluttony) | 182.8 | 1.5 (3 in counter) | single target only |
+| Full DC Heavy w/ Slingshot, Worn Scapular, explosion cancel from max distance | 713 | 1 (2 in counter) | single target only |
+
+<img class="demo-gif" src="/assets/gifs/hooks-dc-heavy.gif" alt="Full Dash Combo Heavy loop demo" loading="lazy" />
+
+Looks complex but this is essentially the same inputs as bow dash combo heavy builds, with different timings.
+
+**Gluttony uptime (empty to full)**
+
+| Loop | Damage | DPS |
+|------|--------|-----|
+| 4 Light attacks to charge up + 2 heavy+light (274 min frames) | 1458 | 292 |
+| 8 light attacks w/ <Pill slug="famished" /> | 1014 | 203 |
+| 3 Light attacks w/ <Pill slug="riposte" /> + 2 heavy+light (244 min frames) | 1539 | 308 |
+| 3 Light attacks w/ <Pill slug="riposte" /> + 2 DC heavy+light (288 min frames, ~40 cancellable) | 3142 | 628 |
+| 4 Light attacks w/ VF + 2 DC heavy+light (292 min frames, ~32 cancellable) | 3061 | 612 |
+
+<img class="demo-gif" src="/assets/gifs/hooks-riposte-loop.gif" alt="Riposte / DC heavy+light loop demo" loading="lazy" />
+
+**Gluttony uptime (full to full)** (<Pill slug="riposte" /> is not counted for damage here, add 208 dmg and 42 dps if you use it)
+
+| Loop | Damage | DPS |
+|------|--------|-----|
+| 1 light + 3 heavy+light (254 min frames) | 1553 | 311 |
+| 3 DC heavy+light (292 min frames, ~40 cancellable) | 3831 | 766 |
+
+**Burst uptime (emptying Gluttony in \<5s)** (Gluttony x1.3 damage boost is not counted here)
+
+| Loop | Damage | DPS |
+|------|--------|-----|
+| 6 Heavy (264 min frames, 290 w/ <Pill slug="famished" /> 6 stacks) | 1316 (1609 w/ 6 stacks Famished) | 263 (322) |
+| 4 Heavy + 3 Light (276 min frames) | 1365 | 273 |
+| 4 Heavy w/ DC (288 min frames) | 3540 | 708 |
+
+**Overcrowded**
+
+Full parry w/ <Pill slug="riposte" /> (w/ dmg boost from DC and <Pill slug="slingshot" /> potentially).
+
+Without <Pill slug="riposte" />, try getting enemies close as much as possible while having Gluttony stacks up to perma stagger.
+
+## Builds
+
+The author hasn't committed to formal builds yet — bugs are still in flux. <Pill slug="slingshot" /> + Dash Combos are mandatory for DPS; <Pill slug="riposte" /> performs best overall as the second upgrade.

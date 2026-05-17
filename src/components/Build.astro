@@ -1,0 +1,26 @@
+---
+import Pill from './Pill.astro';
+
+interface Props {
+  id: string;
+  name: string;
+  upgrades: string[];
+  desc?: string;
+}
+
+const { id, name, upgrades: upgradeList, desc } = Astro.props;
+---
+<details class="build" id={id}>
+  <summary>
+    <span class="build-name">
+      {upgradeList.map((u, i) => (
+        <>{i > 0 && ' + '}<Pill slug={u} kind="upgrade" /></>
+      ))}
+    </span>
+    <span class="build-tagline">"{name}"</span>
+    {desc && <span class="build-desc">{desc}</span>}
+  </summary>
+  <div class="build-body">
+    <slot />
+  </div>
+</details>

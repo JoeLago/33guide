@@ -1,0 +1,27 @@
+---
+import { relics } from '../data/items';
+import iconsData from '../data/icons.json';
+
+interface Props {
+  category?: string;
+}
+
+const { category } = Astro.props;
+const icons = iconsData as Record<string, { path: string }>;
+const filtered = category ? relics.filter(r => r.category === category) : relics;
+---
+<div class="card-grid">
+  {filtered.map(relic => {
+    const icon = icons[relic.slug];
+    return (
+      <article class="card" id={relic.slug}>
+        <h3 class="card-title">
+          {icon && <img class="card-icon" src={`/${icon.path}`} alt="" loading="lazy" />}
+          <span class={`pill pill-relic-${relic.rarity}`}>{relic.name}</span>
+        </h3>
+        <p class="card-effect">{relic.effect}</p>
+        {relic.blessed && <p class="card-blessed">Blessed: {relic.blessed}</p>}
+      </article>
+    );
+  })}
+</div>

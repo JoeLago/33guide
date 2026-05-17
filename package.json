@@ -1,0 +1,17 @@
+{
+  "name": "33-astro",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^5.0.6",
+    "astro": "^6.3.3",
+    "unist-util-visit": "^5.1.0",
+    "yaml": "^2.9.0",
+    "zod": "^4.4.3"
+  }
+}

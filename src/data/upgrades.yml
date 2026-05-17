@@ -1,0 +1,252 @@
+- slug: mobile-light
+  name: Mobile Light
+  weapon: bow
+  weaponLabel: Bow of Hope
+  effect: Recalled arrows deal x1.25 (+25%) damage and guiding light gives a speed boost.
+  note: Speed boost is nice for dodging and replacement, however it's not optimal to build around recalling only, since multiple recalled arrows can only deal a single costrike or crit.
+- slug: small-quiver
+  name: Small Quiver
+  weapon: bow
+  weaponLabel: Bow of Hope
+  effect: Set quiver size to 2 and fired arrows does x1.5 (+50%) damage
+  note: Huge 1.5 multiplier, really strong, will get used as long as you can manage having only two arrows.
+- slug: piercing-arrows
+  name: Piercing Arrows
+  weapon: bow
+  weaponLabel: Bow of Hope
+  effect: Arrows now pierce, dealing x0.85 (-15%) damage
+  note: Damage reduction also applies to recalled arrows. Really good at getting down chunks of enemies, less strong on bosses.
+- slug: double-shot
+  name: Double Shot
+  weapon: bow
+  weaponLabel: Bow of Hope
+  effect: Charged attacks fires 2 arrows, dealing x0.75 (-25%) damage
+  note: Hard to use since the arrows are fired in a fan shape, yet strong since it theoretically divides the charging time by two.
+- slug: auto-recall
+  name: Auto Recall
+  weapon: bow
+  weaponLabel: Bow of Hope
+  effect: Arrows fired are automatically recalled after 0.5 seconds, recalled arrows deal x0.75 (-25%) damage.
+  note: Best way to get all costrikes from all recalled arrows, thus also really good to buildup costrike counter and to generate coop power meter with Muddy Apostle Medal relic.
+- slug: quick-shot
+  name: Quick Shot
+  weapon: bow
+  weaponLabel: Bow of Hope
+  effect: Increase fire rate by 25%
+  note: Also works on charging time ! The biggest attack speed increase of the game at no cost, will allow you to get more damage AND more costrikes.
+- slug: final-justice
+  name: Final Justice
+  weapon: sword
+  weaponLabel: Sword of Justice
+  effect: Counter attack is now a bigger aoe, consumes 35 Justice, and deals 253.5 (x2) heavy damage
+  note: Funny stagger aoe (as long as you have Justice)
+- slug: inner-justice
+  name: Inner Justice
+  weapon: sword
+  weaponLabel: Sword of Justice
+  effect: Justice now regen passively (15 per sec) instead by using light attacks
+  note: Great if you don't want to run out of justice when spamming parry or heavy attacks. Equivalent to constantly using light attacks since they generate 10 justice per attack.
+- slug: shockwave
+  name: Shockwave
+  weapon: sword
+  weaponLabel: Sword of Justice
+  effect: When Justice is more than half full, periodically release an aoe around you
+  note: Great to get an additional hit every two seconds to compensate for the low attack speed of sword. The aoe deals 68.25 base damage.
+- slug: spin-slash
+  name: Spin Slash
+  weapon: sword
+  weaponLabel: Sword of Justice
+  effect: Heavy attack is now a circular aoe
+  note: More cleaving and staggering bunch of enemies.
+- slug: frenzy
+  name: Frenzy
+  weapon: sword
+  weaponLabel: Sword of Justice
+  effect: When justice is full, around +15% light attack speed
+  note: More dps and more costrikes ! Animation cancelling does also work with this, further increasing attack speed by around 20% (in this case Frenzy becomes effectively +12.5% atk speed)
+- slug: mighty-slash
+  name: Mighty Slash
+  weapon: sword
+  weaponLabel: Sword of Justice
+  effect: Slashes are now 33% slower but deals more (~twice) damage. Combo becomes a single attack, with x2.4 ratio on light attacks, x2.6 on heavy attacks.
+  note: New damage is around twice the average damage of the combo (a bit less for heavy). Attack speed becomes 1/s and charging time 1.3s (0.46s charging + 0.83s animation). Animation cancelling is mostly not worth it. Affected by Frenzy (1.11 atk per sec), does not affect parry damage.
+- slug: greedier
+  name: Greedier
+  weapon: daggers
+  weaponLabel: Daggers of Greed
+  effect: Store 33 more greed (is x1.75 original damage), TD always consume all greed
+  note: Great option to unleash more damage when Greed meter is full. You may take it if you count to use takedown as soon as it is charged. Can also consider that it is 10.22 damage for every point over 66 greed, full greed takedown is 788 damage (450 x 1.75)
+- slug: quick-strike
+  name: Quick Strike
+  weapon: daggers
+  weaponLabel: Daggers of Greed
+  effect: Increases attack speed by 10% every four successful strike up to +30%
+  note: Charging time can also decrease down to 0.81s (should be 0.7s however). Light attack speed goes to 4.29/s. Good for charging costrikes and coop power quicker, yet restricts mobility.
+- slug: steadfast-power
+  name: Steadfast Power
+  weapon: daggers
+  weaponLabel: Daggers of Greed
+  effect: x1.02 original damage, +0.02 every 2s up to x1.2, reset when dodging
+  note: Forces takedown to also be your main dodging tool in addition to its good damage.
+- slug: mortal-slashes
+  name: Mortal Slashes
+  weapon: daggers
+  weaponLabel: Daggers of Greed
+  effect: Charged attacks does x1.45 original damage to enemies under mid life
+  note: Only option with no downside, allowing a more versatile and comfortable gameplay. Does NOT work on Takedown.
+- slug: stabs
+  name: Stabs
+  weapon: daggers
+  weaponLabel: Daggers of Greed
+  effect: Light attacks have x1.2 original damage, but lower range
+  note: This is cool, but risk is to mess up your daggers combo, as it requires replacement. Heavy attack range is not affected.
+- slug: patience
+  name: Patience
+  weapon: daggers
+  weaponLabel: Daggers of Greed
+  effect: When greed starts depleting (2.25s), you run faster until your next attack, which has x2 original damage
+  note: Best option to get funny numbers on takedown, but does significantly reduce your ability to increase costrike combo fast, and very easy to lose it without Rosary Beads (+3s combo time relic)
+- slug: torpor-wave
+  name: Torpor Wave
+  weapon: staff
+  weaponLabel: Staff of Sloth
+  effect: Torpor becomes a slow moving wave, with x1.5 (+50%) damage
+  note: Allow slowing more enemies than before, with interesting damage.
+- slug: lethargy
+  name: Lethargy
+  weapon: staff
+  weaponLabel: Staff of Sloth
+  effect: Torpor slow now almost immobilize enemies
+  note: Nice survivability tool, acting as a mini coop power, can save some people when things become overwhelming.
+- slug: outburst
+  name: Outburst
+  weapon: staff
+  weaponLabel: Staff of Sloth
+  effect: Release an aoe every 5 seconds, dealing 292.5 heavy damage to slowed and immobilized enemies, staggering them
+  note: Slow melee attack, counterintuitive considering staff ranged gameplay. Efficient to clear out the enemies stuck in a staff Coop Power, hard to use in other situations since Sloth recharge is quite slow overall, requiring to use Torpor every time Outburst is about to proc.
+- slug: echoing-orbs
+  name: Echoing Orbs
+  weapon: staff
+  weaponLabel: Staff of Sloth
+  effect: Heavy attack becomes two mines that explodes one second after, x1.75 (+75%) damage
+  note: Really good damage here, yet requires a bit of anticipation to place mines.
+- slug: scattering-orbs
+  name: Scattering Orbs
+  weapon: staff
+  weaponLabel: Staff of Sloth
+  effect: Every two light attacks, throw an additional orb dealing x0.33 (-66%) damage, up to 3 additional orbs
+  note: Ever dreamt of firing 8 (EIGHT) orbs per second ? Aight, there you go
+- slug: bouncing-orbs
+  name: Bouncing Orbs
+  weapon: staff
+  weaponLabel: Staff of Sloth
+  effect: Orbs bounce, bouncing orbs deal x0.33 (-66%) damage
+  note: Great tool to get additional costrikes, even on heavy attacks. Unaffected by Dash Combos.
+- slug: one-motion
+  name: One Motion
+  weapon: glaive
+  weaponLabel: Glaive of Temperance
+  effect: Launching an attack right after a backstep makes it deal x2 damage and consumes no temperance
+  note: For some reason, this is way better than Dash Combo (x1.5 with Cosmic Rebirth), and backstep has almost no cooldown.
+- slug: measured
+  name: Measured
+  weapon: glaive
+  weaponLabel: Glaive of Temperance
+  effect: Backstep causes a small directional explosion, dealing 165.75 heavy damage and staggering enemies
+  note: Can be good against elites and bosses if well mastered, or some situations where you constantly have an enemy to your feet. Also good to get a lot of costrikes in counter (up to 4 per sec).
+- slug: thousand-cuts
+  name: Thousand Cuts
+  weapon: glaive
+  weaponLabel: Glaive of Temperance
+  effect: Slashes are 22% faster (2.2 aps, and cuts 10 frames from heavy attack ending animations, 0.76s total time)
+  note: Good attack speed buff, however this makes backstep duration more important in a combo loop, resulting in a bit less effective attack speed.
+- slug: deliberation
+  name: Deliberation
+  weapon: glaive
+  weaponLabel: Glaive of Temperance
+  effect: Heavy attacks can be charged up to 1s, causing them to deal up to x3 damage gradually (count 6 frames after charging for release + attack animation)
+  note: Huge multiplier but quite long charging time, requiring to be static.
+- slug: master-of-flow
+  name: Master of Flow
+  weapon: glaive
+  weaponLabel: Glaive of Temperance
+  effect: Light attacks doesn't consume Temperance anymore
+  note: Makes the glaive more easy to play, nice to start with or to use with Thousand Cuts for maximal attack speed.
+- slug: unceasing-blows
+  name: Unceasing Blows
+  weapon: glaive
+  weaponLabel: Glaive of Temperance
+  effect: Successful attacks provide a stack of combo (max 6), each increasing damage by 10% (x1.6 damage at 6 stacks). Decay at a 2 stacks per second rate after 2.5 seconds without hitting any enemy
+  note: Huge and almost free multiplier, that only requires a few seconds to be at max stacks. Does also affect Measured explosion.
+- slug: indiscriminate
+  name: Indiscriminate
+  weapon: crossbows
+  weaponLabel: Crossbows of Pride
+  effect: Ability now brand enemies in an area around impact
+  note: Good if you are going for some area damage or to kill multiple enemies in a single uninterrupted heavy attack.
+- slug: skipping-bolts
+  name: Skipping Bolts
+  weapon: crossbows
+  weaponLabel: Crossbows of Pride
+  effect: Bolts now ricochet when hitting an enemy
+  note: Technically x1.5 damage (possibly x2 with Indiscriminate) when there are two enemies. Ricochet direction is not totally automatic and seems to follow some rules (see tips and tricks). Currently removes the ability to perform Dash Combos.
+- slug: explosive-brands
+  name: Explosive Brands
+  weapon: crossbows
+  weaponLabel: Crossbows of Pride
+  effect: Hitting an enemy four times while branded causes a 311.5 damage explosion, removing current brand effect
+  note: Good damage here, it is also an aoe however other enemies will suffer only half damage if they are not branded during the explosion.
+- slug: massive-bolts
+  name: Massive Bolts
+  weapon: crossbows
+  weaponLabel: Crossbows of Pride
+  effect: Every fourth heavy bolt deals 58.5 damage and causes character to backstep
+  note: Can be considered as around x1.2 multiplier on heavy attack, recoil require to be melee to land the whole 20 Pride on the same target
+- slug: flurry-of-bolts
+  name: Flurry of Bolts
+  weapon: crossbows
+  weaponLabel: Crossbows of Pride
+  effect: Each light attack bolt is replaced by four bolts in a cone, each dealing x0.6 dmg (-40% or 24.4 dmg)
+  note: Technically more damage (x2.4), however all bolts won't be able to costrike at the same time on the same target (usually only one will, 2 if very lucky). Changes how pride is generated (see tips and tricks).
+- slug: showtime
+  name: Showtime
+  weapon: crossbows
+  weaponLabel: Crossbows of Pride
+  effect: On Pride fulfil, gain +30% additional damage for 6 seconds. Requires to consume at least 1 Pride for the effect to be able to happen again.
+  note: The only upgrade in the game that gives additional damage rather than multiplying it, will suffer diminishing returns (at +200% additional dmg (e.g. crit with Empyreal Deceptiveness), this will only be a 10% real damage increase).
+- slug: riposte
+  name: Riposte
+  weapon: hooks
+  weaponLabel: Hooks of Gluttony
+  effect: Parrying deals 160 damage to the attacker, filling up 1 Gluttony stack
+  note: Note that the 160 damage becomes ~208 because of Gluttony state damage boost. Overall good, allows to charge Gluttony quickly while dealing damage in overcrowded situations where you need to constantly parry.
+- slug: feast-of-flesh
+  name: Feast of Flesh
+  weapon: hooks
+  weaponLabel: Hooks of Gluttony
+  effect: Attacks have around 25% chance to spawn a healing orb that regens 1 hp
+  note: Works with all damage done with the Hooks. Slight hp regen, great if you don't take damage too many times (especially since healing is supposed to be scarce in the game)
+- slug: famished
+  name: Famished
+  weapon: hooks
+  weaponLabel: Hooks of Gluttony
+  effect: Store 4 more Gluttony (up to 8)
+  note: Correct if there is going to be a lot of downtime and to expand burst time, else pretty useless.
+- slug: slingshot
+  name: Slingshot
+  weapon: hooks
+  weaponLabel: Hooks of Gluttony
+  effect: "Heavy attack (and possible explosion from Gluttony stack) has more range and deals more damage the farther it hits : at melee x1.2, at dash distance x2.2, at max range x3."
+  note: This upgrade is bugged, damage boost also applies to the next heavy attack (not next explosion from Gluttony stacks) AND every other heavy damage in between (from Riposte for example). Great for using with Dash Combos, and has some other uses (thanks bugs). Else very situational.
+- slug: vengeful-slashes
+  name: Vengeful Slashes
+  weapon: hooks
+  weaponLabel: Hooks of Gluttony
+  effect: During Gluttony state, light attacks are 21% faster (28 frames per attack)
+  note: Small and conditional attack speed increase, not really useful besides pairing it with Famished or in a full Coop Power build.
+- slug: crippling-hits
+  name: Crippling Hits
+  weapon: hooks
+  weaponLabel: Hooks of Gluttony
+  effect: Enemies that are in base hook range are randomly affected by a mark that makes the next hook hit on a marked enemy deal x3 damage and stagger.
+  note: This is not exactly random, in most cases taking away the mark from an enemy will make it reappear quite quickly (< 5s) then it will take more time to reappear again (5-20s). I found an average of 6.1s for the mark to appear (not from a huge dataset though) + there may be other conditions that make it appear more or less quicker. Overall too random to be considered.
