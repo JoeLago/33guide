@@ -754,6 +754,12 @@ section + section { margin-top: 24px; }
   max-height: 28px;
   width: auto;
 }
+[data-theme="dark"] .formula-figure,
+[data-theme="dark"] .formula-inline {
+  background: #f7f5f0;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
 
 /* Icon embedded inside a pill */
 .pill-icon {
