@@ -1,5 +1,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import rehypeWrapTables from './plugins/rehype-wrap-tables.mjs';
 import rehypeBaseUrls from './plugins/rehype-base-urls.mjs';
 
@@ -11,7 +13,9 @@ export default defineConfig({
   base: basePath || undefined,
   integrations: [mdx()],
   markdown: {
+    remarkPlugins: [remarkMath],
     rehypePlugins: [
+      rehypeKatex,
       rehypeWrapTables,
       [rehypeBaseUrls, { base: basePath }],
     ],

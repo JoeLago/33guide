@@ -15,19 +15,17 @@ import Figure from '../../components/Figure.astro';
 
 ## 1. Basic formula — Attack and Relics
 
-<Callout>
-  **Damage = BaseDmg × (1 + 0.02·atk) × (1 + ΣRelic%)**
-</Callout>
-
-<Figure src="/assets/figures/damage/formula-basic.png" alt="BaseDmg × (1 + 0.02·atk) × (1 + ΣRelic%) rendered" variant="banner" />
+$$
+\underbrace{\text{BaseDmg}}_{97.5 \;\times\; \text{Ratio} \;\times\; \text{WeapUpgrade}} \times \overbrace{(1 + 0.02 \times \text{Atk})}^{\text{Each atk point is +2\% dmg}} \times \left(1 + \sum \text{Relic\%}\right)
+$$
 
 This is the simple damage formula for "vanilla" damage (no costrike, no status effect, etc.). **BaseDmg** averages 97.5 (100 max, 95 min), multiplied by a ratio specific to the attack you are using (from 0.4 for a recalled light bow arrow at 39 dmg, up to 1.9 for the glaive last attack of a combo at 185 dmg).
 
-Then it's multiplied by another ratio that depends on your weapon upgrade(s). For Bow with <Pill slug="small-quiver" />, that's 1.5. Upgrades are multiplicative with each other — adding <Pill slug="double-shot" /> on top of <Pill slug="small-quiver" /> gives 1.5 × 0.75 = 1.125 <img class="formula-inline" src="/assets/figures/damage/formula-upgrade-mult.png" alt="" />. Per-attack and per-upgrade ratios are listed on each weapon's intro page.
+Then it's multiplied by another ratio that depends on your weapon upgrade(s). For Bow with <Pill slug="small-quiver" />, that's 1.5. Upgrades are multiplicative with each other — adding <Pill slug="double-shot" /> on top of <Pill slug="small-quiver" /> gives $1.5 \times 0.75 = 1.125$. Per-attack and per-upgrade ratios are listed on each weapon's intro page.
 
 Next, we multiply by a stat term: `(1 + 0.02 · atk)` — each attack point adds +2% damage.
 
-Finally, relics. Relics and most perks are **additive** between each other — hence the Σ. Example: <Pill slug="thorn-of-the-martyr" /> (+15%) and <Pill slug="cocytus-abiding-ice" /> (+25%) give +40% total, not +43.75% <img class="formula-inline" src="/assets/figures/damage/relic-sum-example.png" alt="" />.
+Finally, relics. Relics and most perks are **additive** between each other — hence the Σ. Example: <Pill slug="thorn-of-the-martyr" /> (+15%) and <Pill slug="cocytus-abiding-ice" /> (+25%) give +40% total, not +43.75%: $1 + \sum\text{Relic\%} = 1 + 0.15 + 0.25 = 1.4$.
 
 Your damage will almost never be exactly the same in identical conditions because there's a ±2.5% window around the calculated value (only exception: daggers' Takedown).
 
@@ -35,25 +33,23 @@ Your damage will almost never be exactly the same in identical conditions becaus
 
 Playing daggers, light attacks (0.8 ratio), <Pill slug="stabs" /> upgrade (×1.2 light damage), 18 atk, relics <Pill slug="thorn-of-the-martyr" /> (0.20 after blessing) and <Pill slug="cocytus-abiding-ice" /> (0.25):
 
-`97.5 × 0.8 × 1.2 × (1 + 0.02·18) × (1 + 0.20 + 0.25) ≈ 184.7`
-
-<Figure src="/assets/figures/damage/daggers-example.png" alt="Daggers light attack worked example" />
+$$
+97.5 \times 0.8 \times 1.2 \;\times\; (1 + 0.02 \times 18) \;\times\; (1 + 0.2 + 0.25) \;=\; 93.6 \times 1.36 \times 1.45 \;\cong\; 184.58
+$$
 
 With the damage window, my hit will be between roughly 180 and 189.
 
 From here on, we call **additional damage** every +% added alongside relics% (additive), and call out anything **multiplicative** separately. This distinction is crucial for the diminishing-returns section.
 
-<Figure src="/assets/figures/damage/additive-vs-multiplicative.png" alt="Additional damage adds to ΣRelic%; multiplicative damage gets its own multiplier term" variant="wide" />
+$$
+\text{BaseDmg} \times (1 + 0.02 \times \text{Atk}) \times \left(1 + \sum\text{Relic\%} \;\overbrace{\boxed{{\color{gray}+\;\ldots}}}^{\color{red}\text{additional damage}}\right) \underbrace{\boxed{{\color{gray}\times\;\ldots}}}_{\color{red}\text{multiplicative damage}}
+$$
 
 ## 2. Advanced formula — Costrikes and Critical hits
 
 Co-strike additional damage scales on empathy (+1% per empathy point) and is **additive with relics**.
 
 Critical hits add +100% additional damage (and more with additional crit damage). Also **additive with relics**.
-
-<Callout>
-  **FinalDmg = BaseDmg × (1 + 0.02·atk) × (1 + ΣRelic% + ΣCostrike% + ΣCrit%)**
-</Callout>
 
 <Figure src="/assets/figures/damage/formula-advanced.png" alt="Advanced formula with costrike and crit terms" variant="banner" />
 
@@ -85,7 +81,7 @@ Weak doesn't directly add damage, but it's the easiest status to trigger <Pill s
 
 Armor reduces light damage by 60% (×0.4). Killing an armored enemy with light damage alone requires 2.5× its max HP.
 
-Example: an Arciere has 950 HP, so you'd need to deal 950 ÷ 0.4 = 2,375 light damage <img class="formula-inline" src="/assets/figures/damage/armor-example.png" alt="" /> to kill it through armor.
+Example: an Arciere has 950 HP, so you'd need to deal 950 ÷ 0.4 = 2,375 light damage ($950 / 0.4 = 950 \times 2.5 = 2375$) to kill it through armor.
 
 Regular enemies have 40–60% of their HP as armor *(Arciere itself has 600)*; elites have ~35–40%. Switch to heavy on elites — with small exceptions for full Coop-Power builds or running <Pill slug="blessed-chains" /> / <Pill slug="cruel-harpy-feather" />.
 
@@ -113,17 +109,23 @@ The damage formula is a chain of multiplications, but the "additional damage" te
 
 ### What is diminishing returns?
 
-Vanilla bow normal attack, 15 atk, +50% damage relic: ~ 97.5 × 0.6 × 1.3 × 1.5 ≈ 114.
+Vanilla bow normal attack, 15 atk, +50% damage relic: $\approx 97.5 \times 0.6 \times 1.3 \times 1.5 \approx 114$.
 
-<Figure src="/assets/figures/damage/diminishing-step1.png" alt="Starting damage calculation: ≈ 114" />
+$$
+58.5 \times 1.3 \times 1.5 \;\cong\; 114
+$$
 
 Now add a second relic at +25%. If relics were **multiplicative**, you'd expect 114 × 1.25 = 142.5.
 
-<Figure src="/assets/figures/damage/diminishing-step2.png" alt="Hypothetical multiplicative result: 142.5" />
+$$
+58.5 \times 1.3 \times 1.5 \times 1.25 \;\cong\; 142.5
+$$
 
 But relics are **additive**, so the real calculation is 97.5 × 0.6 × 1.3 × (1 + 0.50 + 0.25) ≈ 133 — an effective +16.6% overall (not +25%).
 
-<Figure src="/assets/figures/damage/diminishing-step3.png" alt="Actual additive result: ≈ 133" />
+$$
+58.5 \times 1.3 \times (1 + 0.5 + 0.25) = 58.5 \times 1.3 \times 1.75 \;\cong\; 133
+$$
 
 This gets worse the higher your existing multiplier. Adding +25% to an already +300% pile is only an effective +6.25% damage.
 

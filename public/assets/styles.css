@@ -760,6 +760,7 @@ section + section { margin-top: 24px; }
   padding: 6px 10px;
   border-radius: 6px;
 }
+.katex { color: var(--text); }
 
 /* Icon embedded inside a pill */
 .pill-icon {
