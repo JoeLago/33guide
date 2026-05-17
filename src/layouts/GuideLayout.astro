@@ -21,14 +21,12 @@ const base = import.meta.env.BASE_URL;
 <div class="layout">
 <aside class="sidebar">
   <div class="sidebar-header">
-    <h2 class="site-title">33 Immortals</h2>
+    <div class="sidebar-header-row">
+      <h2 class="site-title">33 Immortals</h2>
+      <button class="theme-toggle" type="button" aria-label="Toggle light/dark theme">☾</button>
+    </div>
     <p class="site-subtitle">Build Guide · Gluttony Update</p>
   </div>
-  <div class="search-box">
-    <input id="site-search" type="search" placeholder="Search the guide…" aria-label="Search guide">
-    <div id="search-results" class="search-results" role="listbox"></div>
-  </div>
-
   <nav class="nav-group">
     <h3>Fundamentals</h3>
     <ul>
@@ -64,7 +62,6 @@ const base = import.meta.env.BASE_URL;
   </nav>
 </aside>
 <main class="main">
-  <button class="theme-toggle" type="button" aria-label="Toggle light/dark theme">☾ Dark</button>
   <slot />
 </main>
 </div>
@@ -75,7 +72,7 @@ const THEME_KEY = 'guide-theme';
 function applyTheme(t: string) {
   document.documentElement.setAttribute('data-theme', t);
   const btn = document.querySelector('.theme-toggle');
-  if (btn) btn.textContent = t === 'dark' ? '☀ Light' : '☾ Dark';
+  if (btn) btn.textContent = t === 'dark' ? '☀' : '☾';
 }
 
 function initTheme() {
