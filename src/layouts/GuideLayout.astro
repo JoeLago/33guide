@@ -195,10 +195,12 @@ function initPillTooltips() {
     const vh = window.innerHeight;
     let left = r.left + r.width / 2 - tw / 2;
     let top = r.bottom + gap;
-    if (top + th > vh - 8) top = r.top - th - gap;
+    let pos: 'below' | 'above' = 'below';
+    if (top + th > vh - 8) { top = r.top - th - gap; pos = 'above'; }
     left = Math.max(8, Math.min(left, vw - tw - 8));
     tip.style.left = left + 'px';
     tip.style.top = top + 'px';
+    tip.dataset.pos = pos;
   }
 
   function hideTip(pill: HTMLElement | null) {
@@ -216,8 +218,13 @@ function initPillTooltips() {
 
   document.addEventListener('pointerover', e => {
     const pill = (e.target as HTMLElement).closest('.pill') as HTMLElement | null;
-    if (!pill || pill === activeEl) return;
+    if (!pill) return;
+    if (pill === activeEl) {
+      if (hideTimer) clearTimeout(hideTimer);
+      return;
+    }
     if (showTimer) clearTimeout(showTimer);
+    if (hideTimer) clearTimeout(hideTimer);
     activeEl = pill;
     showTimer = setTimeout(() => showTip(pill), 120);
   });

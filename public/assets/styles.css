@@ -829,6 +829,19 @@ section + section { margin-top: 24px; }
   pointer-events: none;
 }
 .pill-tooltip[data-interactive] { pointer-events: auto; }
+.pill-tooltip[data-interactive]::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
+.pill-tooltip[data-pos="below"][data-interactive]::before {
+  bottom: 100%;
+}
+.pill-tooltip[data-pos="above"][data-interactive]::before {
+  top: 100%;
+}
 .pill-tooltip-name {
   display: flex;
   align-items: center;
