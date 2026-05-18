@@ -385,6 +385,12 @@ tbody tr:last-child td { border-bottom: none; }
   font-weight: 600;
 }
 
+.val-yes { color: #22c55e; font-weight: 600; }
+.val-no { color: #ef4444; font-weight: 600; }
+.val-maybe { color: #eab308; font-weight: 600; }
+
+.agony-value { color: #b8860b; font-weight: 600; }
+
 .card-note {
   font-size: 13px;
   color: var(--text-muted);

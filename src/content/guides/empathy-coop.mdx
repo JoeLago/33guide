@@ -19,7 +19,9 @@ That means only high-empathy players (using <Pill slug="soaring-grace" />) shoul
 
 Bow of Hope Coop Power (scales on duration, 3s base), 20 Empathy with <Pill slug="soaring-grace" /> and <Pill slug="dirty-votive-candle" /> equipped, two other 20-Empathy joiners without those: base duration is multiplied by:
 
-$1 + (20+20+20) \cdot 0.04 + 20 \cdot 0.02 + 0.30 \approx 2.10$ → effective ~6.3s (the doc cites 12.3s using full effective stacking including all sources).
+<img src="/assets/figures/empathy-coop/scaling-formula.png" alt="Coop Power scaling formula: 1 + (0.30 from Soaring Grace) + (0.06 × 20 Empathy with Dirty Votive Candle) + (0.04 × 40 other Empathy) = 4.1" loading="lazy" style="max-width: 540px; display: block; margin: 14px auto;" />
+
+Effective ~6.3s (the doc cites 12.3s using full effective stacking including all sources).
 
 ## Coop Power scaling
 
@@ -66,27 +68,34 @@ Charging is boosted by <Pill slug="astute-erudite" /> (+60%) and <Pill slug="blo
 
 Some abilities, upgrades, and relics do not trigger on-hit charging or cannot generate Muddy Apostle Medal orbs:
 
-| Item / Ability / Upgrade | On-hit charge | Orb-eligible |
-|--------------------------|---------------|--------------|
-| Eagle Talon | N | N |
-| Preserved Heretic Head | N | N |
-| Bow Arrow Recall | Y | ~ |
-| Bow Auto Recall upgrade | Y | Y |
-| Sword Parry | Y | Y |
-| Sword Shockwave upgrade | N | Y |
-| Daggers Takedown | Y | Y |
-| Staff Torpor (and Wave) | Y | Y |
-| Staff Outburst upgrade | Y | Y |
-| Staff Scattering Orbs upgrade | N | Y |
-| Staff Bouncing Orbs upgrade | N | Y |
-| Glaive Coop Power | N | N |
-| Glaive Measured upgrade | N | Y |
-| Crossbows Brand | N | Y |
-| Crossbows Skipping Bolts upgrade | Y | Y |
-| Crossbows Flurry of Bolts upgrade | Y | ~ |
-| Crossbows Explosive Brands upgrade | N | Y |
-| Hooks Explosion | Y | Y |
-| Hooks Riposte upgrade | N | Y |
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th>Item / Ability / Upgrade</th><th>On-hit charge</th><th>Orb-eligible</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Eagle Talon</td><td><span class="val-no">N</span></td><td><span class="val-no">N</span></td></tr>
+    <tr><td>Preserved Heretic Head</td><td><span class="val-no">N</span></td><td><span class="val-no">N</span></td></tr>
+    <tr><td>Bow Arrow Recall</td><td><span class="val-yes">Y</span></td><td><span class="val-maybe">{'~'}</span></td></tr>
+    <tr><td>Bow Auto Recall upgrade</td><td><span class="val-yes">Y</span></td><td><span class="val-yes">Y</span></td></tr>
+    <tr><td>Sword Parry</td><td><span class="val-yes">Y</span></td><td><span class="val-yes">Y</span></td></tr>
+    <tr><td>Sword Shockwave upgrade</td><td><span class="val-no">N</span></td><td><span class="val-yes">Y</span></td></tr>
+    <tr><td>Daggers Takedown</td><td><span class="val-yes">Y</span></td><td><span class="val-yes">Y</span></td></tr>
+    <tr><td>Staff Torpor (and Wave)</td><td><span class="val-yes">Y</span></td><td><span class="val-yes">Y</span></td></tr>
+    <tr><td>Staff Outburst upgrade</td><td><span class="val-yes">Y</span></td><td><span class="val-yes">Y</span></td></tr>
+    <tr><td>Staff Scattering Orbs upgrade</td><td><span class="val-no">N</span></td><td><span class="val-yes">Y</span></td></tr>
+    <tr><td>Staff Bouncing Orbs upgrade</td><td><span class="val-no">N</span></td><td><span class="val-yes">Y</span></td></tr>
+    <tr><td>Glaive Coop Power</td><td><span class="val-no">N</span></td><td><span class="val-no">N</span></td></tr>
+    <tr><td>Glaive Measured upgrade</td><td><span class="val-no">N</span></td><td><span class="val-yes">Y</span></td></tr>
+    <tr><td>Crossbows Brand</td><td><span class="val-no">N</span></td><td><span class="val-yes">Y</span></td></tr>
+    <tr><td>Crossbows Skipping Bolts upgrade</td><td><span class="val-yes">Y</span></td><td><span class="val-yes">Y</span></td></tr>
+    <tr><td>Crossbows Flurry of Bolts upgrade</td><td><span class="val-yes">Y</span></td><td><span class="val-maybe">{'~'}</span></td></tr>
+    <tr><td>Crossbows Explosive Brands upgrade</td><td><span class="val-no">N</span></td><td><span class="val-yes">Y</span></td></tr>
+    <tr><td>Hooks Explosion</td><td><span class="val-yes">Y</span></td><td><span class="val-yes">Y</span></td></tr>
+    <tr><td>Hooks Riposte upgrade</td><td><span class="val-no">N</span></td><td><span class="val-yes">Y</span></td></tr>
+  </tbody>
+</table>
+</div>
 
 <small>"~" means yes, but multiple hits on the same enemy within a 1–5 frame window only ever produce one costrike — so only one possible orb.</small>
 
@@ -95,6 +104,8 @@ Some abilities, upgrades, and relics do not trigger on-hit charging or cannot ge
 Current max Empathy is **84**, with 8/7/8 starting stats, maxed stats, +3 Call to Arms buff, and all three blessed stat-converter relics. Adding <Pill slug="soaring-grace" /> and blessed <Pill slug="dirty-votive-candle" /> gives max possible Coop Power efficiency.
 
 That ends up as a **×19.54** multiplier for 3-slot Coop Powers and **×13.36** for 2-slot ones.
+
+<img src="/assets/figures/empathy-coop/max-coop-power.png" alt="Maximum Coop Power in action" loading="lazy" style="max-width: 540px; display: block; margin: 14px auto; border-radius: 6px;" />
 
 | Weapon | Scales on | Base | Max |
 |--------|-----------|------|-----|

@@ -25,19 +25,21 @@ Then it's multiplied by another ratio that depends on your weapon upgrade(s). Fo
 
 Next, we multiply by a stat term: `(1 + 0.02 · atk)` — each attack point adds +2% damage.
 
-Finally, relics. Relics and most perks are **additive** between each other — hence the Σ. Example: <Pill slug="thorn-of-the-martyr" /> (+15%) and <Pill slug="cocytus-abiding-ice" /> (+25%) give +40% total, not +43.75%: $1 + \sum\text{Relic\%} = 1 + 0.15 + 0.25 = 1.4$.
+Finally, relics. Relics and most perks are **additive** between each other — hence the Σ. Example: <Pill slug="thorn-of-the-martyr" /> (+15%) and <Pill slug="cocytus-abiding-ice" /> (+25%) give +40% total, not +43.75%:
+
+$$1 + \sum\text{Relic\%} = 1 + 0.15 + 0.25 = 1.4$$
 
 Your damage will almost never be exactly the same in identical conditions because there's a ±2.5% window around the calculated value (only exception: daggers' Takedown).
 
 ### Full example
 
-Playing daggers, light attacks (0.8 ratio), <Pill slug="stabs" /> upgrade (×1.2 light damage), 18 atk, relics <Pill slug="thorn-of-the-martyr" /> (0.20 after blessing) and <Pill slug="cocytus-abiding-ice" /> (0.25):
+Playing daggers, light attacks (0.8 ratio), <Pill slug="stabs" /> upgrade (×1.2 light damage), 18 atk, relics <Pill slug="cruel-harpy-feather" /> (0.25 after blessing) and <Pill slug="cocytus-abiding-ice" /> (0.25):
 
 $$
-97.5 \times 0.8 \times 1.2 \;\times\; (1 + 0.02 \times 18) \;\times\; (1 + 0.2 + 0.25) \;=\; 93.6 \times 1.36 \times 1.45 \;\cong\; 184.58
+97.5 \times 0.8 \times 1.2 \;\times\; (1 + 0.02 \times 18) \;\times\; (1 + 0.25 + 0.25) \;=\; 93.6 \times 1.36 \times 1.50 \;\cong\; 190.94
 $$
 
-With the damage window, the hit will be between roughly 180 and 189.
+With the damage window, the hit will be between roughly 186 and 196.
 
 From here on, we call **additional damage** every +% added alongside relics% (additive), and call out anything **multiplicative** separately. This distinction is crucial for the diminishing-returns section.
 
@@ -59,11 +61,11 @@ Critical hits add +100% additional damage (and more with additional crit damage)
 
 ### Status effects
 
-- <img class="entity-icon entity-icon-inline" src="/assets/icons/status/status-armor-break.png" alt="" loading="lazy" /> **Armor Break** — once armor is broken with enough heavy damage. Prevents the target from doing any action for 3 seconds.
-- <img class="entity-icon entity-icon-inline" src="/assets/icons/status/status-vulnerable.jpg" alt="" loading="lazy" /> **Vulnerable** — built up by any damage while <Pill slug="yawning-maw-of-truth" /> is equipped. Multiplies damage taken by ×2.25 for 5s.
-- <img class="entity-icon entity-icon-inline" src="/assets/icons/status/status-exposed.jpg" alt="" loading="lazy" /> **Exposed** — built up by light damage while <Pill slug="sacrosant-vernicle" /> is equipped. ×1.4 damage taken for 5s.
-- <img class="entity-icon entity-icon-inline" src="/assets/icons/status/status-marked.png" alt="" loading="lazy" /> **Marked** — built up by costrike damage while <Pill slug="soiled-purificator" /> is equipped. +100% costrike damage taken for 5s.
-- <img class="entity-icon entity-icon-inline" src="/assets/icons/status/status-weak.jpg" alt="" loading="lazy" /> **Weak** — built up by any damage while <Pill slug="oxidized-flagon" /> is equipped. Target deals less damage to players for 5s.
+- **Armor Break** — once armor is broken with enough heavy damage. Prevents the target from doing any action for 3 seconds.
+- **Vulnerable** — built up by any damage while <Pill slug="yawning-maw-of-truth" /> is equipped. Multiplies damage taken by ×2.25 for 5s.
+- **Exposed** — built up by light damage while <Pill slug="sacrosant-vernicle" /> is equipped. ×1.4 damage taken for 5s.
+- **Marked** — built up by costrike damage while <Pill slug="soiled-purificator" /> is equipped. +100% costrike damage taken for 5s.
+- **Weak** — built up by any damage while <Pill slug="oxidized-flagon" /> is equipped. Target deals less damage to players for 5s.
 
 Vulnerability and Exposure are **additive to each other**; an enemy under both takes +165% more damage (×2.65).
 
@@ -83,7 +85,7 @@ Armor reduces light damage by 60% (×0.4). Killing an armored enemy with light d
 
 Example: an Arciere has 950 HP, so you'd need to deal 950 ÷ 0.4 = 2,375 light damage ($950 / 0.4 = 950 \times 2.5 = 2375$) to kill it through armor.
 
-Regular enemies have 40–60% of their HP as armor *(Arciere itself has 600)*; elites have ~35–40%. Switch to heavy on elites — with small exceptions for full Coop-Power builds or running <Pill slug="blessed-chains" /> / <Pill slug="cruel-harpy-feather" />.
+Regular enemies have 40–60% of their HP as armor *(Arciere itself has 600)*; elites have ~35–40%. Switch to heavy on elites — with small exceptions for full Coop-Power builds or running <Pill slug="blessed-chains" /> / <Pill slug="sacrosant-vernicle" />.
 
 ### Dash Combos
 

@@ -21,7 +21,7 @@ const filtered = category ? relics.filter(r => r.category === category) : relics
           <span class={`pill pill-relic-${relic.rarity}`}>{relic.name}</span>
         </h3>
         <p class="card-effect">{relic.effect}</p>
-        {relic.blessed && <p class="card-blessed">Blessed: {relic.blessed}</p>}
+        {relic.blessed && <p class="card-blessed">{relic.blessed}</p>}
       </article>
     );
   })}

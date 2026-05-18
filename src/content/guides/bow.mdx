@@ -42,37 +42,21 @@ If you're running a heavy attack build, you'll notice that guiding light can fee
 
 This can be done in a short window of 12 frames (counting dodge short frames too), yet better aim for 15 for all arrows to come back. Of course this means you may not be able to dodge when you want to, so you'll need to anticipate your dodge direction!
 
+{/* TODO: missing gif from gdoc (bow-overview Tips and Tricks) */}
+
 Note that guiding light can also cancel the end of the animation of firing an arrow, reducing the heavy firing animation down to 8 frames! Making firing an arrow time: 30 frames charging + 8 frames animation + 15 frames cancelling = 0.89s, which unfortunately is quicker than dash recovery time, unless… (no spoiler). Because of this, if the previously shooted arrow is an heavy, guiding light will be counted as having a 0.17s duration.
 
 ## Builds
 
 Click a build name to expand its breakdown.
 
-### Piercing Arrows
-
-Piercing Arrows is a singular upgrade since it fits with every other upgrade — no particularly detailed builds here, just numbers. All figures are on a *single* target. Mobile Light is not covered but is good for mobility and more damage on recall.
-
-**PA + Small Quiver** (max damage):
-- **Cleaving:** High | **Difficulty:** Medium | **Archetype:** Full Damage
-
-**PA + Double Shot** (max cleaving):
-- **Cleaving:** Maximal | **Difficulty:** Hard *(more static, requires melee)* | **Archetype:** Full Damage
-
-**PA + Quick Shot** (max light damage & coop charging):
-- **Attack speed:** 3.125 arrows/sec | **Damage:** 82.9/arrow (recall included)
-- **Core dps:** 259 | **Costrike/sec:** 3.4
-- **Cleaving:** Medium | **Difficulty:** Easy | **Archetype:** Coop Power + Damage / Support
-
-**PA + Auto Recall** (max costrikes):
-- **Attack speed:** 2.5 arrows/sec | **Damage:** 66.3/arrow
-- **Core dps:** 165.75 | **Costrike/sec:** 5
-- **Cleaving:** Medium | **Difficulty:** Easy | **Archetype:** Coop Power + Support
-
 <Build id="auto-recall-quick-shot" name="Make it Rain" upgrades={["auto-recall", "quick-shot"]} desc="Quick attacks and costrikes build focusing on Coop Power.">
 
 Natural build for bow, allowing to get a lot of hits and costrikes per second, thus being great for Coop Power charging. It also has a lot of mobility since a bow shot won't lock you in place for long, so helping your mates to activate their coop power is a good idea with this build, plus you'll already be investing in Stronger Coop Powers for your own coop power.
 
 It's ability to perform a lot of costrikes in no time makes this build a great option for playing <Pill slug="muddy-apostle-medal" />, allowing to charge coop power in around 15 seconds.
+
+<img class="demo-gif" src="/assets/gifs/bow-make-it-rain-medal.gif" alt="Muddy Apostle Medal Coop Power charging demo" loading="lazy" />
 
 In addition, arrows from coop power being fixed damage makes it a great option for applying Exposed and/or Weak (not Marked though!) without having to take care about your own damage.
 
@@ -134,7 +118,6 @@ Note that if you want to try hard, you can win some frames and damage by dodging
 - You may create chaos or even kill your allies if you put your coop power at the bad timing
 - Requires two other person (lol)
 
-<img class="demo-gif" src="/assets/gifs/bow-make-it-rain.gif" alt="Make it Rain Again build demo" loading="lazy" />
 
 </Build>
 
@@ -177,13 +160,20 @@ Build info will cover these two playstyles, considering <Pill slug="cosmic-rebir
 
 ### Build info
 
-| | (1) Reversed | (2) Base | (2) with Atk Speed |
-|---|---|---|---|
-| **Charged per sec** | 0.8 | 0.8 | 1 |
-| **Damage per charged** | 521.1 | 530.2 | 630.75 |
-| **Core DPS** | 416.9 | 424.2 | 630.75 |
-| **Costrike per second** | 1.6 | 1.6 | 2 |
-| **Costrike per second in counter** | 2.4 | 2.4 | 3 |
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th></th><th>(1) Reversed</th><th>(2) Base</th><th>(2) with <Pill slug="worn-scapular" /></th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Charged per sec</strong></td><td>0.8</td><td>0.8</td><td>1</td></tr>
+    <tr><td><strong>Damage per charged</strong></td><td>521.1</td><td>530.2 → <span style="color: #ef4444">630.75</span></td><td>530.2 → <span style="color: #ef4444">630.75</span></td></tr>
+    <tr><td><strong>Core DPS</strong></td><td>416.9</td><td>424.2 → <span style="color: #ef4444">504.6</span></td><td>530.2 → <span style="color: #ef4444">630.75</span></td></tr>
+    <tr><td><strong>Costrike per second</strong></td><td>1.6</td><td>1.6</td><td>2</td></tr>
+    <tr><td><strong>Costrike per second in counter</strong></td><td>2.4</td><td>2.4</td><td>3</td></tr>
+  </tbody>
+</table>
+</div>
 
 - **Cleaving capacity:** Medium
 - **Difficulty rating:** Medium
@@ -217,13 +207,20 @@ Build info will take in consideration a full Dash Combo usage, with <Pill slug="
 
 ### Build info
 
-| | + Atk Speed | |
-|---|---|---|
-| **Charged per sec** | 0.8 | 1 |
-| **Damage per charged** | 734.8 | 855.5 |
-| **Core DPS** | 627.12 | 734.8 |
-| **Costrike per second** | 1.6 | 2 |
-| **Costrike per second in counter** | 2.4 | 3 |
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr><th></th><th>with <Pill slug="cosmic-rebirth" /></th><th><Pill slug="worn-scapular" /> + <Pill slug="cosmic-rebirth" /></th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Charged per sec</strong></td><td>0.8</td><td>1</td></tr>
+    <tr><td><strong>Damage per charged</strong></td><td>734.8 → <span style="color: #ef4444">855.5</span></td><td>734.8 → <span style="color: #ef4444">855.5</span></td></tr>
+    <tr><td><strong>Core DPS</strong></td><td>627.12 → <span style="color: #ef4444">684.4</span></td><td>734.8 → <span style="color: #ef4444">855.5</span></td></tr>
+    <tr><td><strong>Costrike per second</strong></td><td>1.6</td><td>2</td></tr>
+    <tr><td><strong>Costrike per second in counter</strong></td><td>2.4</td><td>3</td></tr>
+  </tbody>
+</table>
+</div>
 
 - **Cleaving capacity:** High
 - **Difficulty rating:** Hard
@@ -342,5 +339,27 @@ Concept is simple here: we take <Pill slug="mobile-light" /> for its additional 
 ### Cons
 
 - Lacks a bit of costrikes, making <Pill slug="muddy-apostle-medal" /> less effective on this build
+
+</Build>
+
+<Build id="piercing-arrows" name="Piercing Arrows" upgrades={["piercing-arrows"]} desc="Fits with every other upgrade — quick overview of each pairing.">
+
+Piercing Arrows is a singular upgrade since it fits with every other upgrade — no particularly detailed builds here, just numbers. All figures are on a *single* target. Mobile Light is not covered but is good for mobility and more damage on recall.
+
+**PA + Small Quiver** (max damage):
+- **Cleaving:** High | **Difficulty:** Medium | **Archetype:** Full Damage
+
+**PA + Double Shot** (max cleaving):
+- **Cleaving:** Maximal | **Difficulty:** Hard *(more static, requires melee)* | **Archetype:** Full Damage
+
+**PA + Quick Shot** (max light damage & coop charging):
+- **Attack speed:** 3.125 arrows/sec | **Damage:** 82.9/arrow (recall included)
+- **Core dps:** 259 | **Costrike/sec:** 3.4
+- **Cleaving:** Medium | **Difficulty:** Easy | **Archetype:** Coop Power + Damage / Support
+
+**PA + Auto Recall** (max costrikes):
+- **Attack speed:** 2.5 arrows/sec | **Damage:** 66.3/arrow
+- **Core dps:** 165.75 | **Costrike/sec:** 5
+- **Cleaving:** Medium | **Difficulty:** Easy | **Archetype:** Coop Power + Support
 
 </Build>
