@@ -5,6 +5,7 @@ lead: Tank/support weapon with parry. Provides shield via Coop Power and stagger
 import Pill from '../../components/Pill.astro';
 import Build from '../../components/Build.astro';
 import Coop from '../../components/Coop.astro';
+import UpgradeList from '../../components/UpgradeList.astro';
 
 <img class="entity-icon entity-icon-hero" src="/assets/icons/weapons/sword-hero.png" alt="First look at Sword of Justice" loading="lazy" />
 
@@ -30,7 +31,7 @@ Doing a successful light attack provides 10 Justice, and Justice is consumed at 
 
 ## Sword upgrades
 
-<div data-render="upgrades" data-weapon="sword"></div>
+<UpgradeList weapon="sword" />
 
 ## Tips and tricks
 

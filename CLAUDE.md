@@ -38,4 +38,3 @@ Add to the appropriate YAML file in `src/data/`. Add icon to `public/assets/icon
 ## Remaining work
 
 1. Search index generation
-2. Upgrade rendering for `<div data-render="upgrades">` sections (currently no-op client-side)

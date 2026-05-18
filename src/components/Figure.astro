@@ -3,11 +3,19 @@ interface Props {
   src: string;
   alt: string;
   variant?: 'banner' | 'wide' | 'inline';
+  expandable?: boolean;
 }
 
-const { src, alt, variant } = Astro.props;
+const { src, alt, variant, expandable } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const resolvedSrc = src.startsWith('/') ? `${base}${src.slice(1)}` : src;
 const cls = variant ? `formula-figure ${variant}` : 'formula-figure';
 ---
-<img class={cls} src={resolvedSrc} alt={alt} loading="lazy" />
+{expandable ? (
+  <div class="map-block">
+    <img class={`${cls} map-image`} src={resolvedSrc} alt={alt} loading="lazy" />
+    <button class="map-expand" type="button" aria-label="Expand image">⤢</button>
+  </div>
+) : (
+  <img class={cls} src={resolvedSrc} alt={alt} loading="lazy" />
+)}

@@ -1,0 +1,30 @@
+---
+import { upgrades } from '../data/items';
+import iconsData from '../data/icons.json';
+
+interface Props {
+  weapon: string;
+}
+
+const { weapon } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const icons = iconsData as Record<string, { path: string }>;
+const entries = upgrades.filter(u => u.weapon === weapon);
+---
+<div class="upgrade-grid">
+{entries.map(u => {
+  const icon = icons[u.slug];
+  return (
+    <div class="upgrade-entry" id={`upgrade-${u.slug}`}>
+      <div class="upgrade-header">
+        <span class="pill pill-upgrade">
+          {icon && <img class="pill-icon" src={`${base}${icon.path}`} alt="" loading="lazy" />}
+          {u.name}
+        </span>
+      </div>
+      <p class="upgrade-effect">{u.effect}</p>
+      {u.note && <p class="upgrade-note">{u.note}</p>}
+    </div>
+  );
+})}
+</div>

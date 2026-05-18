@@ -5,6 +5,7 @@ lead: Ranged, high attack speed weapon. Quick costrike buildup; can apply status
 import Pill from '../../components/Pill.astro';
 import Build from '../../components/Build.astro';
 import Coop from '../../components/Coop.astro';
+import UpgradeList from '../../components/UpgradeList.astro';
 
 <img class="entity-icon entity-icon-hero" src="/assets/icons/weapons/bow-hero.png" alt="First look at Bow of Hope" loading="lazy" />
 
@@ -27,11 +28,11 @@ Bow coop power unleashes a volley of 3 arrows in 3 columns 2.4 times per seconds
 - Guiding Light duration: 0.58s
 - Guiding Light with animation cancel: ~0.2s (see tips and tricks)
 
-Note: Performing a Dash Combo then instantly recalling the arrow(s) shot will also apply Dash Combo multiplier to recalled arrows. I have reported this a while back and have no idea if this is intended, so during the calculation on builds, if DC is used with instant recall I'll add calculation in parenthesis and show the effective value in red.
+Note: Performing a Dash Combo then instantly recalling the arrow(s) shot will also apply Dash Combo multiplier to recalled arrows. This was reported a while back and it's unclear if it's intended, so where DC is used with instant recall the calculation is shown in parenthesis with the effective value in red.
 
 ## Bow upgrades
 
-<div data-render="upgrades" data-weapon="bow"></div>
+<UpgradeList weapon="bow" />
 
 ## Tips and tricks
 
@@ -46,6 +47,26 @@ Note that guiding light can also cancel the end of the animation of firing an ar
 ## Builds
 
 Click a build name to expand its breakdown.
+
+### Piercing Arrows
+
+Piercing Arrows is a singular upgrade since it fits with every other upgrade — no particularly detailed builds here, just numbers. All figures are on a *single* target. Mobile Light is not covered but is good for mobility and more damage on recall.
+
+**PA + Small Quiver** (max damage):
+- **Cleaving:** High | **Difficulty:** Medium | **Archetype:** Full Damage
+
+**PA + Double Shot** (max cleaving):
+- **Cleaving:** Maximal | **Difficulty:** Hard *(more static, requires melee)* | **Archetype:** Full Damage
+
+**PA + Quick Shot** (max light damage & coop charging):
+- **Attack speed:** 3.125 arrows/sec | **Damage:** 82.9/arrow (recall included)
+- **Core dps:** 259 | **Costrike/sec:** 3.4
+- **Cleaving:** Medium | **Difficulty:** Easy | **Archetype:** Coop Power + Damage / Support
+
+**PA + Auto Recall** (max costrikes):
+- **Attack speed:** 2.5 arrows/sec | **Damage:** 66.3/arrow
+- **Core dps:** 165.75 | **Costrike/sec:** 5
+- **Cleaving:** Medium | **Difficulty:** Easy | **Archetype:** Coop Power + Support
 
 <Build id="auto-recall-quick-shot" name="Make it Rain" upgrades={["auto-recall", "quick-shot"]} desc="Quick attacks and costrikes build focusing on Coop Power.">
 

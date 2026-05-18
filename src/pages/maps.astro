@@ -22,41 +22,4 @@ const base = import.meta.env.BASE_URL;
     <button class="map-expand" type="button" aria-label="Expand Paradiso map">⤢</button>
   </div>
 
-  <div class="map-overlay" hidden aria-hidden="true">
-    <button class="map-overlay-close" type="button" aria-label="Close expanded map">✕</button>
-    <img class="map-overlay-image" src="" alt="" />
-  </div>
-
-  <script>
-    (() => {
-      const overlay = document.querySelector('.map-overlay');
-      const overlayImg = overlay.querySelector('.map-overlay-image');
-      const closeBtn = overlay.querySelector('.map-overlay-close');
-      const open = (src, alt) => {
-        overlayImg.src = src;
-        overlayImg.alt = alt;
-        overlay.hidden = false;
-        overlay.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      };
-      const close = () => {
-        overlay.hidden = true;
-        overlay.setAttribute('aria-hidden', 'true');
-        overlayImg.src = '';
-        document.body.style.overflow = '';
-      };
-      for (const btn of document.querySelectorAll('.map-expand')) {
-        btn.addEventListener('click', () => {
-          const img = btn.parentElement.querySelector('.map-image');
-          open(img.src, img.alt);
-        });
-      }
-      for (const img of document.querySelectorAll('.map-image')) {
-        img.addEventListener('click', () => open(img.src, img.alt));
-      }
-      closeBtn.addEventListener('click', close);
-      overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !overlay.hidden) close(); });
-    })();
-  </script>
 </GuideLayout>
