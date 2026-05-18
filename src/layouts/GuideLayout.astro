@@ -299,11 +299,28 @@ function initImageExpand() {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !overlay.hidden) close(); });
 }
 
+function initBuildLinks() {
+  for (const d of document.querySelectorAll<HTMLDetailsElement>('details.build[id]')) {
+    d.addEventListener('toggle', () => {
+      if (d.open) history.replaceState(null, '', '#' + d.id);
+      else if (location.hash === '#' + d.id) history.replaceState(null, '', location.pathname + location.search);
+    });
+  }
+  const hash = location.hash.slice(1);
+  if (!hash) return;
+  const target = document.getElementById(hash);
+  if (target instanceof HTMLDetailsElement && target.classList.contains('build')) {
+    target.open = true;
+    target.scrollIntoView({ block: 'start' });
+  }
+}
+
 initTheme();
 initMobileToggle();
 initActiveLink();
 initPillTooltips();
 initImageExpand();
+initBuildLinks();
 </script>
 </body>
 </html>
