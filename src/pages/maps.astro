@@ -7,14 +7,14 @@ const base = import.meta.env.BASE_URL;
   <p class="page-lead">Reference maps for each region — chest, altar, sigil, and event locations.</p>
   <p>Each color corresponds to one possible layout (3 possible). On Paradiso, sigil chambers show the first-wave / second-wave sigil per spawn point.</p>
 
-  <div class="map-block" id="purgatorio">
-    <img class="map-image" src={`${base}assets/maps/purgatorio.png`} alt="Purgatorio map showing chests, altars, and sigil locations" loading="lazy" />
-    <button class="map-expand" type="button" aria-label="Expand Purgatorio map">⤢</button>
-  </div>
-
   <div class="map-block" id="inferno">
     <img class="map-image" src={`${base}assets/maps/inferno.png`} alt="Inferno map showing chests, altars, and sigil locations" loading="lazy" />
     <button class="map-expand" type="button" aria-label="Expand Inferno map">⤢</button>
+  </div>
+
+  <div class="map-block" id="purgatorio">
+    <img class="map-image" src={`${base}assets/maps/purgatorio.png`} alt="Purgatorio map showing chests, altars, and sigil locations" loading="lazy" />
+    <button class="map-expand" type="button" aria-label="Expand Purgatorio map">⤢</button>
   </div>
 
   <div class="map-block" id="paradiso">
