@@ -109,9 +109,11 @@ function initMobileToggle() {
 }
 
 function initActiveLink() {
-  const here = (location.pathname.split('/').pop() || 'index').toLowerCase();
+  const segments = location.pathname.split('/').filter(Boolean);
+  const here = (segments.pop() || 'index').toLowerCase();
   document.querySelectorAll('.nav-group a').forEach(a => {
-    const href = (a.getAttribute('href') || '').split('/').pop()?.split('#')[0]?.toLowerCase() || '';
+    const hrefSegments = (a.getAttribute('href') || '').split('/').filter(Boolean);
+    const href = (hrefSegments.pop() || 'index')?.split('#')[0]?.toLowerCase() || '';
     if (href === here || href === here + '.html') a.classList.add('active');
   });
 }
