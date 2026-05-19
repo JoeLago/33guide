@@ -769,7 +769,7 @@ section + section { margin-top: 24px; }
   outline: none;
 }
 
-/* Gameplay demonstration GIF embedded inline in build / tips content */
+/* Gameplay demonstration video embedded inline in build / tips content */
 .demo-gif {
   display: block;
   width: 100%;
