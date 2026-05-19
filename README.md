@@ -27,7 +27,7 @@ Then open http://localhost:4321 in your browser. The page will update live as yo
 | Relic list (names, effects, rarity) | `src/data/relics.yml` |
 | Upgrade list (names, effects, weapons) | `src/data/upgrades.yml` |
 | Icons for items | `public/assets/icons/` |
-| GIFs for build demos | `public/assets/gifs/` |
+| Videos for build demos | `public/assets/videos/` |
 | Site-wide styling | `public/assets/styles.css` |
 
 ## Editing a guide page
@@ -107,15 +107,27 @@ Your build content goes here. Regular markdown works inside.
 - `upgrades` — the two upgrade slugs (must match `src/data/upgrades.yml`)
 - `desc` — one-line summary shown below the name
 
-### Adding images and GIFs
+### Adding gameplay videos
 
-Place the file in `public/assets/gifs/` or `public/assets/icons/`, then reference it:
+Gameplay clips are stored as MP4 videos (not GIFs — they're too large for git). To add a new clip:
 
-```
-<img class="demo-gif" src="/assets/gifs/bow-make-it-rain.gif" alt="Description" loading="lazy" />
-```
+1. Start with a GIF or video source file
+2. Convert to MP4 using the included script:
+   ```
+   bash scripts/convert-gifs.sh path/to/source/dir public/assets/videos
+   ```
+   Or convert a single file with ffmpeg directly:
+   ```
+   ffmpeg -y -i clip.gif -c:v libx264 -crf 23 -preset slow -pix_fmt yuv420p -movflags +faststart -vf "pad=ceil(iw/2)*2:ceil(ih/2)*2" -an public/assets/videos/clip.mp4
+   ```
+3. Reference it in your MDX file:
+   ```
+   <video class="demo-gif" src="/assets/videos/clip.mp4" autoplay loop muted playsinline preload="none">
+     Description of the clip
+   </video>
+   ```
 
-All paths must start with `/assets/`.
+All paths must start with `/assets/`. **Do not commit GIF files** — they are blocked by `.gitignore`.
 
 ### Tables
 

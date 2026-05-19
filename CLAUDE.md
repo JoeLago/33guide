@@ -17,17 +17,24 @@ npm run preview  # serve dist/ locally
 - `src/data/icons.json` is machine-generated — don't hand-edit
 - JSON endpoints (`src/pages/assets/*.json.ts`) generate `/assets/items.json` and `/assets/icons.json` at build time
 - All styles live in `public/assets/styles.css` — single file, edit in place
-- Client JS is inlined in `GuideLayout.astro` (theme, nav, tooltips)
+- Client JS is inlined in `GuideLayout.astro` (theme, nav, tooltips, lazy video loading)
 
 ## Gotchas
 
 - Asset paths in MDX must start with `/assets/...` (public directory root)
-- Bare `<` in MDX (like `<5s` or `<-`) must be escaped as `\<` to avoid JSX parse errors
+- Bare `<` in MDX (like `<5s` or `<-`) must be escaped as `\<` to avoid JSX parse errors — this includes `<video>` fallback text content
 - Rehype plugin (`plugins/rehype-wrap-tables.mjs`) auto-wraps GFM tables in `.table-wrap`
+- Rehype plugin (`plugins/rehype-base-urls.mjs`) rewrites `<img>` and `<video>` src paths for the GitHub Pages base path
+- GIF files are blocked by `.gitignore` — convert to MP4 via `scripts/convert-gifs.sh` before committing
+- Gameplay videos use `<video class="demo-gif">` with `preload="none"` — an IntersectionObserver in GuideLayout lazy-loads them
 
 ## Adding new items
 
 Add to the appropriate YAML file in `src/data/`. Add icon to `public/assets/icons/{type}/` and update `src/data/icons.json`. Build will fail with a Zod error if schema is wrong.
+
+## Adding gameplay videos
+
+Convert source GIFs to MP4 with `scripts/convert-gifs.sh` (or ffmpeg directly). Place MP4s in `public/assets/videos/`. Reference with `<video class="demo-gif" src="/assets/videos/name.mp4" autoplay loop muted playsinline preload="none">`. Never commit raw GIF files.
 
 ## Adding a new page
 
