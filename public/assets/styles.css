@@ -257,6 +257,10 @@ body {
   .page-nav { display: none !important; }
 }
 
+@media (max-width: 900px) {
+  .layout.has-page-nav { grid-template-columns: 1fr; }
+}
+
 .crumb {
   font-size: 13px;
   color: var(--text-muted);
