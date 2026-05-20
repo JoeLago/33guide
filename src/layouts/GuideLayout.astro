@@ -69,6 +69,7 @@ const base = import.meta.env.BASE_URL;
 <main class="main">
   <slot />
 </main>
+<aside class="page-nav"></aside>
 </div>
 <div class="map-overlay" hidden aria-hidden="true">
   <button class="map-overlay-close" type="button" aria-label="Close expanded image">✕</button>
@@ -325,6 +326,72 @@ initPillTooltips();
 initImageExpand();
 initBuildLinks();
 initLazyVideos();
+initPageNav();
+
+function initPageNav() {
+  const builds = document.querySelectorAll<HTMLDetailsElement>('details.build[id]');
+  if (!builds.length) return;
+
+  const aside = document.querySelector('.page-nav');
+  const main = document.querySelector('.main');
+  if (!aside || !main) return;
+
+  const headings = main.querySelectorAll<HTMLHeadingElement>('h2[id]');
+  const buildsHeadingId = 'builds';
+
+  let html = '<nav class="page-nav-inner"><p class="page-nav-title">On this page</p><ul>';
+  const targets: { id: string; el: Element }[] = [];
+
+  headings.forEach(h => {
+    targets.push({ id: h.id, el: h });
+    html += `<li><a href="#${h.id}" class="page-nav-link" data-target="${h.id}">${h.textContent}</a>`;
+    if (h.id === buildsHeadingId) {
+      html += '<ul>';
+      builds.forEach(b => {
+        const nameEl = b.querySelector('.build-name');
+        const name = nameEl ? Array.from(nameEl.querySelectorAll('.pill')).map(p => p.textContent!.trim()).join(' + ') : b.id;
+        targets.push({ id: b.id, el: b });
+        html += `<li><a href="#${b.id}" class="page-nav-link page-nav-build" data-target="${b.id}">${name}</a></li>`;
+      });
+      html += '</ul>';
+    }
+    html += '</li>';
+  });
+
+  html += '</ul></nav>';
+  aside.innerHTML = html;
+  document.querySelector('.layout')!.classList.add('has-page-nav');
+
+  aside.addEventListener('click', e => {
+    const link = (e.target as HTMLElement).closest<HTMLAnchorElement>('.page-nav-link');
+    if (!link) return;
+    const id = link.dataset.target;
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (el instanceof HTMLDetailsElement && el.classList.contains('build')) {
+      el.open = true;
+    }
+    e.preventDefault();
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  let currentLink: HTMLAnchorElement | null = null;
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      const id = (entry.target as HTMLElement).id;
+      const link = aside.querySelector<HTMLAnchorElement>(`[data-target="${id}"]`);
+      if (link && link !== currentLink) {
+        currentLink?.classList.remove('active');
+        link.classList.add('active');
+        currentLink = link;
+      }
+    }
+  }, { rootMargin: '0px 0px -70% 0px', threshold: 0 });
+
+  targets.forEach(t => observer.observe(t.el));
+}
 
 function initLazyVideos() {
   const videos = document.querySelectorAll('video.demo-gif');
