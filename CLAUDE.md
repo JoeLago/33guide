@@ -14,10 +14,11 @@ npm run preview  # serve dist/ locally
 
 - MDX guide pages: content collection (`src/content/guides/`) → `GuideLayout`
 - Data-driven pages (perks, relics): YAML in `src/data/` → Zod validation → server-rendered grids
-- `src/data/icons.json` is machine-generated — don't hand-edit
+- `src/data/icons.json` — manually maintained icon registry; edit when adding new items
 - JSON endpoints (`src/pages/assets/*.json.ts`) generate `/assets/items.json` and `/assets/icons.json` at build time
 - All styles live in `public/assets/styles.css` — single file, edit in place
 - Client JS is inlined in `GuideLayout.astro` (theme, nav, tooltips, lazy video loading)
+- LaTeX math via `remark-math` + `rehype-katex`; KaTeX CSS loaded from CDN in `GuideLayout.astro`
 
 ## Gotchas
 
@@ -32,16 +33,30 @@ npm run preview  # serve dist/ locally
 
 Add to the appropriate YAML file in `src/data/`. Add icon to `public/assets/icons/{type}/` and update `src/data/icons.json`. Build will fail with a Zod error if schema is wrong.
 
+Schema fields (`src/data/schemas.ts`):
+- **Relics**: `slug`, `name`, `rarity` (common|rare|epic|legendary|fake), `category`, `categoryLabel`, `effect`, `blessed?`
+- **Upgrades**: `slug`, `name`, `weapon`, `weaponLabel`, `effect`, `note?`
+- **Perks**: `slug`, `name`, `effect`, `note?`
+
 ## Adding gameplay videos
 
 Convert source GIFs to MP4 with `scripts/convert-gifs.sh` (or ffmpeg directly). Place MP4s in `public/assets/videos/`. Reference with `<video class="demo-gif" src="/assets/videos/name.mp4" autoplay loop muted playsinline preload="none">`. Never commit raw GIF files.
 
+## Components (`src/components/`)
+
+| Component | Used in | Purpose |
+|---|---|---|
+| `Pill` | MDX guides | Inline item reference with icon + tooltip (`slug` prop) |
+| `Build` | MDX guides | Collapsible build breakdown (`id`, `name`, `upgrades[]`, `desc?`) |
+| `UpgradeList` | MDX guides | Renders all upgrades for a weapon (`weapon` prop) |
+| `Coop` | MDX guides | Weapon Coop Power icon (`weapon` prop) |
+| `Figure` | MDX guides | Image with variant sizing + optional expand (`src`, `alt`, `variant?`, `expandable?`) |
+| `Callout` | MDX guides | Highlight box wrapping slot content |
+| `PerkGrid` | `perks.astro` | Server-rendered perk card grid |
+| `RelicGrid` | `relics.astro` | Server-rendered relic card grid, filterable by `category` |
+
 ## Adding a new page
 
-1. Create `src/content/guides/{slug}.mdx` with `title` and `lead` frontmatter
+1. Create `src/content/guides/{slug}.mdx` with `title` frontmatter (`lead` is optional)
 2. Create `src/pages/{slug}.astro` using the content-collection pattern
 3. Add nav link in `src/layouts/GuideLayout.astro`
-
-## Remaining work
-
-1. Search index generation

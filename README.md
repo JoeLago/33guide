@@ -62,7 +62,7 @@ import Build from '../../components/Build.astro';
 import Coop from '../../components/Coop.astro';
 ```
 
-**Don't remove the import lines** — they enable the special components below.
+`title` is required. `lead` is optional — if provided, it appears as a subtitle under the page heading. **Don't remove the import lines** — they enable the special components below.
 
 ### Mentioning an item (Pill)
 
@@ -107,6 +107,45 @@ Your build content goes here. Regular markdown works inside.
 - `upgrades` — the two upgrade slugs (must match `src/data/upgrades.yml`)
 - `desc` — one-line summary shown below the name
 
+### Showing a weapon's Coop Power icon (Coop)
+
+Weapon pages display a Coop Power icon:
+
+```
+import Coop from '../../components/Coop.astro';
+
+<Coop weapon="bow" />
+```
+
+The `weapon` value must match the weapon slug in `upgrades.yml` (`bow`, `sword`, `daggers`, `staff`, `glaive`, `crossbows`, `hooks`).
+
+### Adding an image (Figure)
+
+For inline images like formulas or diagrams:
+
+```
+import Figure from '../../components/Figure.astro';
+
+<Figure src="/assets/figures/damage/formula.png" alt="Description" variant="banner" />
+<Figure src="/assets/maps/map.png" alt="Description" expandable />
+```
+
+- `src` and `alt` are required
+- `variant` — `"banner"`, `"wide"`, or `"inline"` (controls sizing)
+- `expandable` — adds a button to view the image full-size in an overlay
+
+### Highlighting a paragraph (Callout)
+
+Wraps content in a styled highlight box:
+
+```
+import Callout from '../../components/Callout.astro';
+
+<Callout>
+Important information here.
+</Callout>
+```
+
 ### Adding gameplay videos
 
 Gameplay clips are stored as MP4 videos (not GIFs — they're too large for git). To add a new clip:
@@ -128,6 +167,18 @@ Gameplay clips are stored as MP4 videos (not GIFs — they're too large for git)
    ```
 
 All paths must start with `/assets/`. **Do not commit GIF files** — they are blocked by `.gitignore`.
+
+### Math formulas
+
+The damage page uses LaTeX math notation, rendered by KaTeX. Inline math uses single dollar signs (`$1.5 \times 0.75$`) and display math uses double:
+
+```
+$$
+\text{Base} \times \text{Multiplier} \times (1 + \sum\text{Bonuses})
+$$
+```
+
+This works in any `.mdx` guide page — no extra imports needed.
 
 ### Tables
 
@@ -159,6 +210,7 @@ These are in simple YAML files in `src/data/`. Each entry looks like:
 - slug: worn-scapular
   name: Worn Scapular
   category: mobility
+  categoryLabel: Mobility
   rarity: common
   effect: Reduces dash cooldown by 25%.
   blessed: Reduces dash cooldown by 40%.
@@ -169,8 +221,11 @@ These are in simple YAML files in `src/data/`. Each entry looks like:
 - slug: auto-recall
   name: Auto Recall
   weapon: bow
+  weaponLabel: Bow of Hope
   effect: Arrows are automatically recalled after a short delay.
 ```
+
+`category`/`weapon` are URL-friendly keys; `categoryLabel`/`weaponLabel` are the display names shown on the site.
 
 After editing, run `npm run build` — if something is wrong, the error message will tell you exactly which field is missing or invalid.
 
@@ -184,7 +239,7 @@ After editing, run `npm run build` — if something is wrong, the error message 
    ```
 4. Run `npm run build` to verify everything works
 
-The runtime JSON files (`items.json`, `icons.json`) are generated automatically during the build — no need to update them by hand.
+The build generates `/assets/items.json` and `/assets/icons.json` endpoints from your source files — you don't need to touch those output files.
 
 ## Publishing changes
 
@@ -200,7 +255,7 @@ This generates the final site in the `dist/` folder, ready to deploy.
 
 | Problem | Fix |
 |---|---|
-| Build fails with "frontmatter" error | Check that the `---` block at the top of your MDX file has both `title` and `lead` |
+| Build fails with "frontmatter" error | Check that the `---` block at the top of your MDX file has `title` (required) and optionally `lead` |
 | Build fails with "unexpected token" | You probably have a bare `<` — escape it as `\<` |
 | Pill shows no icon/tooltip | Make sure the slug matches exactly (check the YAML file) and that `icons.json` has an entry |
 | Page not showing in nav | Add a link in `src/layouts/GuideLayout.astro` |
