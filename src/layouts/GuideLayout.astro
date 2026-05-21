@@ -131,6 +131,7 @@ function initPillTooltips() {
   let activeEl: HTMLElement | null = null;
   let showTimer: ReturnType<typeof setTimeout> | null = null;
   let hideTimer: ReturnType<typeof setTimeout> | null = null;
+  let tapped = false;
   let _itemsPromise: Promise<any> | null = null;
 
   function loadItems() {
@@ -218,6 +219,7 @@ function initPillTooltips() {
     tip.removeAttribute('data-interactive');
     if (pill) pill.removeAttribute('aria-describedby');
     activeEl = null;
+    tapped = false;
   }
 
   function scheduleHide(pill: HTMLElement | null) {
@@ -234,11 +236,13 @@ function initPillTooltips() {
     }
     if (showTimer) clearTimeout(showTimer);
     if (hideTimer) clearTimeout(hideTimer);
+    tapped = false;
     activeEl = pill;
     showTimer = setTimeout(() => showTip(pill), 120);
   });
 
   document.addEventListener('pointerout', e => {
+    if (tapped) return;
     const pill = (e.target as HTMLElement).closest('.pill') as HTMLElement | null;
     if (!pill) return;
     if (showTimer) clearTimeout(showTimer);
@@ -246,7 +250,28 @@ function initPillTooltips() {
   });
 
   tip.addEventListener('pointerenter', () => { if (hideTimer) clearTimeout(hideTimer); });
-  tip.addEventListener('pointerleave', () => scheduleHide(activeEl));
+  tip.addEventListener('pointerleave', () => { if (!tapped) scheduleHide(activeEl); });
+
+  document.addEventListener('click', e => {
+    const target = e.target as HTMLElement;
+    const pill = target.closest('.pill') as HTMLElement | null;
+    if (pill) {
+      if (tapped && pill === activeEl) {
+        hideTip(pill);
+        return;
+      }
+      if (activeEl && activeEl !== pill) hideTip(activeEl);
+      tapped = true;
+      activeEl = pill;
+      if (showTimer) clearTimeout(showTimer);
+      if (hideTimer) clearTimeout(hideTimer);
+      showTip(pill);
+      return;
+    }
+    if (!tip.contains(target) && tapped) {
+      hideTip(activeEl);
+    }
+  });
 
   document.addEventListener('focusin', e => {
     const pill = (e.target as HTMLElement).closest('.pill') as HTMLElement | null;
@@ -256,11 +281,12 @@ function initPillTooltips() {
   });
 
   document.addEventListener('focusout', e => {
+    if (tapped) return;
     const pill = (e.target as HTMLElement).closest('.pill') as HTMLElement | null;
     if (pill) hideTip(pill);
   });
 
-  document.addEventListener('scroll', () => hideTip(activeEl), true);
+  document.addEventListener('scroll', () => { if (!tapped) hideTip(activeEl); }, true);
   window.addEventListener('resize', () => hideTip(activeEl));
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && activeEl) { hideTip(activeEl); activeEl = null; }
