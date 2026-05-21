@@ -375,7 +375,7 @@ function initPageNav() {
       html += '<ul>';
       builds.forEach(b => {
         const nameEl = b.querySelector('.build-name');
-        const name = nameEl ? Array.from(nameEl.querySelectorAll('.pill')).map(p => p.textContent!.trim()).join(' + ') : b.id;
+        const name = nameEl ? Array.from(nameEl.querySelectorAll('.pill')).map(p => p.textContent!.trim()).join('<br> + ') : b.id;
         targets.push({ id: b.id, el: b });
         html += `<li><a href="#${b.id}" class="page-nav-link page-nav-build" data-target="${b.id}">${name}</a></li>`;
       });
