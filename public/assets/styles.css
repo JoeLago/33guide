@@ -656,8 +656,8 @@ tbody tr:last-child td { border-bottom: none; }
 .menu-toggle {
   display: none;
   position: fixed;
-  top: 12px;
-  left: 12px;
+  top: calc(12px + env(safe-area-inset-top));
+  left: calc(12px + env(safe-area-inset-left));
   z-index: 30;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -677,13 +677,21 @@ tbody tr:last-child td { border-bottom: none; }
     top: 0;
     width: 86%;
     max-width: 320px;
-    height: 100vh;
+    height: 100dvh;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
     transition: left 0.2s ease;
     box-shadow: var(--shadow-strong);
   }
   .sidebar.open { left: 0; }
   .menu-toggle { display: block; }
-  .main { padding: 60px 20px 60px; }
+  .main {
+    padding:
+      calc(60px + env(safe-area-inset-top))
+      calc(20px + env(safe-area-inset-right))
+      calc(60px + env(safe-area-inset-bottom))
+      calc(20px + env(safe-area-inset-left));
+  }
   h1 { font-size: 26px; }
   h2 { font-size: 20px; }
   .card-grid { grid-template-columns: 1fr; }
@@ -817,8 +825,8 @@ section + section { margin-top: 24px; }
 
 .map-overlay-close {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: calc(16px + env(safe-area-inset-top));
+  right: calc(16px + env(safe-area-inset-right));
   width: 40px;
   height: 40px;
   padding: 0;
