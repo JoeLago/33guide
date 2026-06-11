@@ -2,6 +2,10 @@
 
 This is the source for the 33 Immortals community build guide website. You don't need to be a programmer to update the content — most pages are written in a format close to plain text.
 
+### Just want to fix or add some guide content?
+
+You don't need any of the setup below. See **[CONTRIBUTING.md](CONTRIBUTING.md)** for how to edit pages and upload images **entirely from your web browser** — no installs, no command line, no git. The instructions below are for running the site locally, which is optional.
+
 ## Setup (one-time)
 
 1. Install [Node.js](https://nodejs.org/) (LTS version)
