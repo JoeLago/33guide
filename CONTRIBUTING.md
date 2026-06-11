@@ -172,12 +172,39 @@ steps are in the [README](README.md#adding-a-new-item).
 
 ---
 
-## Want to add a gameplay video?
+## Want to add a gameplay clip?
 
-Gameplay clips need to be converted to a web-friendly format first, which can't
-be done through the browser. Please
+Gameplay clips on this site are short, silent, looping **MP4** videos. If you can
+record or export an MP4, you can upload it just like a photo:
+[⬆️ Upload to `videos`](https://github.com/JoeLago/33guide/upload/main/public/assets/videos).
+
+**Please upload MP4, not GIF** — GIFs are several times larger and aren't accepted
+by the project. Most screen recorders (the built-in Xbox Game Bar on Windows,
+QuickTime on Mac, OBS, or your console's clip/share feature) already save MP4.
+
+A few things that keep clips small and looking right on the site:
+
+- **Format:** MP4 with H.264 video (the most common default).
+- **Keep it short** — usually 2–6 seconds, trimmed to just the thing you're
+  showing.
+- **Audio doesn't matter** — clips play muted, so feel free to mute or leave it.
+- **File size:** aim for a few MB. If yours is much larger, trim it shorter or
+  lower the resolution to 720p.
+
+After uploading, reference it in a guide page like this:
+
+```
+<video class="demo-gif" src="/assets/videos/your-clip.mp4" autoplay loop muted playsinline preload="none">
+  Short description of the clip
+</video>
+```
+
+(Or just mention the filename in your pull request and a maintainer will place
+it on the page.)
+
+**Only have a GIF or some other format?** No problem —
 [open an issue](https://github.com/JoeLago/33guide/issues/new) and attach or link
-your clip — a maintainer will convert it and add it to the right page.
+your clip, and a maintainer will convert it and add it for you.
 
 ---
 
